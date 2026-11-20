@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>Open-Hardware Blueprints : BitTerrarium · BitAquaponics · BitPlant | Regenerative Compute</title>
+    <meta name="description" content="Plans OpenSCAD paramétriques, bilans thermodynamiques, nomenclatures BOM, guides de montage, entretien et mise en avant pour BitTerrarium (17W), Pico-BitAquaponics (1,35L / 40L) et BitPlant (140W / 800W)." />
+
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+      window.MathJax = {
+        tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$']] },
+        svg: { fontCache: 'global' }
+      };
+    </script>
+    <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        :root {
+            --bg-dark: #050608;
+            --panel-bg: rgba(13, 15, 20, 0.9);
+            --text-main: #f1f5f9;
+            --text-soft: #cbd5e1;
+            --text-muted: #94a3b8;
+            --sun-gold: #ffcc00;
+            --btc-orange: #f7931a;
+            --warm-amber: #ff8c42;
+            --bio-lime: #44ee77;
+            --bio-emerald: #10b981;
+            --water-cyan: #00e5ff;
+            --purple-accent: #b366ff;
+            --danger-red: #ef4444;
+            --border-warm: rgba(247, 147, 26, 0.28);
+            --border-bio: rgba(68, 238, 119, 0.28);
+            --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'Fira Code', monospace;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-ui);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-image:
+                radial-gradient(circle at 50% 0%, rgba(247, 147, 26, 0.12) 0%, rgba(68, 238, 119, 0.05) 38%, transparent 70%),
+                radial-gradient(circle at 85% 55%, rgba(0, 229, 255, 0.05) 0%, transparent 50%);
+        }
+
+        body.lang-en [lang="fr"] { display: none !important; }
+        body.lang-fr [lang="en"] { display: none !important; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 150;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0.85rem 2rem; background: rgba(5, 6, 8, 0.92);
+            backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-warm);
+        }
+        .brand {
+            display: flex; align-items: center; gap: 10px;
+            text-decoration: none; color: #fff; font-weight: 800;
+            letter-spacing: 1px; font-size: 0.9rem; text-transform: uppercase;
+        }
+        .brand .dot {
+            width: 9px; height: 9px; border-radius: 50%;
+            background: var(--bio-lime); box-shadow: 0 0 10px var(--bio-lime);
+        }
+        .nav-links { display: flex; gap: 1rem; align-items: center; }
+        .nav-links a {
+            color: var(--text-muted); text-decoration: none; font-size: 0.76rem;
+            font-weight: 600; text-transform: uppercase; letter-spacing: 0.7px;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--sun-gold); }
+        .nav-right { display: flex; align-items: center; gap: 8px; }
+        .lang-btn {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.14);
+            color: #fff; padding: 4px 9px; border-radius: 6px; font-family: var(--font-mono);
+            font-size: 0.75rem; cursor: pointer; opacity: 0.6;
+        }
+        body.lang-en #btn-en, body.lang-fr #btn-fr {
+            opacity: 1; border-color: var(--sun-gold); background: rgba(255, 204, 0, 0.16);
+        }
+        .back-pill {
+            background: rgba(68, 238, 119, 0.14); border: 1px solid var(--bio-lime);
+            color: var(--bio-lime); font-family: var(--font-mono); font-size: 0.74rem;
+            font-weight: 700; padding: 6px 12px; border-radius: 999px; text-decoration: none;
+        }
+
+        main { max-width: 1160px; margin: 6.2rem auto 4rem; padding: 0 1.5rem; }
+
+        /* --- HEADER --- */
+        .hero-head { text-align: center; padding: 1.8rem 0 2.2rem; }
+        .eyebrow {
+            display: inline-block; padding: 5px 14px; border-radius: 999px;
+            background: rgba(68, 238, 119, 0.1); border: 1px solid rgba(68, 238, 119, 0.35);
+            color: var(--bio-lime); font-family: var(--font-mono); font-size: 0.74rem;
+            font-weight: 600; margin-bottom: 1rem;
+        }
+        h1 {
+            font-size: clamp(2rem, 4.8vw, 3.35rem); font-weight: 900; line-height: 1.1;
+            letter-spacing: -1px; margin-bottom: 0.9rem;
+            background: linear-gradient(180deg, #ffffff 30%, #fde68a 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero-lead {
+            max-width: 860px; margin: 0 auto 1.8rem; color: var(--text-soft); font-size: 1.08rem;
+        }
+
+        /* --- 3 PRODUCT SELECTOR CARDS --- */
+        .selector-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem;
+        }
+        .prod-tab {
+            background: rgba(15, 18, 26, 0.85); border: 1.5px solid rgba(255,255,255,0.1);
+            border-radius: 14px; padding: 1.25rem; text-align: left; cursor: pointer;
+            transition: all 0.22s ease; color: var(--text-main);
+        }
+        .prod-tab:hover { transform: translateY(-2px); border-color: rgba(255, 204, 0, 0.45); }
+        .prod-tab.active {
+            background: linear-gradient(145deg, rgba(247, 147, 26, 0.16), rgba(12, 18, 24, 0.95));
+            border-color: var(--sun-gold);
+            box-shadow: 0 12px 32px rgba(247, 147, 26, 0.18);
+        }
+        .prod-tab .pt-badge {
+            font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+            color: var(--sun-gold); display: flex; justify-content: space-between; margin-bottom: 0.4rem;
+        }
+        .prod-tab h2 { font-size: 1.22rem; font-weight: 800; color: #fff; margin-bottom: 0.3rem; }
+        .prod-tab p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.45; }
+
+        /* --- INTERACTIVE SIMULATOR & CUTAWAY STAGE --- */
+        .workbench-grid {
+            display: grid; grid-template-columns: 1.25fr 1fr; gap: 1.3rem;
+            background: var(--panel-bg); border: 1px solid var(--border-warm);
+            border-radius: 18px; padding: 1.5rem; margin-bottom: 2.8rem;
+            box-shadow: 0 22px 55px rgba(0,0,0,0.75);
+        }
+        .canvas-wrap {
+            position: relative; border-radius: 12px; overflow: hidden;
+            background: radial-gradient(circle at 50% 45%, #171512 0%, #05070b 80%);
+            border: 1px solid rgba(255,255,255,0.09);
+        }
+        #hwCanvas { width: 100%; height: 420px; display: block; }
+        .sim-side { display: flex; flex-direction: column; justify-content: space-between; gap: 1rem; }
+        .ctrl-group {
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px; padding: 0.9rem 1rem;
+        }
+        .ctrl-group label {
+            display: flex; justify-content: space-between; font-size: 0.79rem;
+            font-weight: 600; margin-bottom: 0.4rem; color: #e2e8f0;
+        }
+        .ctrl-group input[type="range"] { width: 100%; accent-color: var(--btc-orange); cursor: pointer; }
+        .telemetry-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+        }
+        .tel-card {
+            background: #04060a; border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 10px; padding: 0.85rem; text-align: center;
+        }
+        .tel-val {
+            display: block; font-family: var(--font-mono); font-size: 1.18rem;
+            font-weight: 800; color: var(--sun-gold);
+        }
+        .tel-lbl { font-size: 0.68rem; text-transform: uppercase; color: var(--text-muted); }
+        .safety-banner {
+            padding: 0.8rem 1rem; border-radius: 9px; font-size: 0.82rem;
+            border-left: 4px solid var(--bio-lime); background: rgba(68, 238, 119, 0.08);
+        }
+
+        /* --- BLUEPRINT CONTENT SECTIONS --- */
+        .model-pane { display: none; }
+        .model-pane.active { display: block; animation: fadeIn 0.25s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+        .section-grid-2 {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-bottom: 2rem;
+        }
+        .info-card {
+            background: var(--panel-bg); border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 14px; padding: 1.6rem;
+        }
+        .info-card h3 {
+            font-size: 1.14rem; color: var(--sun-gold); margin-bottom: 0.85rem;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .info-card ul { padding-left: 1.2rem; color: var(--text-soft); font-size: 0.91rem; }
+        .info-card li { margin-bottom: 0.55rem; }
+
+        .math-box {
+            background: #04060b; border: 1px solid rgba(0, 229, 255, 0.24);
+            border-left: 4px solid var(--water-cyan); border-radius: 10px;
+            padding: 1rem; margin: 1rem 0; text-align: center; overflow-x: auto;
+        }
+
+        /* --- BOM TABLE --- */
+        .table-wrap {
+            overflow-x: auto; border-radius: 12px; border: 1px solid rgba(255,255,255,0.09);
+            background: rgba(6, 8, 13, 0.9); margin-bottom: 2rem;
+        }
+        table.bom-table { width: 100%; border-collapse: collapse; font-size: 0.87rem; }
+        table.bom-table th, table.bom-table td {
+            padding: 0.85rem 1rem; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+        table.bom-table th {
+            font-family: var(--font-mono); font-size: 0.73rem; text-transform: uppercase;
+            color: var(--sun-gold); background: rgba(255,255,255,0.03);
+        }
+
+        /* --- INTERACTIVE CHECKLIST --- */
+        .checklist { display: flex; flex-direction: column; gap: 0.6rem; }
+        .chk-item {
+            display: flex; align-items: flex-start; gap: 10px;
+            padding: 0.75rem 0.95rem; border-radius: 9px;
+            background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07);
+            cursor: pointer; font-size: 0.88rem; color: var(--text-soft);
+        }
+        .chk-item input[type="checkbox"] {
+            margin-top: 4px; accent-color: var(--bio-lime); width: 16px; height: 16px; cursor: pointer;
+        }
+
+        /* --- OPENSCAD CODE VIEWER & DOWNLOAD --- */
+        .scad-panel {
+            background: #040508; border: 1px solid rgba(68, 238, 119, 0.35);
+            border-radius: 16px; padding: 1.6rem; margin: 2rem 0 3rem;
+        }
+        .scad-header {
+            display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+            gap: 10px; margin-bottom: 1rem;
+        }
+        .btn-action {
+            background: rgba(68, 238, 119, 0.14); border: 1px solid var(--bio-lime);
+            color: var(--bio-lime); padding: 7px 14px; border-radius: 8px;
+            font-family: var(--font-mono); font-size: 0.76rem; font-weight: 700;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .btn-action:hover { background: rgba(68, 238, 119, 0.28); color: #fff; }
+        .btn-action.gold {
+            background: rgba(247, 147, 26, 0.16); border-color: var(--sun-gold); color: var(--sun-gold);
+        }
+        pre.scad-code {
+            max-height: 360px; overflow: auto; padding: 1rem; border-radius: 10px;
+            background: #020305; border: 1px solid rgba(255,255,255,0.08);
+            font-family: var(--font-mono); font-size: 0.76rem; color: #a7f3d0; line-height: 1.55;
+        }
+
+        footer {
+            border-top: 1px solid var(--border-warm); padding: 2.8rem 1.5rem;
+            text-align: center; color: var(--text-muted); font-size: 0.84rem;
+        }
+
+        @media (max-width: 920px) {
+            .nav-links { display: none; }
+            .selector-grid, .workbench-grid, .section-grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="lang-fr">
+
+<nav>
+    <a href="index.html" class="brand">
+        <span class="dot"></span>
+        <span>Regenerative Compute · Lab</span>
+    </a>
+
+    <div class="nav-links">
+        <a href="#workbench"><span lang="fr">Simulateur CAO</span><span lang="en">CAD Workbench</span></a>
+        <a href="#blueprint-details"><span lang="fr">Montage & BOM</span><span lang="en">Assembly & BOM</span></a>
+        <a href="#openscad-vault"><span lang="fr">Code OpenSCAD</span><span lang="en">OpenSCAD Code</span></a>
+    </div>
+
+    <div class="nav-right">
+        <a href="index.html" class="back-pill">← <span lang="fr">Accueil Bloc #1M</span><span lang="en">Block #1M Home</span></a>
+        <button type="button" class="lang-btn" id="btn-fr" onclick="setLang('fr')">FR</button>
+        <button type="button" class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+</nav>
+
+<main>
+    <header class="hero-head">
+        <span class="eyebrow">OPEN-HARDWARE COMMONS · CERN-OHL-P v2 · REGENERATIVECOMPUTE.ORG & .IO</span>
+        <h1>
+            <span lang="fr">La Trilogie Open-Hardware : Du Bureau au Vivant</span>
+            <span lang="en">The Open-Hardware Trilogy: From Desk Hash to Living Biospheres</span>
+        </h1>
+        <p class="hero-lead">
+            <span lang="fr">Trois prototypes reproductibles partout dans le monde pour transformer 100 % de l'effet Joule du minage Bitcoin en micro-climats auto-irrigués, aquaponie symbiotique et autonomie alimentaire — avec fichiers CAO OpenSCAD paramétriques, guides de montage en 30 minutes, entretien et mise en scène.</span>
+            <span lang="en">Three globally reproducible prototypes turning 100% of Bitcoin ASIC Joule heat into self-watering micro-climates, symbiotic aquaponics, and four-season food production—complete with parametric OpenSCAD CAD files, 30-minute build guides, maintenance protocols, and showcase playbooks.</span>
+        </p>
+    </header>
+
+    <!-- 3 PRODUCT TABS -->
+    <div class="selector-grid" role="tablist">
+        <button type="button" class="prod-tab active" data-model="bitterrarium" onclick="selectModel('bitterrarium')">
+            <div class="pt-badge">
+                <span>01 // BITAXE 17W</span>
+                <span style="color:var(--bio-lime);">~42 $ AUD BOM</span>
+            </div>
+            <h2>BitTerrarium™</h2>
+            <p>
+                <span lang="fr">Dôme cloche sec sans liquide sur Bitaxe Gamma 601 : substrat Biochar Terra Preta, mousses vivantes et cycle de pluie par condensation.</span>
+                <span lang="en">Zero-liquid snap-on cloche dome over Bitaxe Gamma 601: Terra Preta biochar, live moss & self-watering condensation rain cycle.</span>
+            </p>
+        </button>
+
+        <button type="button" class="prod-tab" data-model="bitaquaponics" onclick="selectModel('bitaquaponics')">
+            <div class="pt-badge">
+                <span>02 // PICO 1,35 L & 40 L</span>
+                <span style="color:var(--water-cyan);">~52 $ AUD BOM</span>
+            </div>
+            <h2>BitAquaponics™</h2>
+            <p>
+                <span lang="fr">Le plus petit écosystème aquaponique viable sur Bitaxe (crevettes, Air-Lift 3D, Wolffia & cresson) extensible en Tri-Boucle 40 L (Perche/Tilapia + Spiruline).</span>
+                <span lang="en">Smallest viable Bitaxe aquaponic loop (1.35L shrimp, 3D Air-Lift, Wolffia & watercress), scalable to a 40L Fish + Spirulina Tri-Loop.</span>
+            </p>
+        </button>
+
+        <button type="button" class="prod-tab" data-model="bitplant" onclick="selectModel('bitplant')">
+            <div class="pt-badge">
+                <span>03 // NANO 3S 140W & MINI 3</span>
+                <span style="color:var(--btc-orange);">~85 $ AUD BOM</span>
+            </div>
+            <h2>BitPlant™</h2>
+            <p>
+                <span lang="fr">Collecteur aéraulique sur Canaan Avalon Nano 3S (140W) ou Mini 3 (800W) chauffant une serre hydroponique 72 cellules et pré-séchant le Biochar.</span>
+                <span lang="en">Aerodynamic thermal manifold on Avalon Nano 3S (140W) or Mini 3 (800W) warming a 72-cell hydroponic dome & pre-drying Biochar.</span>
+            </p>
+        </button>
+    </div>
+
+    <!-- INTERACTIVE CUTAWAY & THERMAL SIMULATOR -->
+    <section class="workbench-grid" id="workbench">
+        <div class="canvas-wrap">
+            <canvas id="hwCanvas" aria-label="Coupe technique interactive du prototype sélectionné"></canvas>
+        </div>
+
+        <div class="sim-side">
+            <div>
+                <div style="font-family:var(--font-mono); font-size:0.74rem; color:var(--sun-gold); margin-bottom:4px;" id="wb-subtitle">
+                    SIMULATEUR THERMIQUE EN TEMPS RÉEL
+                </div>
+                <h3 style="font-size:1.25rem; color:#fff; margin-bottom:0.8rem;" id="wb-title">
+                    BitTerrarium™ Topper (17 W)
+                </h3>
+
+                <div class="ctrl-group" style="margin-bottom:0.75rem;">
+                    <label for="sl-amb">
+                        <span><span lang="fr">Température Pièce ($T_{\text{amb}}$)</span><span lang="en">Room Ambient Temp ($T_{\text{amb}}$)</span></span>
+                        <span id="out-amb" style="color:var(--water-cyan); font-family:var(--font-mono);">20.5 °C</span>
+                    </label>
+                    <input type="range" id="sl-amb" min="12" max="30" step="0.5" value="20.5">
+                </div>
+
+                <div class="ctrl-group">
+                    <label for="sl-baffle">
+                        <span><span lang="fr">Couplage Thermique / Volet ($\eta_{\text{couplage}}$)</span><span lang="en">Thermal Coupling / Baffle ($\eta_{\text{couple}}$)</span></span>
+                        <span id="out-baffle" style="color:var(--btc-orange); font-family:var(--font-mono);">35 %</span>
+                    </label>
+                    <input type="range" id="sl-baffle" min="15" max="85" step="1" value="35">
+                </div>
+            </div>
+
+            <div class="telemetry-grid">
+                <div class="tel-card">
+                    <span class="tel-val" id="tel-bio-temp">27.2 °C</span>
+                    <span class="tel-lbl"><span lang="fr">Substrat / Eau</span><span lang="en">Root / Water Temp</span></span>
+                </div>
+                <div class="tel-card">
+                    <span class="tel-val" id="tel-asic-temp" style="color:var(--btc-orange);">51.4 °C</span>
+                    <span class="tel-lbl"><span lang="fr">Puce ASIC</span><span lang="en">ASIC Core Temp</span></span>
+                </div>
+                <div class="tel-card">
+                    <span class="tel-val" id="tel-water-flux" style="color:var(--water-cyan);">42 mL/j</span>
+                    <span class="tel-lbl"><span lang="fr">Pluie / Flux Eau</span><span lang="en">Rain / Water Cycle</span></span>
+                </div>
+                <div class="tel-card">
+                    <span class="tel-val" id="tel-yield" style="color:var(--bio-lime);">+100 % O₂</span>
+                    <span class="tel-lbl"><span lang="fr">Rendement Vivant</span><span lang="en">Biological Output</span></span>
+                </div>
+            </div>
+
+            <div class="safety-banner" id="wb-safety">
+                ● Équilibre optimal : maintien tropical doux sans surchauffe ASIC.
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         BLUEPRINT 1 : BITTERRARIUM (17W BITAXE CLOCHE TOPPER)
+         ====================================================================== -->
+    <div id="pane-bitterrarium" class="model-pane active">
+        <div id="blueprint-details" class="section-grid-2">
+            <div class="info-card">
+                <h3>🔬 <span lang="fr">1. Physique & Règles d'Or (Zéro Liquide)</span><span lang="en">1. Physics & Golden Rules (Zero Liquid)</span></h3>
+                <p style="font-size:0.91rem; color:var(--text-soft); margin-bottom:0.7rem;">
+                    <span lang="fr">À $17\text{ W}$, l'immersion liquide est superflue : un couplage sec par convection-conduction sous une coupelle en aluminium anodisé ($\varnothing 150\text{ mm}$) suffit à créer un cycle hydrologique tropical fermé.</span>
+                    <span lang="en">At $17\text{ W}$, liquid immersion is unnecessary: dry convective-conductive coupling beneath a $\varnothing 150\text{ mm}$ anodized aluminum dish creates a self-sustaining closed tropical rain loop.</span>
+                </p>
+                <div class="math-box">
+                    $$ Q_{\text{utile}} = \eta_{\text{baffle}} \cdot P_{\text{Bitaxe}} \approx 0,35 \times 17\text{ W} \approx 6,0\text{ W}_{\text{th}} \implies T_{\text{mousse}} \approx 27,5\,^\circ\text{C} $$
+                </div>
+                <ul>
+                    <li><span lang="fr"><strong>Sécurité ASIC (< 55 °C) :</strong> Le socle imprimé évacue $65\,\%$ du flux d'air latéralement afin de ne jamais brider le ventilateur de $40\text{ mm}$ du Bitaxe Gamma 601.</span><span lang="en"><strong>ASIC Safety (< 55°C):</strong> The 3D-printed cradle vents $65\%$ of warm air laterally so the Bitaxe's $40\text{ mm}$ fan never chokes.</span></li>
+                    <li><span lang="fr"><strong>Gouttière de retour interne :</strong> La bague <code>gutter_ring</code> capte les gouttelettes condensées sur la paroi interne du dôme en verre et les redirige vers le lit de Biochar *Terra Preta*.</span><span lang="en"><strong>Internal Drip Gutter:</strong> The <code>gutter_ring</code> catches droplets rolling down the inner glass cloche and channels them straight back into the *Terra Preta* bed.</span></li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>🎥 <span lang="fr">2. Mise en Avant & Storytelling ("Video Warmth")</span><span lang="en">2. Showcase & "Video Warmth" Playbook</span></h3>
+                <ul>
+                    <li><span lang="fr"><strong>Angle Viral :</strong> « *Bitaxe était la première moitié de l'équation (le silicium libre). Voici la seconde moitié : le vivant.* »</span><span lang="en"><strong>Viral Hook:</strong> "*Bitaxe was the first half of the equation (open silicon). Here is the second half: living biology.*"</span></li>
+                    <li><span lang="fr"><strong>Plan Vidéo 12s (X / Reels / LinkedIn) :</strong> Lumière rasante dorée du matin sur bureau en bois, zoom macro passant de l'écran OLED (`1.2 TH/s`) aux gouttelettes perlant sur la mousse émeraude sous la cloche.</span><span lang="en"><strong>12s Macro Shot:</strong> Golden morning window light on wood desk, panning from the `1.2 TH/s` OLED screen up to sparkling rain droplets falling onto emerald moss.</span></li>
+                    <li><span lang="fr"><strong>Modèle Économique Dual :</strong> STL gratuit sur <code>regenerativecompute.org</code> (acquisition zéro-CAC auprès de 100 000 mineurs Bitaxe) + Kit assemblé *Founder's Batch* à **89 $ AUD** sur <code>regenerativecompute.io</code>.</span><span lang="en"><strong>Dual Distribution:</strong> Free STL on <code>regenerativecompute.org</code> + turnkey **$89 AUD** *Founder's Batch* kit on <code>regenerativecompute.io</code>.</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="table-wrap">
+            <table class="bom-table">
+                <thead>
+                    <tr>
+                        <th><span lang="fr">Composant (BitTerrarium™)</span><span lang="en">Component (BitTerrarium™)</span></th>
+                        <th><span lang="fr">Spécification Technique</span><span lang="en">Technical Spec</span></th>
+                        <th><span lang="fr">Source Locale (Sydney / Global)</span><span lang="en">Source (Sydney / Global)</span></th>
+                        <th>Coût (AUD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Cloche Verre Borosilicate</td><td>$\varnothing 146\text{–}150\text{ mm} \times H\,150\text{ mm}$</td><td>Spotlight Bondi / Amazon AU</td><td><strong>16 $</strong></td></tr>
+                    <tr><td>Coupelle Thermique Aluminium</td><td>Disque/assiette alu anodisé $\varnothing 150 \times 1,5\text{ mm}$</td><td>Bunnings Alexandria / Mascot</td><td><strong>6 $</strong></td></tr>
+                    <tr><td>Socle & Gouttière Imprimés 3D</td><td>~110 g filament PETG ou ASA (résistant $75\,^\circ\text{C}$)</td><td>Impression locale (`bitterrarium_topper.scad`)</td><td><strong>4 $</strong></td></tr>
+                    <tr><td>Substrat Carbone & Flore</td><td>Biochar *Terra Preta* + sphaigne + mousse *Leucobryum* / fougère naine</td><td>Bunnings + pépinière locale</td><td><strong>11 $</strong></td></tr>
+                    <tr><td>Anneau LED USB 5V (Optionnel)</td><td>Blanc chaud $3500\text{ K}$, $3\text{ W}$ sur port USB</td><td>Jaycar / Core Electronics</td><td><strong>5 $</strong></td></tr>
+                    <tr><td colspan="3" style="text-align:right; font-weight:700;">TOTAL KIT ADD-ON (hors Bitaxe Gamma 601) :</td><td><strong style="color:var(--bio-lime);">42 $ AUD</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section-grid-2">
+            <div class="info-card">
+                <h3>🛠️ <span lang="fr">3. Guide de Montage (20 Minutes)</span><span lang="en">3. Step-by-Step Build Guide (20 Min)</span></h3>
+                <div class="checklist">
+                    <label class="chk-item"><input type="checkbox" data-chk="bt1"><span><span lang="fr"><strong>1. Impression PETG :</strong> Imprimer <code>cradle</code> et <code>gutter_ring</code> en PETG (couches 0,2 mm, 25 % remplissage, sans supports).</span><span lang="en"><strong>1. Print PETG Parts:</strong> Print <code>cradle</code> and <code>gutter_ring</code> in PETG (0.2mm layer, 25% infill, no supports).</span></span></label>
+                    <label class="chk-item"><input type="checkbox" data-chk="bt2"><span><span lang="fr"><strong>2. Insertion du Bitaxe :</strong> Glisser le PCB du Bitaxe Gamma 601 horizontalement par l'arrière (ventilateur vers le haut, écran OLED visible dans la visière avant).</span><span lang="en"><strong>2. Slide in Bitaxe:</strong> Insert Bitaxe Gamma 601 horizontally from the rear (fan facing up, OLED screen aligned with front visor).</span></span></label>
+                    <label class="chk-item"><input type="checkbox" data-chk="bt3"><span><span lang="fr"><strong>3. Coupelle & Substrat :</strong> Poser le disque aluminium $\varnothing 150\text{ mm}$, emboîter <code>gutter_ring</code>, étaler $15\text{ mm}$ de gravier/pouzzolane + $10\text{ mm}$ de Biochar *Terra Preta* humide.</span><span lang="en"><strong>3. Dish & Substrate:</strong> Seat the 150mm aluminum saucer, snap in <code>gutter_ring</code>, layer 15mm drainage pumice + 10mm moist *Terra Preta* biochar.</span></span></label>
+                    <label class="chk-item"><input type="checkbox" data-chk="bt4"><span><span lang="fr"><strong>4. Plantation & Mise à Feu :</strong> Disposer la mousse vivante, pulvériser $40\text{ mL}$ d'eau de pluie/déminéralisée, poser la cloche en verre et brancher le Bitaxe. Premières gouttes en $45\text{ min}$.</span><span lang="en"><strong>4. Plant & Hash:</strong> Place live moss, mist with 40 mL distilled/rainwater, set the glass cloche, and power on Bitaxe. Condensation rain starts within 45 min.</span></span></label>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>🌿 <span lang="fr">4. Protocole d'Entretien (2 Min / Mois)</span><span lang="en">4. Maintenance Protocol (2 Min / Month)</span></h3>
+                <ul>
+                    <li><span lang="fr"><strong>Auto-irrigation fermée :</strong> Si une fine buée couvre le tiers supérieur du dôme le matin et s'éclaircit l'après-midi, l'humidité est parfaite — **n'ajoutez aucune eau**.</span><span lang="en"><strong>Closed Self-Watering:</strong> Light morning mist on the upper third of the dome means ideal balance—**do not add water**.</span></li>
+                    <li><span lang="fr"><strong>Appoint mensuel :</strong> Seulement $10\text{ à }15\text{ mL}$ d'eau déminéralisée toutes les 3 à 4 semaines (jamais d'eau calcaire qui tacherait le verre borosilicate).</span><span lang="en"><strong>Monthly Top-Up:</strong> Mist 10–15 mL of distilled water every 3–4 weeks only (avoid hard tap water spots).</span></li>
+                    <li><span lang="fr"><strong>Dépoussiérage ASIC :</strong> Souffler légèrement les ouïes basses du socle une fois par mois pour maintenir la puce BM1370 sous $55\,^\circ\text{C}$.</span><span lang="en"><strong>ASIC Dust Check:</strong> Wipe bottom intake louvers monthly so BM1370 stays under $55\,^\circ\text{C}$.</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
+         BLUEPRINT 2 : PICO-BITAQUAPONICS (1.35L SHRIMP + WOLFFIA & 40L TRI-LOOP)
+         ====================================================================== -->
+    <div id="pane-bitaquaponics" class="model-pane">
+        <div class="section-grid-2">
+            <div class="info-card">
+                <h3>🦐 <span lang="fr">1. Architecture Pico (1,35 L) & Tri-Boucle (40 L)</span><span lang="en">1. Pico (1.35 L) & Tri-Loop (40 L) Architecture</span></h3>
+                <p style="font-size:0.9rem; color:var(--text-soft); margin-bottom:0.7rem;">
+                    <span lang="fr"><strong>Pourquoi 1,35 L est le minimum absolu sur Bitaxe (17 W) :</strong> Un poisson exige $\ge 30\text{ L}$ ($140\text{ W}$). Sur un seul Bitaxe, on associe **4 crevettes naines *Neocaridina*** + **lit Biochar nitrifiant** + **Air-Lift imprimé en 3D** + **tapis de *Wolffia arrhiza* (40 % protéines) & cresson**.</span>
+                    <span lang="en"><strong>Why 1.35 L is the physical minimum on a 17W Bitaxe:</strong> Fish require $\ge 30\text{ L}$ ($140\text{ W}$). On a single Bitaxe, we pair **4 *Neocaridina* dwarf shrimp** + **Biochar biofilter** + **3D-printed Air-Lift** + ***Wolffia arrhiza* (40% protein) & watercress**.</span>
+                </p>
+                <div class="math-box">
+                    $$ P_{\text{pertes, 1,35L}} = U \cdot A \cdot \Delta T \approx 11 \times 0,065 \times 6,0 \approx 4,3\text{ W}_{\text{th}} \quad (\text{Baffle réglé à } 32\,\% \to 26,5\,^\circ\text{C}) $$
+                </div>
+                <ul>
+                    <li><span lang="fr"><strong>Extension Bureau 40 L Tri-Boucle (140 W Avalon Nano 3S) :</strong> Sépare strictement la **colonne Spiruline** ($3\text{ L}$, $\text{pH } 10,2$, $31\,^\circ\text{C}$, couplée uniquement par bullage $\text{CO}_2/\text{O}_2$) du **bassin eau douce** ($30\text{ L}$, $\text{pH } 7,2$, $27,5\,^\circ\text{C}$) et du **bac supérieur *Wolffia*** ($8\text{ L}$).</span><span lang="en"><strong>40L Tri-Loop Upgrade (140W Nano 3S):</strong> Physically isolates the **Spirulina column** ($3\text{ L}$, $\text{pH } 10.2$, $31\,^\circ\text{C}$, gas-coupled via $\text{CO}_2/\text{O}_2$) from the **freshwater fish tank** ($30\text{ L}$, $\text{pH } 7.2$) and **upper *Wolffia* tray** ($8\text{ L}$).</span></li>
+                    <li><span lang="fr"><strong>Note Biosécurité NSW (Sydney) :</strong> En Nouvelle-Galles du Sud, remplacer le Tilapia (interdit vivant) par le **Jade Perch** (*Scortum barcoo*, $27\,^\circ\text{C}$), 100 % légal et indigène australien.</span><span lang="en"><strong>NSW Biosecurity Note:</strong> In Sydney/NSW, substitute live Tilapia with native Australian **Jade Perch** (*Scortum barcoo*, $27\,^\circ\text{C}$).</span></li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>🎥 <span lang="fr">2. Mise en Avant & Impact Visuel</span><span lang="en">2. Showcase & Visual Storytelling</span></h3>
+                <ul>
+                    <li><span lang="fr"><strong>Démonstration Vivante en 3 Éléments :</strong> Sur $124 \times 124\text{ mm}$ de bureau, l'observateur voit le hachage Bitcoin en bas, les crevettes rouges et le train de bulles Air-Lift au centre, et la production de protéines (*Wolffia*) en haut.</span><span lang="en"><strong>Three-Tier Live Proof:</strong> Within a $124 \times 124\text{ mm}$ mug footprint, viewers see live SHA-256 hashing below, red shrimp & rising Air-Lift bubbles mid-level, and edible *Wolffia* protein on top.</span></li>
+                    <li><span lang="fr"><strong>Preuve directe pour Mars & Madagascar :</strong> Démontre sans pompe mécanique submersible (zéro pièce mobile dans l'eau grâce à l'Air-Lift imprimé en 3D) la résilience d'une boucle trophique complète.</span><span lang="en"><strong>Direct Mars & Madagascar Proof:</strong> Uses a clog-free 3D-printed Air-Lift (zero submerged moving impellers) proving long-duration closed-loop reliability.</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="table-wrap">
+            <table class="bom-table">
+                <thead>
+                    <tr>
+                        <th><span lang="fr">Composant (Pico-BitAquaponics 1,35 L)</span><span lang="en">Component (Pico-BitAquaponics 1.35 L)</span></th>
+                        <th><span lang="fr">Spécification Technique</span><span lang="en">Technical Spec</span></th>
+                        <th><span lang="fr">Rôle Métabolique</span><span lang="en">Metabolic Role</span></th>
+                        <th>Coût (AUD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Cylindre Borosilicate 1,35 L</td><td>$\varnothing 115\text{ mm OD} \times H\,135\text{ mm}$, paroi $2,5\text{ mm}$</td><td>Cuve aquatique transparente haute résistance thermique</td><td><strong>14 $</strong></td></tr>
+                    <tr><td>Disque Aluminium + Silicone Neutre</td><td>$\varnothing 112 \times 1,5\text{ mm}$ + joint silicone aquarium</td><td>Plancher caloporteur étanche au-dessus du Bitaxe</td><td><strong>6 $</strong></td></tr>
+                    <tr><td>5 Pièces Imprimées PETG</td><td>Socle, Baffle 32%, Air-Lift, Panier Hydro, Anneau Cloche</td><td>Structure complète (`pico_bitaquaponics.scad`)</td><td><strong>6 $</strong></td></tr>
+                    <tr><td>Micro-Pompe à Air USB 5V</td><td>Piézoélectrique $1,2\text{ W}$ ($< 28\text{ dB}$) + clapet anti-retour</td><td>Élévation d'eau Air-Lift + oxygénation dissoute</td><td><strong>10 $</strong></td></tr>
+                    <tr><td>Consortium Vivant & Substrat</td><td>Billes LECA + Biochar + *Wolffia* + cresson + 4 *Neocaridina*</td><td>Cycle complet $\text{NH}_3 \to \text{NO}_2^- \to \text{NO}_3^- \to \text{Biomasse}$</td><td><strong>16 $</strong></td></tr>
+                    <tr><td colspan="3" style="text-align:right; font-weight:700;">TOTAL PICO-BITAQUAPONICS (hors Bitaxe) :</td><td><strong style="color:var(--water-cyan);">52 $ AUD</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section-grid-2">
+            <div class="info-card">
+                <h3>🛠️ <span lang="fr">3. Montage (30 Min) & Cyclage Azoté (14 Jours)</span><span lang="en">3. Build (30 Min) & Nitrogen Cycling (14 Days)</span></h3>
+                <div class="checklist">
+                    <label class="chk-item"><input type="checkbox" data-chk="ba1"><span><span lang="fr"><strong>1. Scellement Thermique :</strong> Coller le disque alu $\varnothing 112\text{ mm}$ dans <code>thermal_baffle</code> au silicone neutre aquarium (séchage 24 h).</span><span lang="en"><strong>1. Thermal Seal:</strong> Bond the 112mm aluminum disc into <code>thermal_baffle</code> with aquarium-safe neutral silicone (cure 24h).</span></span></label>
+                    <label class="chk-item"><input type="checkbox" data-chk="ba2"><span><span lang="fr"><strong>2. Test Thermique Jours 1–3 :</strong> Glisser le Bitaxe dans <code>base_cradle</code>, poser le cylindre d'eau déchlorée ($1,35\text{ L}$), brancher l'Air-Lift et vérifier $T_{\text{eau}} \in [25,5\,^\circ\text{C}, 27,5\,^\circ\text{C}]$.</span><span lang="en"><strong>2. Days 1–3 Thermal Test:</strong> Insert Bitaxe in <code>base_cradle</code>, fill 1.35L dechlorinated water, run Air-Lift, verify $T_{\text{water}} \in [25.5\,^\circ\text{C}, 27.5\,^\circ\text{C}]$.</span></span></label>
+                    <label class="chk-item"><input type="checkbox" data-chk="ba3"><span><span lang="fr"><strong>3. Cyclage Bactérien Jours 4–13 :</strong> Rincer le Biochar + billes LECA, ensemencer en bactéries nitrifiantes et planter la *Wolffia* + bouture de cresson dans <code>hydro_basket</code>.</span><span lang="en"><strong>3. Days 4–13 Bio-Cycling:</strong> Add rinsed Biochar + LECA, dose nitrifying bacteria, and place *Wolffia* + watercress cutting in <code>hydro_basket</code>.</span></span></label>
+                    <label class="chk-item"><input type="checkbox" data-chk="ba4"><span><span lang="fr"><strong>4. Jour 14 (Faune) :</strong> Vérifier $\text{NO}_2^- = 0\text{ mg/L}$, puis acclimater au goutte-à-goutte 4 crevettes *Neocaridina* et 2 escargots *Planorbis*.</span><span lang="en"><strong>4. Day 14 (Livestock):</strong> Confirm $\text{NO}_2^- = 0\text{ mg/L}$, then drip-acclimate 4 *Neocaridina* shrimp and 2 *Planorbis* snails.</span></span></label>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>💧 <span lang="fr">4. Protocole d'Entretien (5 Min / Semaine)</span><span lang="en">4. Weekly Care Protocol (5 Min / Week)</span></h3>
+                <ul>
+                    <li><span lang="fr"><strong>Compensation d'évaporation :</strong> Ajouter $30\text{–}50\text{ mL}$ d'**eau osmosée ou de pluie** par semaine pour garder une dureté stable ($\text{GH } 6\text{–}8$).</span><span lang="en"><strong>Evaporation Top-Off:</strong> Add 30–50 mL of **RO or rainwater** weekly to keep mineral hardness stable ($\text{GH } 6\text{–}8$).</span></li>
+                    <li><span lang="fr"><strong>Récolte Nitrates :</strong> Prélever chaque semaine **20 à 30 % de la *Wolffia*** et tailler les pointes de cresson : c'est cette récolte qui exporte physiquement l'azote hors du bocal !</span><span lang="en"><strong>Nitrate Harvest:</strong> Scoop out **20–30% of the *Wolffia* mat** and trim watercress tips weekly to export nitrogen.</span></li>
+                    <li><span lang="fr"><strong>Sécurité Clapet :</strong> Toujours maintenir le clapet anti-retour sur le tube silicone $4/6\text{ mm}$ de la pompe USB pour empêcher tout siphonnage en cas de coupure secteur.</span><span lang="en"><strong>Check-Valve Safety:</strong> Keep the inline check valve on the 4/6mm air tubing to prevent back-siphoning if USB power drops.</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
+         BLUEPRINT 3 : BITPLANT (140W AVALON NANO 3S & 800W MINI 3 HYDROPONICS)
+         ====================================================================== -->
+    <div id="pane-bitplant" class="model-pane">
+        <div class="section-grid-2">
+            <div class="info-card">
+                <h3>🌱 <span lang="fr">1. Ingénierie BitPlant™ (140 W Nano 3S → 800 W Mini 3)</span><span lang="en">1. BitPlant™ Engineering (140W Nano 3S → 800W Mini 3)</span></h3>
+                <p style="font-size:0.9rem; color:var(--text-soft); margin-bottom:0.7rem;">
+                    <span lang="fr">Le **Canaan Avalon Nano 3S** ($205 \times 115 \times 58,5\text{ mm}$, $6\text{ TH/s}$, $140\text{ W}$, $33\text{–}40\text{ dB}$) délivre exactement la puissance thermique requise pour maintenir une mini-serre hydroponique de **72 cellules** ($540 \times 280\text{ mm}$) à **$25\,^\circ\text{C}$** tout l'hiver. Pour un foyer de 2 personnes ($3\text{–}5\text{ m}^2$ verticaux), l'**Avalon Mini 3** ($760 \times 104 \times 214,5\text{ mm}$, modes $400\text{ / }500\text{ / }650\text{ / }800\text{ W}$, air à $60\text{–}70\,^\circ\text{C}$) chauffe la serre et pré-sèche la biomasse en Biochar.</span>
+                    <span lang="en">The **Canaan Avalon Nano 3S** ($205 \times 115 \times 58.5\text{ mm}$, $6\text{ TH/s}$, $140\text{ W}$, $33\text{–}40\text{ dB}$) supplies the exact thermal flux needed to keep a **72-cell hydroponic dome** ($540 \times 280\text{ mm}$) at **$25\,^\circ\text{C}$** all winter. Scaling up, the **Avalon Mini 3** ($400\text{–}800\text{ W}$ modes, $60\text{–}70\,^\circ\text{C}$ outlet) heats a $3\text{–}5\text{ m}^2$ home vertical farm + Biochar dryer.</span>
+                </p>
+                <div class="math-box">
+                    $$ E_{\text{mensuelle, Nano 3S}} = 0,140\text{ kW} \times 730\text{ h} \approx 102,2\text{ kWh/mois} \implies +45\,\% \text{ vitesse de germination} $$
+                </div>
+                <ul>
+                    <li><span lang="fr"><strong>Volet Rotatif Été / Hiver (`rotary_damper`) :</strong> En hiver, $80	ext{–}100\,\%$ de l'air chaud ($44\,^\circ\text{C}$) circule dans le plénum sous le bac racinaire ; en été, le volet dévie le flux hors de la serre ou vers un séchoir à herbes aromatiques / Biochar.</span><span lang="en"><strong>Summer/Winter Rotary Damper:</strong> Routes $80	ext{–}100\%$ of warm air ($44\,^\circ\text{C}$) beneath the root tray in winter, or diverts heat to an herb/Biochar dehydrator in summer.</span></li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>🥬 <span lang="fr">2. Plan de Culture & Mise en Avant</span><span lang="en">2. Crop Matrix & Community Showcase</span></h3>
+                <ul>
+                    <li><span lang="fr"><strong>Rotation Haute Densité Nutritionnelle (Cycle 28 jours) :</strong> Pak Choï, Kale nain, Épinard, Basilic Genovese et micropousses de brocoli (indice de récolte $> 85\,\%$, $\text{EC } 1,4\text{–}1,8\text{ mS/cm}$, $\text{pH } 5,8\text{–}6,2$).</span><span lang="en"><strong>28-Day Nutrient-Dense Rotation:</strong> Pak Choi, Dwarf Kale, Spinach, Genovese Basil, and broccoli microgreens ($\text{EC } 1.4\text{–}1.8\text{ mS/cm}$, $\text{pH } 5.8\text{–}6.2$).</span></li>
+                    <li><span lang="fr"><strong>Storytelling Souveraineté Domestique :</strong> « *Pourquoi brûler 140 W dans un tapis chauffant horticole inerte quand un Avalon Nano 3S produit les mêmes 140 W de chaleur racinaire tout en accumulant des satoshis 24h/24 ?* »</span><span lang="en"><strong>Home Sovereignty Hook:</strong> "*Why plug in a dumb 140W seedling heat mat when an Avalon Nano 3S delivers the exact same 140W of root warmth while stacking sats 24/7?*"</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="table-wrap">
+            <table class="bom-table">
+                <thead>
+                    <tr>
+                        <th><span lang="fr">Composant (BitPlant™ Nano 3S 140W)</span><span lang="en">Component (BitPlant™ Nano 3S 140W)</span></th>
+                        <th><span lang="fr">Spécification Technique</span><span lang="en">Technical Spec</span></th>
+                        <th><span lang="fr">Fonction Système</span><span lang="en">System Function</span></th>
+                        <th>Coût (AUD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Dôme Propagation 72 Cellules</td><td>Type AC Infinity Heavy-Duty $540 \times 280 \times 240\text{ mm}$</td><td>Enceinte hydroponique à hygrométrie contrôlée</td><td><strong>42 $</strong></td></tr>
+                    <tr><td>Collecteur & Plénum Imprimés 3D</td><td>PETG/ASA (~260 g) : Hotte $205 \times 58,5\text{ mm}$ + Volet + Diffuseur</td><td>Captage aéraulique (`bitplant_manifold.scad`)</td><td><strong>11 $</strong></td></tr>
+                    <tr><td>Gaine Isolée $\varnothing 100\text{ mm}$ + Colliers</td><td>Gaine alu/phonique souple $1\text{ m}$ ($4\text{ pouces}$)</td><td>Transport thermique sans perte acoustique ($< 36\text{ dB}$)</td><td><strong>14 $</strong></td></tr>
+                    <tr><td>Panneau Isolant Base XPS + Sonde</td><td>Polystyrène extrudé $20\text{ mm}$ + sonde thermique DS18B20</td><td>Isolation vers le bas + sécurité thermique automatique</td><td><strong>18 $</strong></td></tr>
+                    <tr><td colspan="3" style="text-align:right; font-weight:700;">TOTAL KIT ADAPTATEUR BITPLANT (hors Avalon Nano 3S & LED) :</td><td><strong style="color:var(--btc-orange);">85 $ AUD</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section-grid-2">
+            <div class="info-card">
+                <h3>🛠️ <span lang="fr">3. Montage & Raccordement (25 Minutes)</span><span lang="en">3. Assembly & Ducting Guide (25 Min)</span></h3>
+                <div class="checklist">
+                    <label class="chk-item"><input type="checkbox" data-chk="bp1"><span><span lang="fr"><strong>1. Impression des 3 Modules :</strong> Imprimer <code>exhaust_hood</code>, <code>rotary_damper</code> et <code>tray_diffuser</code> en PETG/ASA (remplissage 25 %).</span><span lang="en"><strong>1. Print 3 Modules:</strong> Print <code>exhaust_hood</code>, <code>rotary_damper</code>, and <code>tray_diffuser</code> in PETG/ASA (25% infill).</span></span></label>
+                    <label class="chk-item"><input type="checkbox" data-chk="bp2"><span><span lang="fr"><strong>2. Emboîtement sur Nano 3S :</strong> Glisser la hotte `205 × 58,5 mm` sur la face d'extraction de l'Avalon Nano 3S (laisser l'entrée d'air arrière et le port USB-C 28V libres).</span><span lang="en"><strong>2. Slip onto Nano 3S:</strong> Slide the `205 × 58.5 mm` hood onto the Avalon Nano 3S exhaust face (keep rear intake & 28V USB-C PD clear).</span></span></label>
+                    <label class="chk-item"><input type="checkbox" data-chk="bp3"><span><span lang="fr"><strong>3. Gaine & Plénum Racinaire :</strong> Relier la sortie $\varnothing 100\text{ mm}$ au diffuseur sous le plateau 72 cellules posé sur l'isolant XPS, et insérer la sonde DS18B20.</span><span lang="en"><strong>3. Duct & Root Plenum:</strong> Connect 100mm flex duct to the under-tray diffuser resting on XPS insulation, and insert the DS18B20 probe.</span></span></label>
+                    <label class="chk-item"><input type="checkbox" data-chk="bp4"><span><span lang="fr"><strong>4. Réglage du Volet :</strong> Ajuster le levier `rotary_damper` pour stabiliser la zone racinaire entre $23\,^\circ\text{C}$ et $26\,^\circ\text{C}$.</span><span lang="en"><strong>4. Tune Damper:</strong> Adjust the `rotary_damper` thumb lever until root-zone temperature stabilizes at $23	ext{–}26\,^\circ\text{C}$.</span></span></label>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>🌿 <span lang="fr">4. Entretien Agronomique (5 Min / Semaine)</span><span lang="en">4. Agronomic Maintenance (5 Min / Week)</span></h3>
+                <ul>
+                    <li><span lang="fr"><strong>Contrôle Solution Nutritive :</strong> Vérifier une fois par semaine $\text{pH } 5,8\text{–}6,2$ et électro-conductivité $\text{EC } 1,5\text{ mS/cm}$ ; renouveler l'eau nutritive toutes les 2 semaines.</span><span lang="en"><strong>Nutrient Check:</strong> Verify $\text{pH } 5.8\text{–}6.2$ and $\text{EC } 1.5\text{ mS/cm}$ weekly; refresh reservoir every 14 days.</span></li>
+                    <li><span lang="fr"><strong>Bascule Saisonnière :</strong> Dès que $T_{\text{amb}} > 25\,^\circ\text{C}$, ouvrir le bypass latéral à $70\,\%$ pour diriger la chaleur vers un tiroir de séchage d'herbes ou de Biochar.</span><span lang="en"><strong>Seasonal Switch:</strong> Whenever $T_{\text{amb}} > 25\,^\circ\text{C}$, open lateral bypass to $70\%$ to dry herbs or Biochar instead.</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
+         VAULT OPENSCAD INTERACTIF (COPIE + TÉLÉCHARGEMENT .SCAD DIRECT)
+         ====================================================================== -->
+    <section class="scad-panel" id="openscad-vault">
+        <div class="scad-header">
+            <div>
+                <div style="font-family:var(--font-mono); font-size:0.74rem; color:var(--bio-lime);">
+                    PARAMETRIC CAD SOURCE · READY FOR OPENSCAD (F5 / F6 / EXPORT STL)
+                </div>
+                <h3 style="font-size:1.25rem; color:#fff;" id="scad-title">
+                    bitterrarium_topper.scad
+                </h3>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <button type="button" class="btn-action" onclick="copyScad()">📋 <span lang="fr">Copier le Code OpenSCAD</span><span lang="en">Copy OpenSCAD Code</span></button>
+                <button type="button" class="btn-action gold" onclick="downloadScad()">⬇️ <span lang="fr">Télécharger le fichier .scad</span><span lang="en">Download .scad File</span></button>
+            </div>
+        </div>
+        <pre class="scad-code" id="scad-viewer"></pre>
+    </section>
+</main>
+
+<footer>
+    <div style="font-weight:800; letter-spacing:2px; color:var(--sun-gold); margin-bottom:0.4rem;">
+        ☀ REGENERATIVE COMPUTE · OPEN-HARDWARE COMMONS (REGENERATIVECOMPUTE.ORG & .IO)
+    </div>
+    <p>Pascal Ranoroarijaona (Ranaora) · Sydney Tech Central · BitTerrarium™ · BitAquaponics™ · BitPlant™</p>
+</footer>
+
+<script>
+    const SCAD_BUNDLE = {"bitterrarium": {"filename": "bitterrarium_topper.scad", "code": "// ============================================================================\n// BITTERRARIUM v1.0 — 17W BITAXE SNAP-ON DRY CLOCHE BIOSPHERE TOPPER\n// Regenerative Compute (regenerativecompute.org | regenerativecompute.io)\n// Author: Pascal Ranoroarijaona (Ranaora) — Sydney Tech Central (2026)\n// License: CERN-OHL-P v2 / MIT Open Hardware Commons\n// ============================================================================\n// HARDWARE TARGET:\n// - Bitaxe Gamma 601 (PCB: 99.76 x 56.54 x 1.6 mm, BM1370 ASIC, 17W, 40mm fan)\n// - Dish: 150 mm anodized aluminum saucer (1.2 - 1.5 mm thick)\n// - Dome: 150 mm OD borosilicate glass cloche bell jar\n// - Thermal Split: ~35% (~6 Wth) warms Terra Preta moss bed to 27.5°C;\n//   ~65% vents laterally so BM1370 ASIC stays < 54°C.\n// ============================================================================\n\nPART_TO_RENDER = \"assembly\"; // \"assembly\", \"cradle\", \"gutter_ring\", \"led_crown\"\n\npcb_len       = 99.76;\npcb_wid       = 56.54;\npcb_thick     = 1.60;\nclearance     = 0.35;\nsaucer_od     = 150.0;\ncloche_od     = 146.0;\nwall          = 2.4;\ncradle_h      = 50.0;\nbypass_pct    = 65;   // Lateral hot-air bypass % (keeps ASIC cool & moss < 29°C)\n$fn           = 80;\n\nif (PART_TO_RENDER == \"assembly\") {\n    bt_assembly();\n} else if (PART_TO_RENDER == \"cradle\") {\n    bt_cradle();\n} else if (PART_TO_RENDER == \"gutter_ring\") {\n    bt_condensation_gutter();\n} else if (PART_TO_RENDER == \"led_crown\") {\n    bt_led_crown();\n}\n\nmodule bt_cradle() {\n    base_od = saucer_od + 6.0;\n    difference() {\n        union() {\n            // Tapered architectural plinth (Shou-Sugi-Ban / fluted style)\n            cylinder(d1 = base_od + 8, d2 = base_od, h = cradle_h);\n            // Angled front visor for 0.91\" Bitaxe OLED screen\n            translate([0, -base_od/2 + 1, 16])\n                rotate([24, 0, 0])\n                    cube([36, 12, 20], center = true);\n        }\n\n        // Internal warm-air plenum\n        translate([0, 0, wall])\n            cylinder(d1 = base_od - 2*wall, d2 = saucer_od - 8, h = cradle_h + 2);\n\n        // Slide-in Bitaxe Gamma 601 slot from rear (Y+)\n        sw = pcb_wid + 2*clearance;\n        sl = pcb_len + 2*clearance;\n        translate([-sw/2, -sl/2 + 6, 10])\n            cube([sw, sl + 35, 32]);\n        translate([-(sw + 2.4)/2, -sl/2 + 6, 12])\n            cube([sw + 2.4, sl + 35, pcb_thick + 0.5]);\n\n        // Front 0.91\" OLED window\n        translate([0, -base_od/2 - 1, 16])\n            rotate([24, 0, 0])\n                cube([28, 22, 13], center = true);\n\n        // Cool intake louvers (bottom)\n        for (a = [30 : 45 : 330]) {\n            rotate([0, 0, a])\n                translate([base_od/2, 0, 7])\n                    cube([16, 14, 6], center = true);\n        }\n\n        // Lateral thermal bypass exhaust slots (sized by bypass_pct)\n        slot_h = 4.0 + (bypass_pct / 100.0) * 6.0;\n        for (a = [0 : 45 : 315]) {\n            rotate([0, 0, a + 22.5])\n                translate([base_od/2 - 2, 0, cradle_h - 10])\n                    cube([16, 18, slot_h], center = true);\n        }\n\n        // Top seat for 150 mm Anodized Aluminum Saucer\n        translate([0, 0, cradle_h - 3.5])\n            cylinder(d = saucer_od + 0.8, h = 5.0);\n    }\n}\n\n// Internal condensation return ring: catches water droplets rolling down\n// the inside of the glass cloche and channels them into the biochar bed.\nmodule bt_condensation_gutter() {\n    difference() {\n        cylinder(d = saucer_od - 1.0, h = 12.0);\n        translate([0, 0, -1])\n            cylinder(d = cloche_od - 8.0, h = 15.0);\n        // V-groove seat for 146mm borosilicate glass cloche rim\n        translate([0, 0, 5.0])\n            difference() {\n                cylinder(d = cloche_od + 1.2, h = 8.0);\n                cylinder(d = cloche_od - 4.2, h = 8.0);\n            }\n        // 8 inward weep channels directing condensed rain into moss\n        for (a = [0 : 45 : 315]) {\n            rotate([0, 0, a])\n                translate([cloche_od/2 - 3, 0, 5.0])\n                    rotate([0, -25, 0])\n                        cube([10, 3.0, 4.0], center = true);\n        }\n    }\n}\n\nmodule bt_led_crown() {\n    difference() {\n        cylinder(d = 54.0, h = 8.0);\n        translate([0, 0, 2.0]) cylinder(d = 48.0, h = 7.0);\n        translate([0, 0, -1]) cylinder(d = 22.0, h = 10.0);\n    }\n}\n\nmodule bt_assembly() {\n    color(\"#d97706\") bt_cradle();\n    // Aluminum conduction dish\n    color(\"#cbd5e1\") translate([0, 0, cradle_h - 3.0]) cylinder(d = saucer_od, h = 2.0);\n    // Condensation gutter\n    color(\"#334155\") translate([0, 0, cradle_h - 1.0]) bt_condensation_gutter();\n    // Terra Preta Biochar + Moss hemisphere\n    color(\"#1c1917\") translate([0, 0, cradle_h]) cylinder(d = cloche_od - 10, h = 18);\n    color(\"#22c55e\") translate([0, 0, cradle_h + 18]) resize([120, 120, 45]) sphere(d = 100);\n    // Borosilicate Cloche Dome\n    color(\"#e0f2fe\", 0.22)\n        translate([0, 0, cradle_h + 4])\n            difference() {\n                union() {\n                    cylinder(d = cloche_od, h = 75);\n                    translate([0, 0, 75]) sphere(d = cloche_od);\n                }\n                translate([0, 0, -1]) cylinder(d = cloche_od - 4, h = 76);\n                translate([0, 0, 75]) sphere(d = cloche_od - 4);\n                translate([0, 0, -80]) cube([300, 300, 160], center = true);\n            }\n}\n"}, "bitaquaponics": {"filename": "pico_bitaquaponics.scad", "code": "// ============================================================================\n// PICO-BITAQUAPONICS v1.0 — ULTRA-COMPACT BITAXE AQUAPONIC ECOSYSTEM (1.35 L)\n// Regenerative Compute (regenerativecompute.org | regenerativecompute.io)\n// Author: Pascal Ranoroarijaona (Ranaora) — Sydney Tech Central (2026)\n// License: CERN-OHL-P v2 / MIT Open Hardware Commons\n// ============================================================================\n// DIMENSIONS & THERMAL BUDGET:\n// - Target Miner   : Bitaxe Gamma 601 (PCB 99.76 x 56.54 mm, 40x40mm fan, ~17W)\n// - Footprint      : 124 mm x 124 mm x 265 mm total height (fits any desk)\n// - Water Volume   : ~1.35 L freshwater (26.5°C +/- 1°C via adjustable baffle)\n// - Biology        : 3-4 Neocaridina shrimp + 2 Planorbis snails + Terra Preta\n//                    biochar biofilter + Wolffia arrhiza + watercress/mint\n// ============================================================================\n\n/* [Render Selector] */\n// Options: \"assembly\", \"base_cradle\", \"thermal_baffle\", \"hydro_basket\", \"airlift_tube\", \"cloche_ring\"\nPART_TO_RENDER = \"assembly\";\n\n/* [Bitaxe Gamma 601 Exact PCB Parameters (mm)] */\npcb_len         = 99.76;   // Exact Bitaxe Gamma 601 length\npcb_wid         = 56.54;   // Exact Bitaxe Gamma 601 width\npcb_thick       = 1.60;    // FR4 thickness\npcb_clearance   = 0.35;    // Fit tolerance per side\nfan_size        = 40.5;    // 40x40mm fan clearance\ndc_jack_dia     = 9.5;     // 5.5x2.1mm barrel plug opening\noled_win_w      = 28.0;    // Front 0.91\" OLED viewing window width\noled_win_h      = 14.0;    // Front 0.91\" OLED viewing window height\n\n/* [Vessel & Thermal Transfer Plate Parameters (mm)] */\n// Fits standard 115mm OD borosilicate glass jar/beaker (~1.35L, 140mm tall)\nvessel_od       = 115.0;\nvessel_wall     = 2.5;\nvessel_id       = vessel_od - 2 * vessel_wall; // 110.0 mm\nvessel_h        = 135.0;\nalu_plate_dia   = 112.0;   // Anodized aluminum thermal transfer disc\nalu_plate_thick = 1.5;\n\n/* [Print & Structural Settings] */\nwall            = 2.4;\ncradle_h        = 54.0;    // Height of Bitaxe hot-air plenum base\nbaffle_open_pct = 32;      // Default 32% heat coupling (~5.4 Wth into 1.35L water)\n$fn             = 72;\n\n// ============================================================================\n// RENDER DISPATCHER\n// ============================================================================\nif (PART_TO_RENDER == \"assembly\") {\n    full_assembly();\n} else if (PART_TO_RENDER == \"base_cradle\") {\n    part_base_cradle();\n} else if (PART_TO_RENDER == \"thermal_baffle\") {\n    part_thermal_baffle(baffle_open_pct);\n} else if (PART_TO_RENDER == \"hydro_basket\") {\n    part_hydro_basket();\n} else if (PART_TO_RENDER == \"airlift_tube\") {\n    part_airlift_tube();\n} else if (PART_TO_RENDER == \"cloche_ring\") {\n    part_cloche_ring();\n}\n\n// ============================================================================\n// 1. PART A: BITAXE GAMMA 601 HORIZONTAL PLENUM CRADLE\n// ============================================================================\nmodule part_base_cradle() {\n    outer_d = vessel_od + 2 * wall + 4.0; // 123.8 mm cylindrical shell\n\n    difference() {\n        union() {\n            // Main cylindrical thermal chimney shell\n            cylinder(d = outer_d, h = cradle_h);\n\n            // Front angled OLED display visor bezel\n            translate([0, -outer_d/2 + 2, 16])\n                rotate([22, 0, 0])\n                    cube([oled_win_w + 10, 10, oled_win_h + 8], center = true);\n\n            // Anti-tip outrigger feet (4x)\n            for (a = [45 : 90 : 315]) {\n                rotate([0, 0, a])\n                    translate([outer_d/2 - 2, 0, 0])\n                        hull() {\n                            cylinder(d = 12, h = 4);\n                            translate([6, 0, 0]) cylinder(d = 8, h = 3);\n                        }\n            }\n        }\n\n        // Hollow internal plenum chamber\n        translate([0, 0, wall])\n            cylinder(d = outer_d - 2 * wall, h = cradle_h + 1);\n\n        // Horizontal slide-in slot for Bitaxe Gamma 601 PCB (from rear Y+)\n        slot_w = pcb_wid + 2 * pcb_clearance;\n        slot_l = pcb_len + 2 * pcb_clearance;\n        translate([-slot_w/2, -slot_l/2 + 4, 10])\n            cube([slot_w, slot_l + 25, 34]);\n\n        // PCB edge-rail grooves (locks board horizontally)\n        translate([-(slot_w + 2.4)/2, -slot_l/2 + 4, 12])\n            cube([slot_w + 2.4, slot_l + 25, pcb_thick + 0.5]);\n\n        // Rear DC 5.5x2.1mm power barrel & USB/cable pass-through\n        translate([0, outer_d/2, 17])\n            rotate([90, 0, 0])\n                cylinder(d = dc_jack_dia + 3, h = 25, center = true);\n\n        // Front 0.91\" OLED viewing cutout\n        translate([0, -outer_d/2 + 1, 16])\n            rotate([22, 0, 0])\n                cube([oled_win_w, 22, oled_win_h], center = true);\n\n        // Cool air intake vents (bottom perimeter, 8 slots)\n        for (i = [0 : 7]) {\n            rotate([0, 0, i * 45 + 22.5])\n                translate([outer_d/2 - 4, 0, 7])\n                    cube([12, 14, 6], center = true);\n        }\n\n        // Adjustable thermal bypass exhaust vents (upper perimeter)\n        for (i = [0 : 5]) {\n            rotate([0, 0, i * 60])\n                translate([outer_d/2 - 4, 0, cradle_h - 11])\n                    cube([12, 18, 7], center = true);\n        }\n\n        // Top rebate seat for Thermal Baffle & Aluminum Transfer Disc\n        translate([0, 0, cradle_h - 4.0])\n            cylinder(d = vessel_od + 2.4, h = 5.0);\n    }\n\n    // Internal PCB support pillars (4 corners)\n    for (sx = [-1, 1], sy = [-1, 1]) {\n        translate([sx * (pcb_wid/2 - 3), sy * (pcb_len/2 - 5) + 4, wall])\n            cylinder(d = 5.5, h = 10 - wall);\n    }\n}\n\n// ============================================================================\n// 2. PART B: THERMAL BAFFLE & ALUMINUM DISC HOLDER (26.5°C WATER REGULATOR)\n// ============================================================================\n// Controls what fraction of the 17W ASIC plume hits the aluminum tank bottom\n// vs. venting laterally. Default 32% open -> ~5.4 Wth -> steady 26.5°C water.\nmodule part_thermal_baffle(open_pct = 32) {\n    ring_od = vessel_od + 2.0;\n    ring_h  = 9.0;\n\n    difference() {\n        union() {\n            // Outer retaining collar that holds the borosilicate glass vessel\n            cylinder(d = ring_od + 3.2, h = ring_h);\n        }\n\n        // Upper socket for glass vessel (4.5 mm deep)\n        translate([0, 0, ring_h - 4.5])\n            cylinder(d = vessel_od + 0.6, h = 5.5);\n\n        // Seat for 112mm Anodized Aluminum Thermal Transfer Plate\n        translate([0, 0, ring_h - 4.5 - alu_plate_thick])\n            cylinder(d = alu_plate_dia + 0.5, h = alu_plate_thick + 0.5);\n\n        // Central thermal aperture (scaled by open_pct)\n        ap_dia = (alu_plate_dia - 14) * sqrt(open_pct / 100.0);\n        translate([0, 0, -1])\n            cylinder(d = max(18, ap_dia), h = ring_h + 2);\n\n        // Radial warm-air bypass channels under the plate\n        for (a = [0 : 60 : 300]) {\n            rotate([0, 0, a])\n                translate([alu_plate_dia/2 - 6, 0, 1.8])\n                    cube([16, 12, 3.6], center = true);\n        }\n    }\n}\n\n// ============================================================================\n// 3. PART C: ZERO-CLOG 3D-PRINTED AIR-LIFT WATER PUMP & OXYGENATOR\n// ============================================================================\n// Uses a tiny 1.2W 5V USB air pump to lift nitrate-rich water from the\n// shrimp/biochar floor up into the top plant basket while oxygenating water.\nmodule part_airlift_tube() {\n    tube_od = 10.0;\n    tube_id = 6.8;\n    lift_h  = vessel_h - 14.0;\n\n    difference() {\n        union() {\n            // Intake strainer foot resting in LECA/Biochar bed\n            cylinder(d = 18.0, h = 10.0);\n            // Vertical riser pipe\n            cylinder(d = tube_od, h = lift_h);\n            // Air-line barb inlet at z = 14 mm\n            translate([tube_od/2 - 1, 0, 14])\n                rotate([0, 90, 0])\n                    cylinder(d1 = 5.2, d2 = 4.2, h = 8.0);\n            // Top gooseneck spout discharging into Hydro Basket\n            translate([0, 0, lift_h])\n                rotate([0, -65, 0])\n                    cylinder(d = tube_od, h = 24.0);\n        }\n\n        // Main internal water riser bore\n        translate([0, 0, 2.0])\n            cylinder(d = tube_id, h = lift_h + 2);\n\n        // Gooseneck bore\n        translate([0, 0, lift_h])\n            rotate([0, -65, 0])\n                cylinder(d = tube_id, h = 26.0);\n\n        // Air injection nozzle bore\n        translate([0, 0, 14])\n            rotate([0, 90, 0])\n                cylinder(d = 2.2, h = 16.0);\n\n        // Bottom shrimp-safe intake slots (1.5 mm wide so baby shrimp stay safe!)\n        for (a = [0 : 45 : 315]) {\n            rotate([0, 0, a])\n                translate([6.5, 0, 4.5])\n                    cube([8, 1.5, 5.0], center = true);\n        }\n    }\n}\n\n// ============================================================================\n// 4. PART D: UPPER HYDROPONIC + WOLFFIA BASKET (NITRATE BIO-FILTER)\n// ============================================================================\nmodule part_hydro_basket() {\n    basket_od = vessel_id - 1.2; // 108.8 mm slips smoothly inside glass rim\n    basket_h  = 34.0;\n    lip_od    = vessel_od + 2.0;\n\n    difference() {\n        union() {\n            // Top resting rim on glass vessel edge\n            translate([0, 0, basket_h - 3.0])\n                cylinder(d = lip_od, h = 3.0);\n\n            // Submerged root & Terra Preta cup body\n            cylinder(d = basket_od, h = basket_h);\n\n            // Central standpipe overflow weir (controls water level in basket)\n            translate([-22, 0, 0])\n                cylinder(d = 14.0, h = basket_h - 6.0);\n        }\n\n        // Hollow plant & Wolffia basin\n        translate([0, 0, 2.2])\n            cylinder(d = basket_od - 4.0, h = basket_h);\n\n        // Overflow return drain bore\n        translate([-22, 0, -1])\n            cylinder(d = 9.5, h = basket_h);\n\n        // Pass-through notch on rim for Air-Lift gooseneck & 5V LED cable\n        translate([basket_od/2 - 4, 0, basket_h - 10])\n            cylinder(d = 13.0, h = 14.0);\n\n        // Root aeration & nutrient percolation slots on floor\n        for (r = [14, 26, 38]) {\n            n_holes = floor(r * 0.45);\n            for (k = [0 : n_holes - 1]) {\n                rotate([0, 0, k * (360 / n_holes)])\n                    translate([r, 0, -1])\n                        cylinder(d = 3.2, h = 5.0);\n            }\n        }\n    }\n}\n\n// ============================================================================\n// 5. PART E: TOP BIOSPHERE CLOCHE RING & LED HOLDER\n// ============================================================================\nmodule part_cloche_ring() {\n    ring_od = vessel_od + 3.0;\n    difference() {\n        cylinder(d = ring_od, h = 14.0);\n        // Bottom seat onto hydro basket lip\n        translate([0, 0, -1])\n            cylinder(d = vessel_od + 0.6, h = 7.0);\n        // Top groove for borosilicate glass dome / cloche\n        translate([0, 0, 8.0])\n            cylinder(d = vessel_od + 0.8, h = 7.0);\n        // Central light & gas-exchange aperture\n        translate([0, 0, -1])\n            cylinder(d = vessel_id - 6.0, h = 16.0);\n        // 4 micro gas-exchange breathing ports (prevents CO2 starvation)\n        for (a = [0 : 90 : 270]) {\n            rotate([0, 0, a + 45])\n                translate([ring_od/2, 0, 7.0])\n                    rotate([0, 90, 0])\n                        cylinder(d = 3.0, h = 10.0, center = true);\n        }\n    }\n}\n\n// ============================================================================\n// FULL EXPLODED / ASSEMBLED VISUALIZATION\n// ============================================================================\nmodule full_assembly() {\n    // 1. Bitaxe Cradle Base\n    color(\"#2b211a\") part_base_cradle();\n\n    // 2. Simulated Bitaxe Gamma 601 PCB + Heatsink inside Cradle\n    color(\"#111827\")\n        translate([0, 4, 12.5])\n            cube([pcb_wid, pcb_len, pcb_thick], center = true);\n    color(\"#f7931a\")\n        translate([0, 4, 24])\n            cube([fan_size, fan_size, 20], center = true);\n\n    // 3. Thermal Baffle + Aluminum Transfer Disc\n    color(\"#475569\")\n        translate([0, 0, cradle_h - 3.5])\n            part_thermal_baffle(baffle_open_pct);\n    color(\"#cbd5e1\")\n        translate([0, 0, cradle_h + 0.5])\n            cylinder(d = alu_plate_dia, h = alu_plate_thick);\n\n    // 4. Transparent 1.35L Borosilicate Vessel + Water + Biochar Floor\n    color(\"#1c1917\")\n        translate([0, 0, cradle_h + 2.5])\n            cylinder(d = vessel_id - 1, h = 16); // Terra Preta + LECA biofilter\n    color(\"#00ccff\", 0.28)\n        translate([0, 0, cradle_h + 18.5])\n            cylinder(d = vessel_id - 1, h = vessel_h - 34); // 26.5°C Water\n    color(\"#e0f2fe\", 0.22)\n        translate([0, 0, cradle_h + 2.0])\n            difference() {\n                cylinder(d = vessel_od, h = vessel_h);\n                translate([0, 0, -1]) cylinder(d = vessel_id, h = vessel_h + 2);\n            }\n\n    // 5. Air-Lift Riser Tube\n    color(\"#38bdf8\")\n        translate([vessel_id/2 - 11, 0, cradle_h + 4])\n            part_airlift_tube();\n\n    // 6. Upper Hydroponic + Wolffia Basket\n    color(\"#1e293b\")\n        translate([0, 0, cradle_h + vessel_h - 31])\n            part_hydro_basket();\n\n    // 7. Living Greenery (Wolffia mat + emerging herbs)\n    color(\"#44ee77\")\n        translate([0, 0, cradle_h + vessel_h - 2])\n            cylinder(d = vessel_id - 8, h = 3.5);\n    color(\"#22c55e\")\n        translate([12, 0, cradle_h + vessel_h + 15])\n            sphere(d = 34);\n\n    // 8. Top Cloche Ring & Dome\n    color(\"#334155\")\n        translate([0, 0, cradle_h + vessel_h + 1])\n            part_cloche_ring();\n    color(\"#f8fafc\", 0.18)\n        translate([0, 0, cradle_h + vessel_h + 10])\n            difference() {\n                sphere(d = vessel_od);\n                translate([0, 0, -vessel_od]) cube([vessel_od*2, vessel_od*2, vessel_od*2], center = true);\n                sphere(d = vessel_id);\n            }\n}\n"}, "bitplant": {"filename": "bitplant_manifold.scad", "code": "// ============================================================================\n// BITPLANT v1.0 — CANAAN AVALON NANO 3S (140W) HYDROPONIC THERMAL MANIFOLD\n// Regenerative Compute (regenerativecompute.org | regenerativecompute.io)\n// Author: Pascal Ranoroarijaona (Ranaora) — Sydney Tech Central (2026)\n// License: CERN-OHL-P v2 / MIT Open Hardware Commons\n// ============================================================================\n// EXACT HARDWARE SPECS:\n// - Canaan Avalon Nano 3S: 205.0 x 115.0 x 58.5 mm, 6 TH/s, 140W, 33-40 dB\n// - Outlet Exhaust Shroud -> Rotary Summer/Winter Damper -> 100mm Duct Spigot\n// - Feeds warm air (42-48°C) under AC Infinity 72-Cell Dome / NFT Hydro Tray\n//   or pre-dries agricultural biomass for Terra Preta Biochar!\n// ============================================================================\n\nPART_TO_RENDER = \"assembly\"; // \"assembly\", \"exhaust_hood\", \"rotary_damper\", \"tray_diffuser\"\n\nnano_w        = 205.0;   // Exact Avalon Nano 3S width\nnano_d        = 115.0;   // Exact Avalon Nano 3S depth\nnano_h        = 58.5;    // Exact Avalon Nano 3S height\nfit_tol       = 0.60;    // Slip-on gasket clearance\nwall          = 2.6;\nhood_depth    = 36.0;    // Overlap onto Nano 3S exhaust face\ntransition_l  = 95.0;    // Aerodynamic transition to 100mm round duct\nduct_od       = 99.0;    // Fits standard 100mm (4\") insulated flex duct\ndamper_angle  = 20;      // 0 deg = 100% to Hydroponics | 90 deg = Summer Bypass\n$fn           = 72;\n\nif (PART_TO_RENDER == \"assembly\") {\n    bp_assembly();\n} else if (PART_TO_RENDER == \"exhaust_hood\") {\n    bp_exhaust_hood();\n} else if (PART_TO_RENDER == \"rotary_damper\") {\n    bp_rotary_damper();\n} else if (PART_TO_RENDER == \"tray_diffuser\") {\n    bp_tray_diffuser();\n}\n\n// Part A: Aerodynamic Collector Hood snapping onto Avalon Nano 3S exhaust\nmodule bp_exhaust_hood() {\n    in_w = nano_w + 2 * fit_tol;\n    in_h = nano_h + 2 * fit_tol;\n    out_w = in_w + 2 * wall;\n    out_h = in_h + 2 * wall;\n\n    difference() {\n        union() {\n            // Rectangular slip-on collar around Avalon Nano 3S\n            translate([-out_w/2, -out_h/2, 0])\n                cube([out_w, out_h, hood_depth]);\n\n            // Smooth lofted transition from 205x58.5mm rectangle to 100mm circle\n            hull() {\n                translate([-out_w/2, -out_h/2, hood_depth - 1])\n                    cube([out_w, out_h, 1]);\n                translate([0, 0, hood_depth + transition_l])\n                    cylinder(d = duct_od + 2*wall, h = 1);\n            }\n\n            // 100mm Duct Spigot Collar + Summer Bypass T-Branch\n            translate([0, 0, hood_depth + transition_l])\n                cylinder(d = duct_od, h = 42.0);\n\n            // Lateral Summer Bypass Exhaust Port (Ø70mm)\n            translate([0, 0, hood_depth + transition_l + 20])\n                rotate([-90, 0, 0])\n                    cylinder(d = 70.0, h = 62.0);\n\n            // DS18B20 Temperature Sensor Boss (12mm port)\n            translate([duct_od/2 - 2, 0, hood_depth + transition_l + 18])\n                rotate([0, 90, 0])\n                    cylinder(d = 14.0, h = 12.0);\n        }\n\n        // Hollow slip-on pocket for Nano 3S chassis\n        translate([-in_w/2, -in_h/2, -1])\n            cube([in_w, in_h, hood_depth + 1]);\n\n        // Internal aerodynamic loft cavity\n        hull() {\n            translate([-(in_w - 4)/2, -(in_h - 4)/2, hood_depth - 0.5])\n                cube([in_w - 4, in_h - 4, 1]);\n            translate([0, 0, hood_depth + transition_l + 0.5])\n                cylinder(d = duct_od - 2*wall, h = 1);\n        }\n\n        // Main 100mm duct bore\n        translate([0, 0, hood_depth + transition_l - 1])\n            cylinder(d = duct_od - 2*wall, h = 46.0);\n\n        // Summer bypass bore\n        translate([0, 0, hood_depth + transition_l + 20])\n            rotate([-90, 0, 0])\n                cylinder(d = 65.0, h = 66.0);\n\n        // Damper axle shaft holes (6.2mm)\n        translate([0, 0, hood_depth + transition_l + 20])\n            rotate([0, 90, 0])\n                cylinder(d = 6.2, h = duct_od + 20, center = true);\n\n        // DS18B20 probe bore (6.5mm)\n        translate([duct_od/2 - 8, 0, hood_depth + transition_l + 18])\n            rotate([0, 90, 0])\n                cylinder(d = 6.5, h = 24.0);\n    }\n}\n\n// Part B: Butterfly / Rotary Thermal Damper Valve\nmodule bp_rotary_damper() {\n    disc_d = duct_od - 2*wall - 1.6;\n    union() {\n        cylinder(d = disc_d, h = 2.4, center = true);\n        rotate([0, 90, 0])\n            cylinder(d = 5.8, h = duct_od + 26, center = true);\n        // External thumb dial lever\n        translate([duct_od/2 + 12, 0, 0])\n            cube([4, 24, 8], center = true);\n    }\n}\n\n// Part C: Under-Tray Warm Air Diffuser Plenum (fits 540x280mm 72-cell Hydro Tray)\nmodule bp_tray_diffuser() {\n    plenum_w = 240.0; // Modular half-tray diffuser block (print 1 or 2)\n    plenum_l = 240.0;\n    plenum_h = 48.0;\n\n    difference() {\n        union() {\n            translate([-plenum_w/2, -plenum_l/2, 0])\n                cube([plenum_w, plenum_l, plenum_h]);\n            // 100mm inlet collar on side\n            translate([0, -plenum_l/2, plenum_h/2])\n                rotate([90, 0, 0])\n                    cylinder(d = duct_od, h = 28.0);\n        }\n        translate([-(plenum_w - 2*wall)/2, -(plenum_l - 2*wall)/2, wall])\n            cube([plenum_w - 2*wall, plenum_l - 2*wall, plenum_h - 2*wall]);\n\n        // Side inlet bore\n        translate([0, -plenum_l/2 + 4, plenum_h/2])\n            rotate([90, 0, 0])\n                cylinder(d = duct_od - 2*wall, h = 36.0);\n\n        // Top even-heat distribution matrix (keeps root zone uniform at 25°C)\n        for (gx = [-85 : 34 : 85], gy = [-85 : 34 : 85]) {\n            translate([gx, gy, plenum_h - wall - 1])\n                cylinder(d = 12.0, h = wall + 3);\n        }\n\n        // Bottom 6mm condensate drain weep hole\n        translate([plenum_w/2 - 15, plenum_l/2 - 15, -1])\n            cylinder(d = 6.0, h = wall + 3);\n    }\n}\n\nmodule bp_assembly() {\n    // Simulated Avalon Nano 3S Miner Body\n    color(\"#1e293b\")\n        translate([-nano_w/2, -nano_h/2, -nano_d + hood_depth - 5])\n            cube([nano_w, nano_h, nano_d]);\n\n    // Exhaust Manifold Hood\n    color(\"#f7931a\") bp_exhaust_hood();\n\n    // Rotary Damper inside Manifold\n    color(\"#44ee77\")\n        translate([0, 0, hood_depth + transition_l + 20])\n            rotate([damper_angle, 0, 0])\n                bp_rotary_damper();\n\n    // Under-Tray Hydroponic Diffuser (shown offset above)\n    color(\"#0ea5e9\", 0.85)\n        translate([0, 0, hood_depth + transition_l + 95])\n            bp_tray_diffuser();\n}\n"}};
+
+    let activeModel = 'bitterrarium';
+
+    function setLang(lang) {
+        lang = (lang === 'en') ? 'en' : 'fr';
+        document.body.className = 'lang-' + lang;
+        try { localStorage.setItem('rc-lang', lang); } catch(e) {}
+        updateWorkbench();
+    }
+
+    function selectModel(m) {
+        activeModel = m;
+        document.querySelectorAll('.prod-tab').forEach(b => b.classList.toggle('active', b.dataset.model === m));
+        document.querySelectorAll('.model-pane').forEach(p => p.classList.remove('active'));
+        const pane = document.getElementById('pane-' + m);
+        if (pane) pane.classList.add('active');
+
+        // Set optimal default baffle per model
+        const slBaf = document.getElementById('sl-baffle');
+        if (m === 'bitterrarium') slBaf.value = 35;
+        if (m === 'bitaquaponics') slBaf.value = 32;
+        if (m === 'bitplant') slBaf.value = 78;
+
+        // Update OpenSCAD viewer
+        const sc = SCAD_BUNDLE[m];
+        if (sc) {
+            document.getElementById('scad-title').textContent = sc.filename;
+            document.getElementById('scad-viewer').textContent = sc.code;
+        }
+        updateWorkbench();
+    }
+
+    function copyScad() {
+        const code = SCAD_BUNDLE[activeModel].code;
+        navigator.clipboard.writeText(code).then(() => {
+            alert(document.body.classList.contains('lang-en') ? 'OpenSCAD code copied!' : 'Code OpenSCAD copié dans le presse-papiers !');
+        });
+    }
+
+    function downloadScad() {
+        const item = SCAD_BUNDLE[activeModel];
+        const blob = new Blob([item.code], { type: 'application/sla;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = item.filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+    }
+
+    function updateWorkbench() {
+        const isEn = document.body.classList.contains('lang-en');
+        const tAmb = parseFloat(document.getElementById('sl-amb').value);
+        const baf = parseFloat(document.getElementById('sl-baffle').value) / 100.0;
+
+        document.getElementById('out-amb').textContent = tAmb.toFixed(1) + ' °C';
+        document.getElementById('out-baffle').textContent = Math.round(baf * 100) + ' %';
+
+        let title = '', bioTemp = 26, asicTemp = 52, waterStr = '', yieldStr = '';
+
+        if (activeModel === 'bitterrarium') {
+            title = 'BitTerrarium™ Topper (17 W · Cloche Sèche)';
+            const qIn = 17.0 * baf;
+            bioTemp = tAmb + (qIn / 0.88);
+            asicTemp = tAmb + 26.5 + baf * 12.0;
+            const rainMl = Math.round(qIn * 7.2);
+            waterStr = rainMl + ' mL/j';
+            yieldStr = isEn ? 'Closed Rain Loop' : 'Pluie Fermée Active';
+        } else if (activeModel === 'bitaquaponics') {
+            title = 'Pico-BitAquaponics™ (17 W · 1,35 L Crevettes & Wolffia)';
+            const qIn = 17.0 * baf;
+            bioTemp = tAmb + (qIn / 0.89);
+            asicTemp = tAmb + 27.0 + baf * 13.0;
+            waterStr = '14 L/h Air-Lift';
+            yieldStr = '+12 g/sem Wolffia';
+        } else {
+            title = 'BitPlant™ Manifold (140 W Avalon Nano 3S · 72 Cellules)';
+            const qIn = 140.0 * baf;
+            bioTemp = tAmb + (qIn / 21.5);
+            asicTemp = tAmb + 29.0 + baf * 9.5;
+            waterStr = '102 kWh/m utile';
+            yieldStr = '1,8 kg/mois Légumes';
+        }
+
+        document.getElementById('wb-title').textContent = title;
+        document.getElementById('tel-bio-temp').textContent = bioTemp.toFixed(1) + ' °C';
+        document.getElementById('tel-asic-temp').textContent = asicTemp.toFixed(1) + ' °C';
+        document.getElementById('tel-water-flux').textContent = waterStr;
+        document.getElementById('tel-yield').textContent = yieldStr;
+
+        const banner = document.getElementById('wb-safety');
+        if (bioTemp > 30.0) {
+            banner.style.borderLeftColor = '#ef4444';
+            banner.style.background = 'rgba(239,68,68,0.12)';
+            banner.textContent = isEn
+                ? '⚠️ Too warm (> 30°C): lower the Thermal Coupling slider (open lateral bypass) to protect roots/shrimp!'
+                : '⚠️ Trop chaud (> 30 °C) : réduisez le curseur de couplage (ouvrez le bypass latéral) pour protéger crevettes et racines !';
+        } else if (bioTemp < 22.0) {
+            banner.style.borderLeftColor = '#ffcc00';
+            banner.style.background = 'rgba(255,204,0,0.1)';
+            banner.textContent = isEn
+                ? 'ℹ️ Cool zone (< 22°C): increase Thermal Coupling % to boost tropical growth.'
+                : 'ℹ️ Température fraîche (< 22 °C) : augmentez le % de couplage thermique pour accélérer la croissance.';
+        } else {
+            banner.style.borderLeftColor = '#44ee77';
+            banner.style.background = 'rgba(68,238,119,0.09)';
+            banner.textContent = isEn
+                ? '● Optimal Symbiotic Zone (22–30°C) & safe ASIC core (< 62°C).'
+                : '● Zone symbiotique optimale (22–30 °C) et puce ASIC parfaitement refroidie (< 62 °C).';
+        }
+    }
+
+    // Interactive Cutaway Canvas Renderer
+    (function() {
+        const cv = document.getElementById('hwCanvas');
+        if (!cv) return;
+        const ctx = cv.getContext('2d');
+        let W = 0, H = 0, dpr = 1;
+
+        function resize() {
+            dpr = Math.min(window.devicePixelRatio || 1, 2);
+            W = cv.clientWidth; H = cv.clientHeight;
+            cv.width = W * dpr; cv.height = H * dpr;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+        new ResizeObserver(resize).observe(cv);
+        resize();
+
+        const bubbles = Array.from({ length: 28 }, () => ({ y: Math.random(), spd: 0.3 + Math.random() * 0.4, xOff: (Math.random() - 0.5) * 6 }));
+        const motes = Array.from({ length: 40 }, () => ({ x: (Math.random() - 0.5) * 140, y: Math.random(), spd: 0.25 + Math.random() * 0.35 }));
+
+        function render(now) {
+            requestAnimationFrame(render);
+            const t = now * 0.001;
+            ctx.clearRect(0, 0, W, H);
+            const cx = W * 0.5, baseY = H * 0.80;
+
+            if (activeModel === 'bitterrarium') {
+                // Cradle + Bitaxe
+                ctx.fillStyle = '#291d14'; ctx.strokeStyle = '#f7931a'; ctx.lineWidth = 2;
+                ctx.beginPath(); ctx.roundRect(cx - 105, baseY - 10, 210, 48, 8); ctx.fill(); ctx.stroke();
+                ctx.fillStyle = '#0f172a'; ctx.fillRect(cx - 52, baseY + 6, 104, 8);
+                ctx.fillStyle = '#ffcc00'; ctx.font = '700 11px "Fira Code"'; ctx.textAlign = 'center';
+                ctx.fillText('BITAXE GAMMA 601 · 17W (BM1370)', cx, baseY + 30);
+
+                // Lateral 65% bypass arrows
+                ctx.strokeStyle = 'rgba(255, 140, 66, 0.7)';
+                [-1, 1].forEach(dir => {
+                    ctx.beginPath(); ctx.moveTo(cx + dir * 75, baseY); ctx.lineTo(cx + dir * (118 + Math.sin(t*3)*6), baseY - 8); ctx.stroke();
+                });
+
+                // Aluminum saucer + Terra Preta + Moss + Cloche
+                ctx.fillStyle = '#cbd5e1'; ctx.fillRect(cx - 98, baseY - 16, 196, 5);
+                ctx.fillStyle = '#1c1917'; ctx.fillRect(cx - 86, baseY - 34, 172, 18);
+                for (let i = -5; i <= 5; i++) {
+                    ctx.fillStyle = i % 2 === 0 ? '#22c55e' : '#44ee77';
+                    ctx.beginPath(); ctx.arc(cx + i * 14, baseY - 38 - (5 - Math.abs(i))*4, 16, 0, Math.PI * 2); ctx.fill();
+                }
+                ctx.strokeStyle = 'rgba(224, 242, 254, 0.65)'; ctx.lineWidth = 2.5;
+                ctx.beginPath(); ctx.arc(cx, baseY - 95, 90, Math.PI, 0, false);
+                ctx.lineTo(cx + 90, baseY - 16); ctx.moveTo(cx - 90, baseY - 95); ctx.lineTo(cx - 90, baseY - 16); ctx.stroke();
+
+                // Condensing rain drops
+                motes.slice(0, 22).forEach((m, idx) => {
+                    const prog = (t * 0.25 + idx * 0.13) % 1;
+                    const dx = cx + Math.cos(idx) * 72;
+                    const dy = (baseY - 150) + prog * 105;
+                    ctx.fillStyle = 'rgba(56, 189, 248, 0.85)';
+                    ctx.beginPath(); ctx.arc(dx, dy, 2.3, 0, Math.PI * 2); ctx.fill();
+                });
+
+            } else if (activeModel === 'bitaquaponics') {
+                // Cradle Base
+                ctx.fillStyle = '#1e1b18'; ctx.strokeStyle = '#f7931a'; ctx.lineWidth = 2;
+                ctx.beginPath(); ctx.roundRect(cx - 82, baseY - 4, 164, 46, 8); ctx.fill(); ctx.stroke();
+                ctx.fillStyle = '#ffcc00'; ctx.font = '700 10px "Fira Code"'; ctx.textAlign = 'center';
+                ctx.fillText('BITAXE 17W + BAFFLE 32%', cx, baseY + 24);
+
+                // Aluminum Disc + 1.35L Borosilicate Cylinder
+                ctx.fillStyle = '#cbd5e1'; ctx.fillRect(cx - 74, baseY - 10, 148, 5);
+                ctx.fillStyle = 'rgba(0, 204, 255, 0.18)';
+                ctx.fillRect(cx - 70, baseY - 175, 140, 165);
+                ctx.strokeStyle = 'rgba(224, 242, 254, 0.7)'; ctx.lineWidth = 2.2;
+                ctx.strokeRect(cx - 70, baseY - 185, 140, 175);
+
+                // Biochar + LECA floor
+                ctx.fillStyle = '#1c1917'; ctx.fillRect(cx - 68, baseY - 30, 136, 20);
+
+                // Swimming Red Neocaridina Shrimp (4x)
+                for (let s = 0; s < 4; s++) {
+                    const sx = cx - 35 + Math.sin(t * 0.9 + s * 1.7) * 32;
+                    const sy = baseY - 65 - s * 18 + Math.cos(t * 1.4 + s) * 6;
+                    ctx.fillStyle = '#ef4444';
+                    ctx.beginPath(); ctx.ellipse(sx, sy, 7, 3.2, 0.1, 0, Math.PI * 2); ctx.fill();
+                }
+
+                // 3D-Printed Air-Lift Riser Tube & Bubbles
+                ctx.strokeStyle = '#38bdf8'; ctx.lineWidth = 5;
+                ctx.beginPath(); ctx.moveTo(cx + 54, baseY - 26); ctx.lineTo(cx + 54, baseY - 182); ctx.lineTo(cx + 34, baseY - 188); ctx.stroke();
+                bubbles.forEach(b => {
+                    b.y += 0.008 * b.spd; if (b.y > 1) b.y = 0;
+                    ctx.fillStyle = 'rgba(224, 242, 254, 0.85)';
+                    ctx.beginPath(); ctx.arc(cx + 54 + b.xOff * 0.3, (baseY - 30) - b.y * 150, 2.0, 0, Math.PI * 2); ctx.fill();
+                });
+
+                // Upper Hydro Basket + Wolffia + Watercress
+                ctx.fillStyle = 'rgba(30, 41, 59, 0.88)';
+                ctx.fillRect(cx - 66, baseY - 185, 112, 30);
+                ctx.fillStyle = '#44ee77';
+                ctx.fillRect(cx - 62, baseY - 188, 104, 6);
+                for (let k = -2; k <= 2; k++) {
+                    ctx.fillStyle = '#22c55e';
+                    ctx.beginPath(); ctx.arc(cx - 10 + k * 14, baseY - 202 - (2 - Math.abs(k))*5, 13, 0, Math.PI * 2); ctx.fill();
+                }
+
+            } else {
+                // BitPlant: Avalon Nano 3S (Left) -> Manifold -> 100mm Duct -> 72-Cell Hydro Tray (Right)
+                const mX = cx - 155, tX = cx + 65;
+                ctx.fillStyle = '#1e293b'; ctx.strokeStyle = '#f7931a'; ctx.lineWidth = 2;
+                ctx.beginPath(); ctx.roundRect(mX - 55, baseY - 75, 110, 62, 8); ctx.fill(); ctx.stroke();
+                ctx.fillStyle = '#ffcc00'; ctx.font = '700 10px "Fira Code"'; ctx.textAlign = 'center';
+                ctx.fillText('AVALON NANO 3S', mX, baseY - 46);
+                ctx.fillText('140W · 6 TH/s', mX, baseY - 30);
+
+                // 3D-Printed Manifold + 100mm Duct
+                ctx.strokeStyle = 'rgba(247, 147, 26, 0.75)'; ctx.lineWidth = 16;
+                ctx.beginPath(); ctx.moveTo(mX + 55, baseY - 44);
+                ctx.bezierCurveTo(cx - 40, baseY - 44, cx - 35, baseY - 34, tX - 95, baseY - 34);
+                ctx.stroke();
+
+                // Warm air motes flowing through duct into root plenum
+                motes.forEach(m => {
+                    m.y += 0.006 * m.spd; if (m.y > 1) m.y = 0;
+                    const px = (mX + 60) + m.y * (tX - mX + 10);
+                    const py = baseY - 38 + Math.sin(m.y * 6 + t * 3) * 5;
+                    ctx.fillStyle = 'rgba(255, 180, 70, 0.78)';
+                    ctx.beginPath(); ctx.arc(px, py, 2.4, 0, Math.PI * 2); ctx.fill();
+                });
+
+                // Under-tray plenum + 72-Cell Hydroponic Dome
+                ctx.fillStyle = '#0f172a'; ctx.strokeStyle = '#38bdf8'; ctx.lineWidth = 2;
+                ctx.fillRect(tX - 95, baseY - 52, 190, 32);
+                ctx.strokeRect(tX - 95, baseY - 52, 190, 32);
+
+                // Lush Pak Choi / Kale / Basil rows
+                for (let r = -3; r <= 3; r++) {
+                    const sway = Math.sin(t * 2 + r) * 3;
+                    ctx.fillStyle = r % 2 === 0 ? '#22c55e' : '#44ee77';
+                    ctx.beginPath(); ctx.ellipse(tX + r * 22 + sway, baseY - 78, 12, 24, 0, 0, Math.PI * 2); ctx.fill();
+                }
+                ctx.strokeStyle = 'rgba(224, 242, 254, 0.55)'; ctx.lineWidth = 2;
+                ctx.beginPath(); ctx.roundRect(tX - 98, baseY - 135, 196, 83, [18, 18, 0, 0]); ctx.stroke();
+            }
+        }
+        requestAnimationFrame(render);
+    })();
+
+    // Persist assembly checkboxes in localStorage
+    window.addEventListener('DOMContentLoaded', () => {
+        let savedLang = 'fr';
+        try { savedLang = localStorage.getItem('rc-lang') || 'fr'; } catch(e) {}
+        setLang(savedLang);
+        selectModel('bitterrarium');
+
+        ['sl-amb', 'sl-baffle'].forEach(id => {
+            document.getElementById(id).addEventListener('input', updateWorkbench);
+        });
+
+        document.querySelectorAll('input[data-chk]').forEach(box => {
+            const key = 'rc-chk-' + box.dataset.chk;
+            try { box.checked = localStorage.getItem(key) === '1'; } catch(e) {}
+            box.addEventListener('change', () => {
+                try { localStorage.setItem(key, box.checked ? '1' : '0'); } catch(e) {}
+            });
+        });
+    });
+</script>
+</body>
+</html>

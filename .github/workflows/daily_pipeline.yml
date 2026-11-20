@@ -1,0 +1,47 @@
+name: 24h Regenerative Compute Content & Timechain Agent
+
+on:
+  schedule:
+    # Runs every 24 hours at 21:00 UTC (08:00 AM Sydney AEDT)
+    - cron: '0 21 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout RegenerativeCompute Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Anchor Block #1,000,000 Timechain Telemetry
+        run: python scripts/anchor_promise.py
+
+      - name: Run 24h Gemini Content, Video Warmth & Leads Agent
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/daily_content_agent.py
+
+      - name: Commit & Push New Daily Dispatch to GitHub Pages
+        run: |
+          git config user.name "RegenerativeCompute-Agent[bot]"
+          git config user.email "agent@regenerativecompute.io"
+          git add content/ data/
+          if git diff --staged --quiet; then
+            echo "No new changes to commit."
+          else
+            git commit -m "chore(agent): daily regenerative dispatch & block #1M telemetry [$(date -u +%Y-%m-%d)]"
+            git push
+          fi

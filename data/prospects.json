@@ -1,0 +1,29 @@
+{
+  "updated_at": "2026-11-20T08:33:00+11:00",
+  "segments": [
+    {
+      "segment": "Frontier Venture Capital & Sovereign Tech",
+      "target_profile": "Tim Draper (Draper Associates), Y Combinator DeepTech / Climate, Bitcoin Ecosystem Funds",
+      "hook": "Block #1,000,000 Timechain Anchor + Earth-to-Mars Closed-Loop Life Support powered by 100% Joule heat recovery.",
+      "cta": "Ship BitTerrarium Unit #001 ('Mars Seed') + Seed Round Deck"
+    },
+    {
+      "segment": "Madagascar & Indian Ocean Food/Water NGOs & Sovereign Development",
+      "target_profile": "Southern Madagascar (Androy / Anosy) solar microgrid operators, agroforestry cooperatives, UNDP / World Bank climate resilience",
+      "hook": "Off-grid solar ASIC pods that pay for their own CAPEX via SHA-256 while powering MOF-303 atmospheric water harvesting & Biochar kilns.",
+      "cta": "Deploy 10 kW Community Solar-Water-Biochar Pilot"
+    },
+    {
+      "segment": "Open-Source Home Miners & Makers",
+      "target_profile": "Bitaxe, NerdQaxe, Canaan Avalon Nano 3S community (100,000+ global nodes)",
+      "hook": "Complete the Bitaxe equation: $42 AUD Snap-On BitTerrarium Topper turning 17W desk hash into a self-watering moss & herb dome.",
+      "cta": "Download free OpenSCAD/STL files on regenerativecompute.org or order Founder's Batch kit"
+    },
+    {
+      "segment": "Australian CleanTech & Brownfield Mining Rehabilitation",
+      "target_profile": "NSW Hunter Valley / Lithgow decommissioned mine operators, ARENA grants, Tech Central Sydney partners",
+      "hook": "Turn legacy mine shafts into natural convective cooling chimneys with sub-50ms grid frequency stabilization.",
+      "cta": "Schedule Tech Central Sydney briefing ahead of June 2027 Atlassian Central launch"
+    }
+  ]
+}

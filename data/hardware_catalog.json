@@ -1,0 +1,35 @@
+{
+  "updated_at": "2026-11-20T16:50:00+11:00",
+  "license": "CERN-OHL-P v2 / MIT Open Hardware",
+  "commons_domain": "regenerativecompute.org",
+  "commercial_domain": "regenerativecompute.io",
+  "models": [
+    {
+      "id": "bitterrarium",
+      "name": "BitTerrarium™ Topper v1.0",
+      "miner": "Bitaxe Gamma 601 (17W · 1.2 TH/s)",
+      "footprint_mm": "158 x 158 x 210",
+      "bom_aud": 42,
+      "scad_file": "hardware/openscad/bitterrarium_topper.scad",
+      "outputs": "27.5°C Terra Preta moss bed + closed-loop rain cycle"
+    },
+    {
+      "id": "bitaquaponics",
+      "name": "Pico-BitAquaponics™ v1.0 (1.35L & 40L Tri-Loop)",
+      "miner": "Bitaxe Gamma 601 (17W) or Avalon Nano 3S (140W)",
+      "footprint_mm": "124 x 124 x 265",
+      "bom_aud": 52,
+      "scad_file": "hardware/openscad/pico_bitaquaponics.scad",
+      "outputs": "26.5°C shrimp/fish aquaponics + Wolffia (40% protein) + herbs"
+    },
+    {
+      "id": "bitplant",
+      "name": "BitPlant™ Hydroponic Manifold v1.0",
+      "miner": "Canaan Avalon Nano 3S (140W) or Avalon Mini 3 (400-800W)",
+      "footprint_mm": "211 x 155 x 175 (manifold) + 540 x 280 hydro tray",
+      "bom_aud": 85,
+      "scad_file": "hardware/openscad/bitplant_manifold.scad",
+      "outputs": "25°C root-zone heating + 4-season leafy greens + Biochar pre-drying"
+    }
+  ]
+}
