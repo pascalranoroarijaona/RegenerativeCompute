@@ -1,0 +1,14 @@
+{
+  "corridor": "Lithgow / Central Tablelands",
+  "crop_sector": "Cut Flowers & Orchids (Roses, Phalaenopsis, Lilies)",
+  "greenhouse_area_m2": 6500.0,
+  "design_delta_t_k": 24.0,
+  "peak_thermal_demand_kw": 1095.1,
+  "annual_thermal_energy_mwh": 2418.0,
+  "recommended_compute_pod_kw": 1153,
+  "lpg_displaced_liters_yr": 395102,
+  "baseline_lpg_cost_aud_yr": 493878,
+  "thermal_ppa_revenue_aud_yr": 217622,
+  "grower_net_savings_aud_yr": 276255,
+  "co2_avoided_tons_yr": 612.4
+}

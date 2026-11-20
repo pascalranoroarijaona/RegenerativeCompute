@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <title>Regenerative Compute | Make the Earth Bloom — Australia × Madagascar Symmetry & Block #1M Launch</title>
-    <meta name="description" content="Sustaining life on Earth and beyond through thermodynamic compute. R&D forged in Australia's brownfield bedrock to uplift Communities of the World over a 113-year low-time-preference horizon, and flight-qualify Mars life support." />
+    <title>Regenerative Compute | Solutions · Inverted Matrix Design · B2B Thermal Consulting</title>
+    <meta name="description" content="Thermodynamic compute infrastructure from 17W BitTerrarium kits to 1 MW Inverted Matrix NSW Mine MVPs. Tailored hydronic heat for NSW flower growers, nurseries, and farmers—funding a 113-year mission for Madagascar and Mars." />
 
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
@@ -25,7 +25,7 @@
         :root {
             --bg-dark: #050608;
             --bg-warm: #0b0907;
-            --panel-bg: rgba(14, 13, 12, 0.88);
+            --panel-bg: rgba(13, 15, 20, 0.9);
             --text-main: #f1f5f9;
             --text-soft: #cbd5e1;
             --text-muted: #94a3b8;
@@ -36,11 +36,10 @@
             --bio-lime: #44ee77;
             --water-cyan: #00e5ff;
             --bedrock-purple: #b366ff;
-            --mars-rust: #e05a2b;
+            --danger-red: #ef4444;
             --border-warm: rgba(247, 147, 26, 0.28);
-            --border-bio: rgba(68, 238, 119, 0.25);
+            --border-bio: rgba(68, 238, 119, 0.26);
             --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-serif: 'Georgia', serif;
             --font-mono: 'Fira Code', monospace;
         }
 
@@ -51,28 +50,29 @@
             line-height: 1.72;
             overflow-x: hidden;
             background-image:
-                radial-gradient(circle at 50% 0%, rgba(247, 147, 26, 0.14) 0%, rgba(52, 211, 153, 0.05) 36%, transparent 68%),
-                radial-gradient(circle at 15% 60%, rgba(255, 140, 66, 0.05) 0%, transparent 45%);
+                radial-gradient(circle at 50% 0%, rgba(247, 147, 26, 0.14) 0%, rgba(68, 238, 119, 0.05) 36%, transparent 68%),
+                radial-gradient(circle at 15% 55%, rgba(0, 229, 255, 0.04) 0%, transparent 48%);
         }
 
         body.lang-en [lang="fr"] { display: none !important; }
         body.lang-fr [lang="en"] { display: none !important; }
 
-        /* --- NAVIGATION --- */
+        /* --- REORGANIZED NAVIGATION: SOLUTIONS · DESIGN · CONSULTING --- */
         nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 120;
+            position: fixed; top: 0; left: 0; right: 0; z-index: 150;
             display: flex; align-items: center; justify-content: space-between;
             padding: 0.85rem 2rem;
-            background: rgba(5, 6, 8, 0.92);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(5, 6, 8, 0.93);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--border-warm);
         }
 
         .brand {
             display: flex; align-items: center; gap: 10px;
             text-decoration: none; color: #fff; font-weight: 800;
-            letter-spacing: 1.2px; font-size: 0.92rem; text-transform: uppercase;
+            letter-spacing: 1.1px; font-size: 0.9rem; text-transform: uppercase;
+            white-space: nowrap;
         }
         .brand span.dot {
             width: 10px; height: 10px; border-radius: 50%;
@@ -80,330 +80,324 @@
         }
 
         .nav-links {
-            display: flex; gap: 1.1rem; align-items: center;
+            display: flex; gap: 1.35rem; align-items: center;
         }
         .nav-links a {
-            color: var(--text-muted); text-decoration: none; font-size: 0.76rem;
-            font-weight: 600; text-transform: uppercase; letter-spacing: 0.7px;
-            transition: color 0.2s ease;
+            color: var(--text-soft); text-decoration: none; font-size: 0.78rem;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px;
+            padding: 5px 8px; border-radius: 6px;
+            transition: all 0.2s ease;
         }
-        .nav-links a:hover { color: var(--sun-gold); }
+        .nav-links a:hover {
+            color: var(--sun-gold);
+            background: rgba(255, 204, 0, 0.08);
+        }
+        .nav-links a.nav-cad {
+            color: var(--bio-lime);
+            border: 1px solid rgba(68, 238, 119, 0.3);
+        }
 
-        .nav-right { display: flex; align-items: center; gap: 10px; }
+        .nav-right { display: flex; align-items: center; gap: 8px; }
         .lang-btn {
             background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.14);
             color: #fff; padding: 4px 9px; border-radius: 6px; font-family: var(--font-mono);
-            font-size: 0.75rem; cursor: pointer; opacity: 0.6; transition: all 0.2s;
+            font-size: 0.74rem; cursor: pointer; opacity: 0.6; transition: all 0.2s;
         }
         body.lang-en #btn-en, body.lang-fr #btn-fr {
-            opacity: 1; border-color: var(--sun-gold); background: rgba(255, 204, 0, 0.15);
+            opacity: 1; border-color: var(--sun-gold); background: rgba(255, 204, 0, 0.16);
         }
         .cta-pill {
             background: linear-gradient(135deg, var(--btc-orange), var(--warm-amber));
-            color: #050608; font-weight: 800; font-size: 0.75rem; padding: 7px 14px;
+            color: #050608; font-weight: 800; font-size: 0.74rem; padding: 7px 14px;
             border-radius: 999px; text-decoration: none; text-transform: uppercase;
             letter-spacing: 0.6px; box-shadow: 0 4px 18px rgba(247, 147, 26, 0.35);
-            transition: transform 0.2s;
+            white-space: nowrap;
         }
-        .cta-pill:hover { transform: translateY(-1px); }
 
-        /* --- CONTAINER --- */
-        main { max-width: 1130px; margin: 6.5rem auto 4rem; padding: 0 1.6rem; }
+        main { max-width: 1160px; margin: 6.4rem auto 4rem; padding: 0 1.5rem; }
 
-        /* --- HERO & BLOCK #1,000,000 COUNTDOWN --- */
-        .hero {
-            text-align: center; padding: 2.2rem 1rem 2.8rem;
-        }
+        /* --- HERO & TIMECHAIN COUNTDOWN --- */
+        .hero { text-align: center; padding: 2rem 0.5rem 2.5rem; }
         .yc-eyebrow {
             display: inline-flex; align-items: center; gap: 8px;
             padding: 6px 14px; border-radius: 999px;
             background: rgba(247, 147, 26, 0.12); border: 1px solid rgba(247, 147, 26, 0.38);
-            color: var(--sun-gold); font-family: var(--font-mono); font-size: 0.75rem;
-            font-weight: 600; margin-bottom: 1.4rem;
+            color: var(--sun-gold); font-family: var(--font-mono); font-size: 0.74rem;
+            font-weight: 600; margin-bottom: 1.2rem;
         }
         h1 {
-            font-size: clamp(2.4rem, 5.4vw, 4.1rem); font-weight: 900; line-height: 1.08;
-            letter-spacing: -1.5px; margin-bottom: 1.1rem;
+            font-size: clamp(2.3rem, 5.2vw, 3.95rem); font-weight: 900; line-height: 1.08;
+            letter-spacing: -1.4px; margin-bottom: 1rem;
             background: linear-gradient(180deg, #ffffff 30%, #ffd584 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
         .hero-sub {
-            max-width: 850px; margin: 0 auto 2.2rem; font-size: 1.14rem;
-            color: var(--text-soft); font-weight: 400;
+            max-width: 860px; margin: 0 auto 2rem; font-size: 1.12rem; color: var(--text-soft);
         }
 
-        /* --- LIVE TIMECHAIN COUNTDOWN WIDGET --- */
         .timechain-banner {
-            background: linear-gradient(145deg, rgba(22, 17, 12, 0.94), rgba(8, 12, 14, 0.96));
+            background: linear-gradient(145deg, rgba(22, 17, 12, 0.94), rgba(8, 12, 16, 0.96));
             border: 1px solid rgba(255, 204, 0, 0.36);
-            border-radius: 18px; padding: 1.8rem; margin: 0 auto 2.6rem;
-            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.72), 0 0 40px rgba(247, 147, 26, 0.12);
+            border-radius: 18px; padding: 1.6rem; margin: 0 auto 2.4rem;
+            box-shadow: 0 22px 55px rgba(0, 0, 0, 0.72);
         }
         .tc-header {
-            display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
-            gap: 10px; margin-bottom: 1.2rem; font-family: var(--font-mono); font-size: 0.78rem;
+            display: flex; flex-wrap: wrap; justify-content: space-between;
+            gap: 10px; margin-bottom: 1rem; font-family: var(--font-mono); font-size: 0.76rem;
         }
-        .tc-grid {
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.2rem;
-        }
+        .tc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.9rem; margin-bottom: 1rem; }
         .tc-card {
             background: rgba(0, 0, 0, 0.52); border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px; padding: 1rem; text-align: center;
+            border-radius: 12px; padding: 0.9rem; text-align: center;
         }
         .tc-num {
-            display: block; font-family: var(--font-mono); font-size: clamp(1.35rem, 2.8vw, 2rem);
+            display: block; font-family: var(--font-mono); font-size: clamp(1.3rem, 2.6vw, 1.9rem);
             font-weight: 800; color: var(--sun-gold);
         }
-        .tc-lbl {
-            font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted);
-        }
+        .tc-lbl { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); }
         .progress-track {
-            width: 100%; height: 12px; background: rgba(255, 255, 255, 0.07);
-            border-radius: 999px; overflow: hidden; margin-bottom: 0.8rem;
+            width: 100%; height: 10px; background: rgba(255, 255, 255, 0.07);
+            border-radius: 999px; overflow: hidden; margin-bottom: 0.75rem;
             border: 1px solid rgba(255, 204, 0, 0.25);
         }
         .progress-fill {
             height: 100%; width: 97.1%;
             background: linear-gradient(90deg, var(--btc-orange), var(--sun-gold), var(--bio-lime));
-            border-radius: 999px; transition: width 0.8s ease;
+            border-radius: 999px;
         }
         .covenant-strip {
-            display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
-            gap: 10px; padding-top: 0.8rem; border-top: 1px solid rgba(255, 255, 255, 0.08);
-            font-family: var(--font-mono); font-size: 0.72rem; color: #cbd5e1;
+            display: flex; flex-wrap: wrap; justify-content: space-between;
+            gap: 8px; padding-top: 0.7rem; border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-family: var(--font-mono); font-size: 0.71rem; color: #cbd5e1;
         }
 
-        /* --- WARMTH CANVAS STAGE --- */
+        /* --- WARMTH STAGE --- */
         .warmth-stage {
             position: relative; border-radius: 18px; overflow: hidden;
-            border: 1px solid rgba(255, 140, 66, 0.38);
-            background: radial-gradient(circle at 50% 45%, #1d140c 0%, #07080a 75%);
-            box-shadow: 0 24px 65px rgba(0, 0, 0, 0.8);
-            margin-bottom: 4rem;
+            border: 1px solid rgba(255, 140, 66, 0.36);
+            background: radial-gradient(circle at 50% 45%, #1d140c 0%, #07080a 78%);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.78); margin-bottom: 4.5rem;
         }
-        #bloomCanvas { width: 100%; height: 450px; display: block; cursor: pointer; }
+        #bloomCanvas { width: 100%; height: 390px; display: block; }
         .stage-bar {
             display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
-            gap: 12px; padding: 12px 18px; background: rgba(8, 7, 6, 0.94);
-            border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.82rem;
+            gap: 10px; padding: 12px 16px; background: rgba(8, 7, 6, 0.94);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .mode-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+        .mode-pills { display: flex; gap: 7px; flex-wrap: wrap; }
         .mode-btn {
             background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.14);
-            color: #e2e8f0; padding: 6px 12px; border-radius: 8px; font-family: var(--font-mono);
-            font-size: 0.73rem; cursor: pointer; transition: all 0.2s;
+            color: #e2e8f0; padding: 6px 11px; border-radius: 8px; font-family: var(--font-mono);
+            font-size: 0.72rem; cursor: pointer; transition: all 0.2s;
         }
         .mode-btn.active {
             background: rgba(247, 147, 26, 0.22); border-color: var(--sun-gold); color: var(--sun-gold); font-weight: 700;
         }
 
-        /* --- SECTIONS --- */
-        section.block-sec { margin: 5rem 0; scroll-margin-top: 5.5rem; }
+        /* --- SECTION COMMON --- */
+        section.block-sec { margin: 5rem 0; scroll-margin-top: 5.4rem; }
         .sec-tag {
-            font-family: var(--font-mono); font-size: 0.76rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1.5px; color: var(--bio-lime);
-            margin-bottom: 0.5rem; display: block;
+            font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1.6px; color: var(--bio-lime);
+            margin-bottom: 0.45rem; display: block;
         }
         h2.sec-title {
-            font-size: clamp(1.65rem, 3.4vw, 2.4rem); font-weight: 800; color: #fff;
-            margin-bottom: 1rem; letter-spacing: -0.5px;
+            font-size: clamp(1.65rem, 3.3vw, 2.35rem); font-weight: 800; color: #fff;
+            margin-bottom: 0.9rem; letter-spacing: -0.5px;
         }
         .sec-lead {
-            font-size: 1.06rem; color: var(--text-soft); max-width: 880px; margin-bottom: 2rem;
+            font-size: 1.04rem; color: var(--text-soft); max-width: 900px; margin-bottom: 2rem;
         }
 
-        /* --- BITAXE EQUATION GRID --- */
-        .equation-box {
-            display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 1rem;
-            align-items: center; margin: 2rem 0;
+        /* --- 01. SOLUTIONS: 5-TIER LADDER + GROWER HEAT MATCHER --- */
+        .tier-ladder {
+            display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.85rem; margin-bottom: 2.4rem;
         }
-        .eq-card {
-            background: var(--panel-bg); border: 1px solid var(--border-warm);
-            border-radius: 14px; padding: 1.5rem; height: 100%;
-        }
-        .eq-card.bio { border-color: var(--border-bio); }
-        .eq-op {
-            font-family: var(--font-mono); font-size: 2rem; font-weight: 800;
-            color: var(--sun-gold); text-align: center;
-        }
-        .eq-card h3 { font-size: 1.12rem; margin-bottom: 0.6rem; color: #fff; }
-        .eq-card p { font-size: 0.9rem; color: var(--text-soft); }
-
-        /* --- AUSTRALIA <-> MADAGASCAR SYMMETRY BRIDGE --- */
-        .symmetry-wrapper {
-            background: linear-gradient(145deg, rgba(18, 14, 12, 0.95), rgba(8, 16, 15, 0.96));
-            border: 1px solid rgba(255, 204, 0, 0.32);
-            border-radius: 18px; padding: 2.2rem; margin: 2rem 0;
-            box-shadow: 0 22px 55px rgba(0, 0, 0, 0.7);
-        }
-        .symmetry-grid {
-            display: grid; grid-template-columns: 1fr auto 1fr; gap: 1.2rem;
-            align-items: stretch; margin: 1.6rem 0;
-        }
-        .mirror-col {
-            background: rgba(0, 0, 0, 0.48); border-radius: 14px; padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.09);
+        .tier-card {
+            background: var(--panel-bg); border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid var(--btc-orange); border-radius: 14px; padding: 1.2rem;
             display: flex; flex-direction: column; justify-content: space-between;
+            transition: transform 0.22s ease, border-color 0.22s ease;
         }
-        .mirror-col.aus { border-top: 4px solid var(--btc-orange); }
-        .mirror-col.mdg { border-top: 4px solid var(--bio-lime); }
-        .mirror-bridge-center {
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            padding: 1rem 0.6rem; text-align: center; font-family: var(--font-mono);
+        .tier-card:hover { transform: translateY(-4px); border-color: var(--sun-gold); }
+        .tier-card.featured {
+            background: linear-gradient(155deg, rgba(247, 147, 26, 0.15), rgba(14, 18, 26, 0.95));
+            border-color: var(--sun-gold); border-top-width: 4px;
+            box-shadow: 0 14px 36px rgba(247, 147, 26, 0.16);
         }
-        .bedrock-banner {
-            margin-top: 1.4rem; padding: 1.3rem 1.5rem; border-radius: 12px;
-            background: linear-gradient(90deg, rgba(179, 102, 255, 0.12), rgba(247, 147, 26, 0.08), rgba(68, 238, 119, 0.1));
-            border: 1px solid rgba(179, 102, 255, 0.35);
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;
+        .tier-kw {
+            font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+            color: var(--sun-gold); margin-bottom: 0.35rem;
         }
-        .bedrock-pillar h4 {
-            font-family: var(--font-mono); font-size: 0.8rem; color: var(--sun-gold);
-            text-transform: uppercase; margin-bottom: 0.35rem;
-        }
-        .bedrock-pillar p {
-            font-size: 0.86rem; color: #cbd5e1; line-height: 1.55;
+        .tier-card h3 { font-size: 1.02rem; color: #fff; margin-bottom: 0.45rem; }
+        .tier-card p { font-size: 0.81rem; color: var(--text-soft); line-height: 1.5; margin-bottom: 0.8rem; }
+        .tier-meta {
+            font-family: var(--font-mono); font-size: 0.7rem; color: var(--bio-lime);
+            padding-top: 0.6rem; border-top: 1px solid rgba(255,255,255,0.07);
         }
 
-        /* --- MADAGASCAR & 113-YEAR HORIZON --- */
+        /* NSW GROWER / FARMER / FLORIST HEAT MATCHER */
+        .matcher-shell {
+            background: linear-gradient(145deg, rgba(12, 18, 16, 0.94), rgba(8, 10, 15, 0.96));
+            border: 1px solid var(--border-bio); border-radius: 16px; padding: 1.8rem;
+        }
+        .sector-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.3rem; }
+        .sec-pill {
+            background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.14);
+            color: #dce4ee; padding: 8px 13px; border-radius: 9px; font-family: var(--font-mono);
+            font-size: 0.75rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
+        }
+        .sec-pill.active {
+            background: rgba(68, 238, 119, 0.18); border-color: var(--bio-lime); color: var(--bio-lime);
+        }
+        .matcher-body {
+            display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.4rem; align-items: center;
+        }
+        .spec-list {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+        }
+        .spec-chip {
+            background: rgba(0, 0, 0, 0.48); border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px; padding: 0.85rem;
+        }
+        .spec-chip .lbl { font-size: 0.68rem; text-transform: uppercase; color: var(--text-muted); display: block; }
+        .spec-chip .val { font-family: var(--font-mono); font-size: 0.92rem; font-weight: 700; color: var(--sun-gold); }
+
+        /* --- 02. DESIGN: THE INVERTED MATRIX ARCHITECTURE (-25m -> 0m) --- */
+        .matrix-blueprint-box {
+            background: #06090d; border: 1px solid rgba(179, 102, 255, 0.35);
+            border-radius: 18px; padding: 2rem; margin-bottom: 2rem;
+            box-shadow: 0 22px 55px rgba(0, 0, 0, 0.78);
+        }
+        .matrix-svg {
+            width: 100%; height: auto; display: block; border-radius: 12px;
+            background: linear-gradient(180deg, #060d14 0%, #0d1a16 42%, #111318 43%, #05070a 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08); margin: 1.2rem 0 1.6rem;
+        }
+        .modes-3-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem;
+        }
+        .m-card {
+            background: rgba(255, 255, 255, 0.025); border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 12px; padding: 1.2rem;
+        }
+        .m-card h4 { font-family: var(--font-mono); font-size: 0.84rem; margin-bottom: 0.4rem; }
+        .m-card p { font-size: 0.84rem; color: var(--text-soft); line-height: 1.55; }
+
+        .design-links-row {
+            display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; padding-top: 0.8rem;
+        }
+        .doc-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 18px; border-radius: 10px; text-decoration: none;
+            font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700;
+            transition: all 0.2s;
+        }
+        .doc-btn.purple {
+            background: rgba(179, 102, 255, 0.15); border: 1px solid var(--bedrock-purple); color: #e9d5ff;
+        }
+        .doc-btn.green {
+            background: rgba(68, 238, 119, 0.14); border: 1px solid var(--bio-lime); color: var(--bio-lime);
+        }
+        .doc-btn:hover { transform: translateY(-2px); filter: brightness(1.15); }
+
+        /* --- 03. CONSULTING & B2B LPG DISPLACEMENT CALCULATOR --- */
+        .consulting-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.15rem; margin-bottom: 2.2rem;
+        }
+        .cons-card {
+            background: var(--panel-bg); border: 1px solid var(--border-warm);
+            border-radius: 14px; padding: 1.5rem; display: flex; flex-direction: column;
+            justify-content: space-between;
+        }
+        .cons-tag {
+            font-family: var(--font-mono); font-size: 0.72rem; color: var(--sun-gold);
+            margin-bottom: 0.4rem;
+        }
+        .cons-card h3 { font-size: 1.14rem; color: #fff; margin-bottom: 0.6rem; }
+        .cons-card ul { padding-left: 1.15rem; font-size: 0.86rem; color: var(--text-soft); margin-bottom: 1rem; }
+        .cons-card li { margin-bottom: 0.45rem; }
+        .cons-foot {
+            padding-top: 0.8rem; border-top: 1px solid rgba(255,255,255,0.08);
+            font-family: var(--font-mono); font-size: 0.76rem; color: var(--bio-lime);
+        }
+
+        .audit-calc-box {
+            background: linear-gradient(145deg, rgba(16, 14, 10, 0.95), rgba(8, 12, 18, 0.96));
+            border: 1px solid rgba(255, 204, 0, 0.35); border-radius: 16px; padding: 2rem;
+        }
+        .audit-controls {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem;
+        }
+        .ctrl-card {
+            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 10px; padding: 1rem;
+        }
+        .ctrl-card label {
+            display: flex; justify-content: space-between; font-size: 0.78rem;
+            font-weight: 600; margin-bottom: 0.5rem; color: #e2e8f0;
+        }
+        .ctrl-card select, .ctrl-card input[type="range"] { width: 100%; }
+        .ctrl-card select {
+            background: #0a0e17; color: var(--sun-gold); border: 1px solid rgba(255, 204, 0, 0.35);
+            padding: 8px 10px; border-radius: 7px; font-family: var(--font-mono); font-size: 0.78rem;
+        }
+        .audit-results {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.9rem;
+        }
+        .res-box {
+            background: #04060a; border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 10px; padding: 1rem; text-align: center;
+        }
+        .res-box .v {
+            display: block; font-family: var(--font-mono); font-size: 1.28rem;
+            font-weight: 800; color: var(--bio-lime);
+        }
+        .res-box .k { font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); }
+
+        /* --- 04. MISSION (AUSTRALIA X MADAGASCAR + 24H AI AGENT) --- */
         .madagascar-panel {
             background: linear-gradient(135deg, rgba(16, 26, 20, 0.92), rgba(14, 11, 8, 0.95));
             border: 1px solid rgba(52, 211, 153, 0.35); border-left: 5px solid var(--bio-lime);
-            border-radius: 16px; padding: 2.2rem; margin: 2.5rem 0;
+            border-radius: 16px; padding: 2rem; margin-bottom: 2rem;
         }
-        .kpi-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem; margin-top: 1.6rem;
-        }
-        .kpi-card {
-            background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px; padding: 1.2rem;
-        }
-        .kpi-card strong {
-            display: block; font-family: var(--font-mono); font-size: 1.35rem;
-            color: var(--bio-lime); margin-bottom: 0.3rem;
-        }
-
-        /* --- INTERACTIVE SCALING SIMULATOR --- */
-        .sim-panel {
-            background: rgba(9, 12, 18, 0.92); border: 1px solid rgba(0, 229, 255, 0.28);
-            border-radius: 16px; padding: 2rem;
-        }
-        .sim-controls {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1rem; margin-bottom: 1.5rem;
-        }
-        .ctrl-box {
-            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 10px; padding: 1rem;
-        }
-        .ctrl-box label {
-            display: flex; justify-content: space-between; font-size: 0.8rem;
-            font-weight: 600; margin-bottom: 0.5rem; color: #e2e8f0;
-        }
-        .ctrl-box input[type="range"] { width: 100%; accent-color: var(--btc-orange); }
-        .sim-outputs {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 0.9rem;
-        }
-        .out-metric {
-            background: #04060a; border: 1px solid rgba(255, 204, 0, 0.2);
-            border-radius: 10px; padding: 1rem; text-align: center;
-        }
-        .out-metric .v {
-            display: block; font-family: var(--font-mono); font-size: 1.25rem;
-            font-weight: 800; color: var(--sun-gold);
-        }
-        .out-metric .k { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; }
-
-        /* --- EXPANDED ACQUISITION & GROWTH ENGINE --- */
-        .channel-tabs {
-            display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.4rem;
-        }
-        .ch-tab {
-            background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.14);
-            color: #cbd5e1; padding: 9px 14px; border-radius: 10px; font-family: var(--font-mono);
-            font-size: 0.76rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
-        }
-        .ch-tab:hover { border-color: var(--sun-gold); color: #fff; }
-        .ch-tab.active {
-            background: rgba(68, 238, 119, 0.16); border-color: var(--bio-lime);
-            color: var(--bio-lime); box-shadow: 0 0 18px rgba(68, 238, 119, 0.2);
-        }
-
-        .channel-detail-box {
-            background: linear-gradient(145deg, rgba(11, 15, 22, 0.95), rgba(7, 9, 13, 0.98));
-            border: 1px solid rgba(68, 238, 119, 0.32);
-            border-radius: 16px; padding: 1.8rem; margin-bottom: 2rem;
-        }
-        .ch-grid {
-            display: grid; grid-template-columns: 1.1fr 1fr; gap: 1.4rem; align-items: start;
-        }
-        .funnel-steps {
-            display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.9rem;
-        }
-        .f-step {
-            padding: 0.75rem 1rem; border-radius: 9px; background: rgba(255, 255, 255, 0.03);
-            border-left: 3px solid var(--sun-gold); font-size: 0.87rem;
-        }
-        .f-step strong { color: var(--sun-gold); font-family: var(--font-mono); font-size: 0.78rem; display: block; margin-bottom: 2px; }
-
-        .agent-grid {
-            display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4rem;
-        }
+        .agent-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.3rem; }
         .feed-card {
             background: var(--panel-bg); border: 1px solid var(--border-warm);
-            border-radius: 14px; padding: 1.6rem;
-        }
-        .feed-meta {
-            font-family: var(--font-mono); font-size: 0.74rem; color: var(--sun-gold);
-            margin-bottom: 0.5rem;
+            border-radius: 14px; padding: 1.5rem;
         }
         .copy-box {
             background: #040507; border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px; padding: 0.9rem; font-family: var(--font-mono);
-            font-size: 0.77rem; color: #cbd5e1; white-space: pre-wrap; margin: 0.65rem 0;
+            border-radius: 8px; padding: 0.85rem; font-family: var(--font-mono);
+            font-size: 0.76rem; color: #cbd5e1; white-space: pre-wrap; margin: 0.6rem 0;
         }
         .copy-btn {
             background: rgba(255, 204, 0, 0.12); border: 1px solid rgba(255, 204, 0, 0.35);
             color: var(--sun-gold); padding: 4px 10px; border-radius: 6px;
             font-family: var(--font-mono); font-size: 0.7rem; cursor: pointer;
         }
-        .copy-btn:hover { background: rgba(255, 204, 0, 0.25); }
-
-        .cadence-strip {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 8px; margin-top: 1.6rem;
-        }
-        .day-pill {
-            background: rgba(255, 255, 255, 0.025); border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 9px; padding: 0.75rem; font-size: 0.76rem;
-        }
-        .day-pill strong { display: block; font-family: var(--font-mono); color: var(--btc-orange); margin-bottom: 3px; }
-
-        .dual-org-banner {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2rem;
-        }
-        .domain-card {
-            padding: 1.5rem; border-radius: 14px; background: rgba(255, 255, 255, 0.025);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-        }
 
         footer {
-            border-top: 1px solid var(--border-warm); padding: 3rem 1.6rem;
-            text-align: center; color: var(--text-muted); font-size: 0.85rem;
+            border-top: 1px solid var(--border-warm); padding: 2.8rem 1.5rem;
+            text-align: center; color: var(--text-muted); font-size: 0.84rem;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 980px) {
             .nav-links { display: none; }
-            .tc-grid { grid-template-columns: repeat(2, 1fr); }
-            .equation-box, .symmetry-grid { grid-template-columns: 1fr; }
-            .eq-op { transform: rotate(90deg); }
-            .agent-grid, .ch-grid, .dual-org-banner { grid-template-columns: 1fr; }
+            .tier-ladder { grid-template-columns: 1fr 1fr; }
+            .tc-grid, .audit-results { grid-template-columns: repeat(2, 1fr); }
+            .matcher-body, .modes-3-grid, .consulting-grid, .audit-controls, .agent-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 580px) {
+            .tier-ladder { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body class="lang-en">
 
+<!-- REORGANIZED MENU: SOLUTIONS · DESIGN · CONSULTING · 113-YR MISSION · OPEN CAD -->
 <nav>
     <a href="#top" class="brand">
         <span class="dot"></span>
@@ -411,20 +405,19 @@
     </a>
 
     <div class="nav-links">
-        <a href="hardware.html" style="color:var(--sun-gold);font-weight:800;"><span lang="en">Open Hardware (3D)</span><span lang="fr">Plans 3D & Montage</span></a>
-        <a href="#bitaxe-equation"><span lang="en">Bitaxe + Life</span><span lang="fr">Bitaxe + Vivant</span></a>
-        <a href="#australia-madagascar"><span lang="en">Australia × Madagascar</span><span lang="fr">Australie × Madagascar</span></a>
-        <a href="#madagascar-kpi"><span lang="en">113-Yr KPI</span><span lang="fr">KPI 113 Ans</span></a>
-        <a href="#scale-simulator"><span lang="en">Simulator</span><span lang="fr">Simulateur</span></a>
-        <a href="#acquisition-engine"><span lang="en">Growth & AI Agent</span><span lang="fr">Acquisition & Agent IA</span></a>
+        <a href="#solutions"><span lang="en">Solutions</span><span lang="fr">Solutions</span></a>
+        <a href="#design"><span lang="en">Design (Inverted Matrix)</span><span lang="fr">Design (Matrice Inversée)</span></a>
+        <a href="#consulting"><span lang="en">Consulting</span><span lang="fr">Conseil B2B</span></a>
+        <a href="#madagascar-kpi"><span lang="en">113-Yr Mission</span><span lang="fr">Mission 113 Ans</span></a>
+        <a href="hardware.html" class="nav-cad"><span lang="en">Open CAD (3D)</span><span lang="fr">Plans 3D</span></a>
     </div>
 
     <div class="nav-right">
         <button type="button" class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
         <button type="button" class="lang-btn" id="btn-fr" onclick="setLang('fr')">FR</button>
-        <a href="#acquisition-engine" class="cta-pill">
-            <span lang="en">Block #1M Launch</span>
-            <span lang="fr">Lancement Bloc #1M</span>
+        <a href="#consulting" class="cta-pill">
+            <span lang="en">Book Heat Audit</span>
+            <span lang="fr">Audit Thermique</span>
         </a>
     </div>
 </nav>
@@ -433,21 +426,21 @@
     <!-- HERO -->
     <section class="hero">
         <div class="yc-eyebrow">
-            <span>☀ SYDNEY TECH CENTRAL · ATLASSIAN CENTRAL JUNE 2027 · BITCOIN TIMECHAIN ANCHORED</span>
+            <span>☀ SYDNEY TECH CENTRAL · NSW BROWNFIELD MINES · BLOCK #1,000,000 LAUNCH</span>
         </div>
 
         <h1>
-            <span lang="en">Make the Earth Bloom with Regenerative Compute.</span>
-            <span lang="fr">Faire Fleurir la Terre par le Calcul Régénératif.</span>
+            <span lang="en">Turn Compute Heat Into Living Harvests.</span>
+            <span lang="fr">Transformez le Calcul en Récoltes Vivantes.</span>
         </h1>
 
         <p class="hero-sub">
-            <span lang="en">Bits and thermodynamics united to sustain life. Forging our R&D in Australia's brownfield mining bedrock—making physical and digital mining work hand in hand—to uplift Communities of the World over a 113-year low-time-preference horizon and flight-qualify life support for Mars.</span>
-            <span lang="fr">Les bits et la thermodynamique unis pour soutenir la vie. Forger notre R&D dans le socle minier australien — en unissant mine physique et mine numérique — pour élever Madagascar et la Lémurie sur un horizon de 113 ans et qualifier le support de vie pour Mars.</span>
+            <span lang="en">From a 17W desktop BitTerrarium to our <strong>1 MW Subterranean Inverted Matrix</strong> on rehabilitated New South Wales mine sites: we replace expensive fossil gas boilers for flower growers, nurseries, and farmers with 100% Joule-heated hydronic loops—forging the blueprint to nourish Madagascar over a 113-year horizon and sustain life on Mars.</span>
+            <span lang="fr">Du BitTerrarium de bureau (17 W) à notre <strong>Matrice Inversée Souterraine de 1 MW</strong> dans les mines réhabilitées de Nouvelle-Galles du Sud : nous remplaçons les chaudières au gaz des horticulteurs, pépiniéristes et maraîchers par la chaleur Joule du calcul — forgeant le modèle destiné à nourrir Madagascar sur 113 ans et soutenir la vie sur Mars.</span>
         </p>
 
         <!-- LIVE BITCOIN BLOCK #1,000,000 COUNTDOWN -->
-        <div class="timechain-banner" id="countdown-panel">
+        <div class="timechain-banner">
             <div class="tc-header">
                 <span style="color:var(--bio-lime);">● LIVE MEMPOOL TELEMETRY · TIMECHAIN LAUNCH COVENANT</span>
                 <span style="color:var(--sun-gold);">ANCHOR: BLOCK #1,000,000 → HORIZON 2140 (113 YEARS)</span>
@@ -467,363 +460,412 @@
                     <span class="tc-lbl"><span lang="en">Estimated Time (~10m/block)</span><span lang="fr">Temps Estimé (~10m/bloc)</span></span>
                 </div>
                 <div class="tc-card">
-                    <span class="tc-num" id="tc-horizon-pct" style="color:var(--water-cyan);">0.00%</span>
-                    <span class="tc-lbl"><span lang="en">113-Year Uplift Arc</span><span lang="fr">Arc Civilisationnel 113 Ans</span></span>
+                    <span class="tc-num" id="tc-pue" style="color:var(--water-cyan);">1.008 PUE</span>
+                    <span class="tc-lbl"><span lang="en">1 MW NSW Mine Target</span><span lang="fr">Cible MVP 1 MW NSW</span></span>
                 </div>
             </div>
 
-            <div class="progress-track" aria-label="Progress toward Bitcoin Block 1,000,000">
+            <div class="progress-track">
                 <div class="progress-fill" id="tc-progress-bar"></div>
             </div>
 
             <div class="covenant-strip">
-                <span>SHA-256 PROMISE: <code id="tc-hash">5243314d·e89f4c...timechain-covenant</code></span>
-                <span>
-                    <span lang="en">Dual-Engine Ecosystem:</span><span lang="fr">Écosystème Dual :</span>
-                    <strong style="color:var(--sun-gold);">regenerativecompute.io</strong> (Venture) ·
-                    <strong style="color:var(--bio-lime);">regenerativecompute.org</strong> (Open Commons) ·
-                    <a href="https://www.thesunstandard.net" target="_blank" style="color:var(--water-cyan); text-decoration:none;">thesunstandard.net</a>
-                </span>
+                <span>COVENANT: <code>regenerativecompute.io</code> (Venture) · <code>regenerativecompute.org</code> (Open Commons)</span>
+                <span>HQ ROADMAP: Sydney Tech Central → Atlassian Central (June 2027) → Hunter / Lithgow 1 MW MVP</span>
             </div>
         </div>
     </section>
 
-    <!-- WARMTH INTERACTIVE VISUALIZATION -->
+    <!-- WARMTH INTERACTIVE STAGE -->
     <div class="warmth-stage">
-        <canvas id="bloomCanvas" aria-label="Interactive Thermodynamic Warmth Simulation"></canvas>
+        <canvas id="bloomCanvas" aria-label="Interactive Scale-Invariant Thermodynamic Stage"></canvas>
         <div class="stage-bar">
             <div class="mode-pills">
-                <button type="button" class="mode-btn active" data-scale="bitaxe">1. Bitaxe Topper (17 W)</button>
-                <button type="button" class="mode-btn" data-scale="bitplant">2. Sydney Nano-Bitplant (1.5 kW)</button>
-                <button type="button" class="mode-btn" data-scale="australia">3. NSW Brownfield Shaft (5 MW)</button>
-                <button type="button" class="mode-btn" data-scale="madagascar">4. Madagascar Solar Bloom (250 kW)</button>
-                <button type="button" class="mode-btn" data-scale="mars">5. Mars Lava Tube (1 MW)</button>
+                <button type="button" class="mode-btn active" data-scale="bitaxe">T1 · BitTerrarium (17 W)</button>
+                <button type="button" class="mode-btn" data-scale="bitplant">T2 · BitPlant Nursery (140 W–3 kW)</button>
+                <button type="button" class="mode-btn" data-scale="agskid">T3 · Floriculture Skid (250 kW)</button>
+                <button type="button" class="mode-btn" data-scale="nsw_mvp">T4 · NSW Inverted Matrix (1 MW)</button>
+                <button type="button" class="mode-btn" data-scale="planetary">T5 · Deep Mine / Mars (10–50 MW)</button>
             </div>
-            <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--sun-gold);" id="stage-readout">
+            <div style="font-family:var(--font-mono); font-size:0.74rem; color:var(--sun-gold);" id="stage-readout">
                 17 Wth → 27.5°C Moss Dome · Self-Watering Rain Cycle Active
             </div>
         </div>
     </div>
 
-    <!-- SECTION 1: COMPLETING THE BITAXE EQUATION -->
-    <section class="block-sec" id="bitaxe-equation">
-        <span class="sec-tag">01 // HARDWARE WEDGE · COMPLETING THE EQUATION</span>
+    <!-- ======================================================================
+         01 // SOLUTIONS — 5-TIER PRODUCT LADDER & NSW OFF-TAKER HEAT MATCHER
+         ====================================================================== -->
+    <section class="block-sec" id="solutions">
+        <span class="sec-tag">01 // SOLUTIONS · SCALE-INVARIANT HARDWARE & THERMAL INFRASTRUCTURE</span>
         <h2 class="sec-title">
-            <span lang="en">Bitaxe Solved Open-Source Hash. We Complete the Loop to Sustain Life.</span>
-            <span lang="fr">Bitaxe a résolu le hachage open-source. Nous complétons la boucle pour soutenir la Vie.</span>
+            <span lang="en">Five Modular Tiers: From a $42 Desk Topper to a 50 MW Subterranean Mine</span>
+            <span lang="fr">Cinq Échelons Modulaires : Du Dôme de Bureau à 42 $ jusqu'à la Mine de 50 MW</span>
         </h2>
         <p class="sec-lead">
-            <span lang="en">By the First Law of Thermodynamics, a BM1370 ASIC converts 100% of electrical input into clean Joule heat. Instead of dissipating that warmth into empty room air, our $42 AUD Snap-On BitTerrarium Topper turns any desktop Bitaxe into a self-watering micro-biosphere.</span>
-            <span lang="fr">En vertu du premier principe de la thermodynamique, un ASIC BM1370 convertit 100 % de l'électricité en chaleur Joule propre. Au lieu de la disperser dans le vide, notre dôme BitTerrarium clipsable transforme tout Bitaxe de bureau en une micro-biosphère auto-irriguée.</span>
+            <span lang="en">Every processor is a 100% efficient Joule heater ($Q_{\text{th}} = P_{\text{elec}}$). Our product ladder lets individuals, commercial flower & vegetable growers, and brownfield mine operators monetize curtailed solar while delivering exact biological temperatures.</span>
+            <span lang="fr">Tout processeur est un radiateur à effet Joule efficace à 100 % ($Q_{\text{th}} = P_{\text{élec}}$). Notre gamme permet aux particuliers, horticulteurs, maraîchers et opérateurs miniers de monétiser le solaire écrêté tout en chauffant le vivant.</span>
         </p>
 
-        <div class="equation-box">
-            <div class="eq-card">
-                <div style="font-family:var(--font-mono); color:var(--btc-orange); font-size:0.78rem; margin-bottom:6px;">SIDE A · SILICON & TRUTH</div>
-                <h3>Bitaxe Gamma 601 (17 W)</h3>
-                <p>
-                    <span lang="en">Open-source BM1370 hardware executing 1.2 TH/s of SHA-256 Proof of Work—anchoring unforgeable monetary truth and telemetry on the Bitcoin Timechain.</span>
-                    <span lang="fr">Matériel open-source BM1370 exécutant 1,2 TH/s de Preuve de Travail SHA-256 — ancrant une vérité monétaire infalsifiable sur la Timechain.</span>
-                </p>
+        <!-- 5-TIER PRODUCT ARCHITECTURE -->
+        <div class="tier-ladder">
+            <div class="tier-card">
+                <div>
+                    <div class="tier-kw">TIER 1 · 17 W</div>
+                    <h3>BitTerrarium™ & Pico-Aqua</h3>
+                    <p>Snap-on borosilicate cloche dome & 1.35L shrimp/Wolffia loop for Bitaxe Gamma 601. Zero liquid cooling, silent 27°C rain cycle.</p>
+                </div>
+                <div class="tier-meta">BOM ~$42–$52 AUD · <a href="hardware.html" style="color:var(--sun-gold);">Open STL</a></div>
             </div>
 
-            <div class="eq-op">+</div>
-
-            <div class="eq-card bio">
-                <div style="font-family:var(--font-mono); color:var(--bio-lime); font-size:0.78rem; margin-bottom:6px;">SIDE B · THERMAL BIOSPHERE</div>
-                <h3>BitTerrarium™ Cloche Dome</h3>
-                <p>
-                    <span lang="en">Anodized aluminum dish + Terra Preta biochar + live moss under borosilicate glass. 17 Wth warms the root bed to 27°C, driving continuous evaporation and condensation rain.</span>
-                    <span lang="fr">Coupelle aluminium anodisé + biochar Terra Preta + mousse vivante sous cloche borosilicate. 17 Wth chauffent le substrat à 27 °C, créant un cycle de pluie perpétuel.</span>
-                </p>
+            <div class="tier-card" style="border-top-color: var(--bio-lime);">
+                <div>
+                    <div class="tier-kw" style="color:var(--bio-lime);">TIER 2 · 140 W – 3 kW</div>
+                    <h3>BitPlant™ Home & Bench</h3>
+                    <p>Canaan Avalon Nano 3S / Mini 3 aerodynamic manifold warming 72-cell propagation trays & domestic hot water tanks.</p>
+                </div>
+                <div class="tier-meta">1.8 kg/mo greens · Urban & Farm</div>
             </div>
 
-            <div class="eq-op">=</div>
+            <div class="tier-card" style="border-top-color: var(--water-cyan);">
+                <div>
+                    <div class="tier-kw" style="color:var(--water-cyan);">TIER 3 · 50 – 250 kW</div>
+                    <h3>Agri-Thermic Surface Skid</h3>
+                    <p>Plug-and-play liquid-immersion container delivering 60–68°C hydronic water to existing commercial greenhouses, florists & nurseries.</p>
+                </div>
+                <div class="tier-meta">Cuts LPG bills by 50–65%</div>
+            </div>
 
-            <div class="eq-card" style="border-color: var(--sun-gold);">
-                <div style="font-family:var(--font-mono); color:var(--sun-gold); font-size:0.78rem; margin-bottom:6px;">SCALE-INVARIANT SYMBIOSIS</div>
-                <h3>17 W Desk → 50 MW Bedrock</h3>
-                <p>
-                    <span lang="en">The exact same thermodynamic coupling scales from desktop education to 1.5 kW Sydney BitPlants, Australian brownfield mine shafts, Madagascar solar hubs, and Mars.</span>
-                    <span lang="fr">Le même couplage thermodynamique passe d'un bureau aux BitPlants de 1,5 kW à Sydney, aux puits miniers australiens, à Madagascar et à Mars.</span>
-                </p>
+            <div class="tier-card featured">
+                <div>
+                    <div class="tier-kw">★ TIER 4 · 1 MW NSW MVP</div>
+                    <h3>Inverted Matrix "Ultra-Lean"</h3>
+                    <p>8 submerged ASIC-X / AI GPU rail pods at -25m in NSW brownfield mines ($	ext{PUE}=1.008$) feeding a surface Bio-Hub, MOF-303 water & Ouroboros BLaaS.</p>
+                </div>
+                <div class="tier-meta">$1.07M–$1.95M USD · ROI ~12 mo</div>
+            </div>
+
+            <div class="tier-card" style="border-top-color: var(--bedrock-purple);">
+                <div>
+                    <div class="tier-kw" style="color:var(--bedrock-purple);">TIER 5 · 10 – 50+ MW</div>
+                    <h3>Deep Mine, Madagascar & Mars</h3>
+                    <p>Utility-scale mine rehabilitation, self-funding solar water/food microgrids for Grand Sud Madagascar, & Martian lava-tube life support.</p>
+                </div>
+                <div class="tier-meta">113-Year Horizon (2026–2140)</div>
             </div>
         </div>
-    </section>
 
-    <!-- SECTION 2: THE INDIAN OCEAN SYMMETRY BRIDGE (AUSTRALIA -> MADAGASCAR) -->
-    <section class="block-sec" id="australia-madagascar">
-        <span class="sec-tag">02 // THE INTERMEDIATE STEP · INDIAN OCEAN GEOLOGICAL & THERMODYNAMIC SYMMETRY</span>
-        <h2 class="sec-title">
-            <span lang="en">Australia × Madagascar: Physical & Digital Mining Working Hand in Hand</span>
-            <span lang="fr">Australie × Madagascar : Mine Physique & Mine Numérique Main dans la Main</span>
-        </h2>
-        <p class="sec-lead">
-            <span lang="en">You cannot deploy frontier infrastructure in vulnerable regions without first hardening the engineering in a mature industrial crucible. Across the Indian Ocean, <strong>Australia</strong> and <strong>Madagascar</strong> form a geological and climatic mirror—ancient Gondwanan cratons, abundant solar irradiance, and arid interiors. Our intermediate step is to build, stress-test, and commercialize our R&D in Australia's world-leading brownfield mining ecosystem first, then export battle-tested modular pods across the ocean to Madagascar.</span>
-            <span lang="fr">On ne déploie pas une infrastructure critique dans des régions vulnérables sans l'avoir d'abord éprouvée dans un creuset industriel mature. De part et d'autre de l'océan Indien, l'<strong>Australie</strong> et <strong>Madagascar</strong> forment un miroir géologique et climatique — anciens cratons du Gondwana, ensoleillement exceptionnel et zones arides. Notre étape intermédiaire consiste à forger et rentabiliser notre R&D dans l'écosystème minier australien, puis à exporter des modules éprouvés vers Madagascar.</span>
-        </p>
+        <!-- TAILORED HEAT FOR NSW GROWERS, NURSERIES & FARMERS -->
+        <div class="matcher-shell">
+            <div style="font-family:var(--font-mono); font-size:0.74rem; color:var(--bio-lime); margin-bottom:4px;">
+                NSW CUSTOMER DISCOVERY · TAILORING HEAT TO REAL AGRICULTURAL BUSINESSES
+            </div>
+            <h3 style="font-size:1.28rem; color:#fff; margin-bottom:0.8rem;">
+                <span lang="en">Who Needs 55–70°C Heat in New South Wales? Select an Industry Profile:</span>
+                <span lang="fr">Qui a besoin de chaleur à 55–70 °C en Nouvelle-Galles du Sud ? Choisissez un métier :</span>
+            </h3>
 
-        <div class="symmetry-wrapper">
-            <div class="symmetry-grid">
-                <!-- LEFT: AUSTRALIA (R&D CRUCIBLE) -->
-                <div class="mirror-col aus">
-                    <div>
-                        <div style="font-family:var(--font-mono); font-size:0.74rem; color:var(--btc-orange); margin-bottom:6px;">
-                            STEP 1 · THE INDUSTRIAL R&D CRUCIBLE (2026–2028)
-                        </div>
-                        <h3 style="font-size:1.3rem; color:#fff; margin-bottom:0.7rem;">🇦🇺 Australia · Sydney & NSW Brownfield Bedrock</h3>
-                        <p style="font-size:0.9rem; color:var(--text-soft); margin-bottom:0.9rem;">
-                            <span lang="en"><strong>Developed Infrastructure & Deep Mining Mastery:</strong> Anchored in Sydney's Tech Central (targeting Atlassian Central in June 2027), we leverage Australia's unmatched geotechnical expertise, negative daytime solar spot prices, and thousands of decommissioned brownfield mine sites across NSW (Hunter Valley, Lithgow, Broken Hill).</span>
-                            <span lang="fr"><strong>Infrastructure Développée & Maîtrise Minière :</strong> Ancrés à Tech Central Sydney (cap sur Atlassian Central en juin 2027), nous mobilisons l'expertise géotechnique australienne, les surplus solaires diurnes et les milliers d'anciens sites miniers de Nouvelle-Galles du Sud.</span>
-                        </p>
-                    </div>
-                    <div style="font-family:var(--font-mono); font-size:0.75rem; color:#ffd280; background:rgba(247,147,26,0.08); padding:0.75rem; border-radius:8px;">
-                        • Subterranean Bedrock Thermal Inertia (~18–20°C)<br>
-                        • Natural Shaft Chimney Draft ($\Delta p pprox 560	ext{ Pa}$)<br>
-                        • ARENA CleanTech & Grid Balancing Revenue
-                    </div>
-                </div>
-
-                <!-- CENTER BRIDGE -->
-                <div class="mirror-bridge-center">
-                    <div style="font-size:1.8rem; color:var(--sun-gold);">⇄</div>
-                    <div style="font-size:0.72rem; color:var(--sun-gold); font-weight:700; margin:6px 0;">INDIAN OCEAN<br>SYMMETRY</div>
-                    <div style="font-size:0.68rem; color:var(--text-muted);">Gondwana Cratons<br>20°S – 25°S Latitude<br>High Solar Flux</div>
-                </div>
-
-                <!-- RIGHT: MADAGASCAR (HUMANITARIAN & BIOSPHERIC BLOOM) -->
-                <div class="mirror-col mdg">
-                    <div>
-                        <div style="font-family:var(--font-mono); font-size:0.74rem; color:var(--bio-lime); margin-bottom:6px;">
-                            STEP 2 · SOVEREIGN UPLIFT DEPLOYMENT (2028–2140)
-                        </div>
-                        <h3 style="font-size:1.3rem; color:#fff; margin-bottom:0.7rem;">🇲🇬 Madagascar · Grand Sud & Lemurian Biosphere</h3>
-                        <p style="font-size:0.9rem; color:var(--text-soft); margin-bottom:0.9rem;">
-                            <span lang="en"><strong>Turn-Key Regenerative Microgrids:</strong> Once hardware CAPEX is amortized and flight-proven in Australian brownfield mines, pre-assembled solar-immersion pods deploy to Southern Madagascar (Androy & Anosy)—delivering pure MOF-303 drinking water, Terra Preta soil restoration, and year-round food autonomy without debt traps.</span>
-                            <span lang="fr"><strong>Micro-Réseaux Régénératifs Clés en Main :</strong> Une fois le matériel amorti et éprouvé dans les mines australiennes, des modules solaires pré-assemblés sont déployés dans le Grand Sud malgache — fournissant eau pure MOF-303, régénération des sols Terra Preta et autonomie alimentaire sans dette.</span>
-                        </p>
-                    </div>
-                    <div style="font-family:var(--font-mono); font-size:0.75rem; color:#a7f3d0; background:rgba(68,238,119,0.08); padding:0.75rem; border-radius:8px;">
-                        • Self-Funding CAPEX via SHA-256 Hashrate<br>
-                        • 3,800+ L/day Pure Water per 250 kW Pod<br>
-                        • Reforesting Lemurian Habitats & Arid Soils
-                    </div>
-                </div>
+            <div class="sector-pills" role="tablist">
+                <button type="button" class="sec-pill active" data-sec="flowers">🌸 Cut Flowers & Orchids</button>
+                <button type="button" class="sec-pill" data-sec="nurseries">🌱 Propagation & Mine-Rehab Nurseries</button>
+                <button type="button" class="sec-pill" data-sec="veg">🍅 Hydroponic Tomatoes & Berries</button>
+                <button type="button" class="sec-pill" data-sec="mushrooms">🍄 Mushrooms & Barramundi RAS (24/7)</button>
+                <button type="button" class="sec-pill" data-sec="drying">🔥 Summer Sink: Botanical Drying & Biochar</button>
             </div>
 
-            <!-- PHYSICAL + DIGITAL MINING HAND IN HAND -->
-            <div class="bedrock-banner">
-                <div class="bedrock-pillar">
-                    <h4>⛏️ 1. Physical + Digital Mining United</h4>
-                    <p>
-                        <span lang="en">Physical mining extracts critical minerals (copper, silica, lithium) needed for the energy transition; digital mining monetizes stranded renewable power and recycles 100% of heat. Working hand in hand, digital compute rehabilitates legacy physical mine shafts instead of abandoning them.</span>
-                        <span lang="fr">La mine physique extrait les minéraux critiques (cuivre, silice) ; la mine numérique monétise l'énergie renouvelable isolée et valorise 100 % de la chaleur, réhabilitant les anciens puits miniers au lieu de les abandonner.</span>
-                    </p>
+            <div class="matcher-body">
+                <div>
+                    <h4 id="m-title" style="font-size:1.15rem; color:var(--sun-gold); margin-bottom:0.45rem;">
+                        Commercial Cut Flowers & Orchids (Roses, Phalaenopsis, Lilies, Chrysanthemums)
+                    </h4>
+                    <p id="m-pain" style="font-size:0.91rem; color:var(--text-soft); margin-bottom:0.8rem;"></p>
+                    <p id="m-tailor" style="font-size:0.88rem; color:#a7f3d0; background:rgba(68,238,119,0.08); padding:0.85rem; border-radius:9px; border-left:3px solid var(--bio-lime);"></p>
                 </div>
-                <div class="bedrock-pillar">
-                    <h4>🛡️ 2. Deep Bedrock Asset Protection</h4>
-                    <p>
-                        <span lang="en">Placing compute, batteries, and water reserves deep under Mother Earth's bedrock shields vital civilizational infrastructure from extreme heatwaves, cyclones, wildfires, and solar flares—while leaving the sunlit surface free for forests and agriculture.</span>
-                        <span lang="fr">Enfouir le calcul et les réserves d'eau sous le socle rocheux de Terre-Mère protège les actifs vitaux contre les canicules, cyclones et tempêtes solaires, tout en rendant la surface ensoleillée aux forêts et aux cultures.</span>
-                    </p>
-                </div>
-                <div class="bedrock-pillar">
-                    <h4>♻️ 3. Hydrometallurgical Ouroboros</h4>
-                    <p>
-                        <span lang="en">At end-of-life, obsolete ASIC hashboards undergo gentle organic bioleaching—recovering 99% of gold, copper, silver, and silicon to mint next-generation chips with zero toxic smelting.</span>
-                        <span lang="fr">En fin de vie, les cartes ASIC obsolètes subissent une biolixiviation douce récupérant 99 % de l'or, du cuivre, de l'argent et du silicium pour forger la génération suivante sans fonderie toxique.</span>
-                    </p>
+
+                <div class="spec-list">
+                    <div class="spec-chip">
+                        <span class="lbl">Target NSW Clusters</span>
+                        <span class="val" id="m-region" style="font-size:0.8rem; color:#fff;">Central Coast, Dural, Lithgow</span>
+                    </div>
+                    <div class="spec-chip">
+                        <span class="lbl">Required Temp Tier</span>
+                        <span class="val" id="m-temp">22–26°C Bench / Air</span>
+                    </div>
+                    <div class="spec-chip">
+                        <span class="lbl">1 MW MVP Coverage</span>
+                        <span class="val" id="m-area" style="color:var(--bio-lime);">7,000 m² Glasshouse</span>
+                    </div>
+                    <div class="spec-chip">
+                        <span class="lbl">Seasonal Load Profile</span>
+                        <span class="val" id="m-season" style="color:var(--water-cyan);">Apr–Oct Nights + Dehumid.</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: THE 113-YEAR MADAGASCAN & LEMURIAN UPLIFT KPI -->
+    <!-- ======================================================================
+         02 // DESIGN — THE INVERTED MATRIX ARCHITECTURE (1 MW NSW ULTRA-LEAN MVP)
+         ====================================================================== -->
+    <section class="block-sec" id="design">
+        <span class="sec-tag">02 // DESIGN · THE INVERTED MATRIX v2.0 ("BURY THE MACHINES, AWAKE THE HUMANS")</span>
+        <h2 class="sec-title">
+            <span lang="en">Subterranean Inverted Matrix: Physical & Digital Mining Working Hand in Hand</span>
+            <span lang="fr">La Matrice Inversée Souterraine : Mine Physique & Mine Numérique Main dans la Main</span>
+        </h2>
+        <p class="sec-lead">
+            <span lang="en">To achieve a record <strong>$	ext{PUE} = 1.008$</strong> and cut civil CAPEX by 30% on rehabilitated NSW mine sites (such as the newly rezoned <em>Macquarie Coal Complex</em> near Newcastle, <em>Mt Arthur</em> in Muswellbrook, or <em>Lithgow</em> adits), our v2.0 Ultra-Lean blueprint places <strong>only the silent, liquid-immersed server rail-pods underground at -25 m</strong>—connected via two insulated DN100 stainless-steel pipes to all biological, MOF-303 water, and Ouroboros recycling modules on the sunlit surface pad.</span>
+            <span lang="fr">Pour atteindre un <strong>$	ext{PUE record} = 1,008$</strong> et réduire le CAPEX de 30 % sur les friches minières du NSW (<em>Macquarie Coal Complex</em>, <em>Mt Arthur Muswellbrook</em>, <em>Lithgow</em>), notre architecture v2.0 Ultra-Lean loge <strong>uniquement les chariots de serveurs immergés sous terre à -25 m</strong>, reliés par deux conduites hydrauliques DN100 aux serres, roues MOF-303 et cuves Ouroboros en surface.</span>
+        </p>
+
+        <div class="matrix-blueprint-box">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+                <span style="font-family:var(--font-mono); font-size:0.76rem; color:var(--bedrock-purple); font-weight:700;">
+                    // CROSS-SECTION ARCHITECTURE · 1 MW NSW MINE REBIRTH MVP (ZION -25m ⇄ LEMURIA 0m)
+                </span>
+                <span style="font-family:var(--font-mono); font-size:0.74rem; color:var(--bio-lime);">
+                    635 kWth Active Cascade + 365 kWth Summer Adsorption Chiller / Mine-Water Buffer
+                </span>
+            </div>
+
+            <!-- CLEAN ARCHITECTURAL CROSS-SECTION SVG -->
+            <svg class="matrix-svg" viewBox="0 0 940 420" xmlns="http://www.w3.org/2000/svg">
+                <!-- Surface Line (0m) -->
+                <line x1="0" y1="175" x2="940" y2="175" stroke="#44ee77" stroke-width="2.5" stroke-opacity="0.7"/>
+                <text x="18" y="166" fill="#44ee77" font-family="Fira Code, monospace" font-size="10">0m · SUNLIT SURFACE PAD (HUMANS, FLOWERS & FOOD)</text>
+                <text x="18" y="200" fill="#b366ff" font-family="Fira Code, monospace" font-size="10">-25m · BEDROCK SANCTUARY (ROBOTS & IMMERSED SILICON)</text>
+
+                <!-- LEFT: Bio-Hub Greenhouse / Floriculture (800 m2) -->
+                <path d="M 55 175 L 80 58 L 335 58 L 360 175 Z" fill="rgba(68, 238, 119, 0.08)" stroke="#44ee77" stroke-width="1.8"/>
+                <text x="208" y="46" fill="#44ee77" font-family="Inter, sans-serif" font-size="11" font-weight="800" text-anchor="middle">🌱 BIO-HUB : FLORICULTURE, NURSERY & BARRAMUNDI RAS</text>
+                <text x="208" y="92" fill="#e2e8f0" font-family="Fira Code, monospace" font-size="9.5" text-anchor="middle">• 6-Tier Vertical Hydro / Cut Flowers (21–25°C)</text>
+                <text x="208" y="113" fill="#00e5ff" font-family="Fira Code, monospace" font-size="9.5" text-anchor="middle">• Australian Barramundi & Redclaw RAS (28°C)</text>
+                <text x="208" y="136" fill="#ffcc00" font-family="Fira Code, monospace" font-size="9.5" text-anchor="middle">• Medicinal Mushrooms CO₂ ⇄ Plant O₂ Loop</text>
+                <text x="208" y="158" fill="#a7f3d0" font-family="Fira Code, monospace" font-size="9" text-anchor="middle">Summer: 62°C Silica-Gel Adsorption Chiller Cooling!</text>
+
+                <!-- CENTER: Portal Pad Skid (HEX-101 + Mini-MOF-303 + 40m3 Buffer) -->
+                <rect x="390" y="72" width="160" height="103" rx="8" fill="#0b131e" stroke="#00e5ff" stroke-width="1.8"/>
+                <text x="470" y="92" fill="#ffffff" font-family="Inter, sans-serif" font-size="10" font-weight="800" text-anchor="middle">⚙️ PORTAL THERMAL SKID</text>
+                <text x="470" y="112" fill="#f7931a" font-family="Fira Code, monospace" font-size="9" text-anchor="middle">HEX-101 Plate (72°C → 68°C)</text>
+                <text x="470" y="130" fill="#00e5ff" font-family="Fira Code, monospace" font-size="9" text-anchor="middle">MOF-303 Wheel (2,500 L/d H₂O)</text>
+                <text x="470" y="148" fill="#ffcc00" font-family="Fira Code, monospace" font-size="9" text-anchor="middle">40 m³ Night Thermal Tank</text>
+
+                <!-- RIGHT: Ouroboros BLaaS & Biochar Shed (350 m2) -->
+                <path d="M 580 175 L 580 68 L 735 50 L 890 68 L 890 175 Z" fill="rgba(179, 102, 255, 0.08)" stroke="#b366ff" stroke-width="1.8"/>
+                <text x="735" y="42" fill="#b366ff" font-family="Inter, sans-serif" font-size="11" font-weight="800" text-anchor="middle">♻️ INDUSTRIAL SHED : OUROBOROS BLaaS & BIOCHAR</text>
+                <text x="735" y="92" fill="#e9d5ff" font-family="Fira Code, monospace" font-size="9.5" text-anchor="middle">• 65°C Sulfolobus Cu + 55°C Glycine Au/Ag Leaching</text>
+                <text x="735" y="113" fill="#ff8c42" font-family="Fira Code, monospace" font-size="9.5" text-anchor="middle">• 65°C NSW Forestry/Ag Biomass Drying → Biochar</text>
+                <text x="735" y="136" fill="#44ee77" font-family="Fira Code, monospace" font-size="9.5" text-anchor="middle">• PCB Silica → Geopolymer Shotcrete for Mine Walls</text>
+
+                <!-- DN100 Hydraulic Pipes (Zero Air Ducts = PUE 1.008) -->
+                <line x1="448" y1="285" x2="448" y2="175" stroke="#f7931a" stroke-width="5" stroke-dasharray="7,4"/>
+                <text x="436" y="238" fill="#ffcc00" font-family="Fira Code, monospace" font-size="9" text-anchor="end">▲ DN100 HOT (72°C)</text>
+                <line x1="492" y1="175" x2="492" y2="285" stroke="#00e5ff" stroke-width="5" stroke-dasharray="7,4"/>
+                <text x="504" y="238" fill="#00e5ff" font-family="Fira Code, monospace" font-size="9" text-anchor="start">▼ DN100 COLD (48°C)</text>
+
+                <!-- UNDERGROUND (-25m): ZION COMPUTE GALLERY -->
+                <rect x="140" y="285" width="660" height="74" rx="10" fill="#040609" stroke="#f7931a" stroke-width="2.2"/>
+                <text x="470" y="306" fill="#f7931a" font-family="Fira Code, monospace" font-size="11" font-weight="700" text-anchor="middle">
+                    🟠 ZION (-25m ADIT) : 8 RAIL-MOUNTED IMMERSION PODS (70% BITCOIN ASIC-X / 30% EDGE AI GPU)
+                </text>
+                <text x="470" y="326" fill="#cbd5e1" font-family="Fira Code, monospace" font-size="9.5" text-anchor="middle">
+                    Biodegradable Synthetic Ester · Ceiling Gantry Robot · &lt;35 dB(A) Surface Silence · EMP/Bushfire Shielded
+                </text>
+                <text x="470" y="345" fill="#44ee77" font-family="Fira Code, monospace" font-size="9" text-anchor="middle">
+                    Australia × Madagascar Gondwana Craton Blueprint → Exportable Modular Pods
+                </text>
+
+                <!-- -35m Flooded Mine Water Titanium Loop -->
+                <rect x="270" y="374" width="400" height="32" rx="7" fill="rgba(0, 229, 255, 0.12)" stroke="#00e5ff" stroke-width="1.3" stroke-dasharray="5,3"/>
+                <text x="470" y="394" fill="#00e5ff" font-family="Fira Code, monospace" font-size="9" font-weight="700" text-anchor="middle">
+                    ❄️ -35m FLOODED MINE WATER (15°C) : CLOSED GRADE-2 TITANIUM FAIL-SAFE HEAT SINK
+                </text>
+            </svg>
+
+            <!-- 3 DYNAMIC OPERATING MODES -->
+            <div class="modes-3-grid">
+                <div class="m-card" style="border-top: 3px solid var(--btc-orange);">
+                    <h4 style="color:var(--btc-orange);">MODE 0 · PURE ZION (PUE = 1.008)</h4>
+                    <p>Zero cooling fans. Closed thermosiphon loop ($8	ext{ kW}_{	ext{e}}$ pump) rejecting heat into $15\,^\circ	ext{C}$ flooded mine-shaft water via Grade-2 Titanium coils when surface heat is not needed.</p>
+                </div>
+                <div class="m-card" style="border-top: 3px solid var(--bedrock-purple);">
+                    <h4 style="color:var(--bedrock-purple);">MODE 1 · LIQUID SYMBIOSIS (PUE = 1.014)</h4>
+                    <p>24/7 hydronic cascade warming commercial flower/vegetable glasshouses ($22	ext{–}26\,^\circ	ext{C}$), Barramundi RAS ($28\,^\circ	ext{C}$), and Ouroboros bioleaching vats ($65\,^\circ	ext{C}$).</p>
+                </div>
+                <div class="m-card" style="border-top: 3px solid var(--bio-lime);">
+                    <h4 style="color:var(--bio-lime);">MODE 2 · NSW SOLAR ZENITH (10h–16h)</h4>
+                    <p>Absorbs negative-price daytime solar curtailment across the Hunter / Central-West REZ to run MOF-303 water blowers and Biochar biomass drying at zero electricity cost.</p>
+                </div>
+            </div>
+
+            <div class="design-links-row">
+                <a href="https://www.thesunstandard.net/blog/matrice-inversee.html?lg=EN" class="doc-btn purple">
+                    📐 <span lang="en">Explore Full 8-Level Inverted Matrix Treatise & Simulator</span><span lang="fr">Lire le Traité Complet La Matrice Inversée (Niveaux 1–8)</span>
+                </a>
+                <a href="hardware.html" class="doc-btn green">
+                    🛠️ <span lang="en">Open-Source 3D CAD Blueprints (BitTerrarium · BitPlant)</span><span lang="fr">Plans CAO OpenSCAD 3D (BitTerrarium · BitPlant)</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         03 // CONSULTING — B2B ADVISORY & INTERACTIVE LPG-REPLACEMENT CALCULATOR
+         ====================================================================== -->
+    <section class="block-sec" id="consulting">
+        <span class="sec-tag">03 // CONSULTING · DE-RISKING THE 1 MW NSW MVP WITH PAID B2B THERMAL AUDITS</span>
+        <h2 class="sec-title">
+            <span lang="en">Thermodynamic Engineering & Co-Location Consulting</span>
+            <span lang="fr">Ingénierie Thermodynamique & Conseil en Co-Localisation B2B</span>
+        </h2>
+        <p class="sec-lead">
+            <span lang="en">Before pouring concrete on a 1 MW site, we partner with NSW growers, nurseries, solar farms, and brownfield mine owners to audit their exact thermal bills and sign bankable <strong>Heat Purchase Agreements (Thermal PPAs)</strong>.</span>
+            <span lang="fr">Avant de déployer 1 MW sur site, nous accompagnons les horticulteurs, pépiniéristes, parcs solaires et propriétaires miniers du NSW pour auditer leurs besoins thermiques et structurer des contrats d'achat de chaleur (<strong>Thermal PPAs</strong>).</span>
+        </p>
+
+        <!-- 3 CONSULTING OFFERS -->
+        <div class="consulting-grid">
+            <div class="cons-card">
+                <div>
+                    <div class="cons-tag">PACKAGE 01 · AG & FLORICULTURE</div>
+                    <h3>Greenhouse & Nursery Boiler Replacement Audit</h3>
+                    <ul>
+                        <li>Full winter/night Heating Degree Day & psychrometric load model ($Q = U \cdot A \cdot \Delta T$).</li>
+                        <li>Hydronic manifold & buffer-tank sizing ($22	ext{–}68\,^\circ	ext{C}$) to displace bulk LPG or natural gas by 55–80%.</li>
+                        <li>Optional summer Silica-Gel adsorption cooling & dehumidification against *Botrytis*.</li>
+                    </ul>
+                </div>
+                <div class="cons-foot">For NSW Flower Growers, Nurseries & Protected Cropping</div>
+            </div>
+
+            <div class="cons-card" style="border-color: var(--bedrock-purple);">
+                <div>
+                    <div class="cons-tag" style="color:var(--bedrock-purple);">PACKAGE 02 · BROWNFIELD MINES & VRE</div>
+                    <h3>Subterranean Mine & Solar Curtailment Feasibility</h3>
+                    <ul>
+                        <li>Portal-pad & `-25 m` adit geotechnical/hydraulic scoping (Hunter Valley, Lake Macquarie, Lithgow).</li>
+                        <li>Sub-50ms Stratum Controllable Load Resource (CLR) & FCAS frequency-ancillary revenue modeling.</li>
+                        <li>Mine-water Grade-2 Titanium closed-loop heat-rejection & acoustic compliance ($<35	ext{ dB(A)}$).</li>
+                    </ul>
+                </div>
+                <div class="cons-foot" style="color:#e9d5ff;">For NSW Mine Rehabilitation & Solar Farm Owners</div>
+            </div>
+
+            <div class="cons-card" style="border-color: var(--bio-lime);">
+                <div>
+                    <div class="cons-tag" style="color:var(--bio-lime);">PACKAGE 03 · GRANTS & SOVEREIGN PODS</div>
+                    <h3>ARENA / Net Zero Grant & Microgrid Co-Design</h3>
+                    <ul>
+                        <li>Joint R&D structuring with universities via <code>regenerativecompute.org</code> + commercial build via <code>.io</code>.</li>
+                        <li>Biochar carbon-removal (CORC) & MOF-303 off-grid water autonomy engineering.</li>
+                        <li>CSR Twin-Pod program: every commercial Australian MW helps fund Madagascar water/food hubs.</li>
+                    </ul>
+                </div>
+                <div class="cons-foot">For CleanTech Grants, Councils & Impact Partners</div>
+            </div>
+        </div>
+
+        <!-- INTERACTIVE NSW GROWER LPG-DISPLACEMENT & MVP SIZER -->
+        <div class="audit-calc-box">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:1.2rem;">
+                <div>
+                    <span style="font-family:var(--font-mono); font-size:0.74rem; color:var(--sun-gold);">
+                        INTERACTIVE B2B SCOPING TOOL · POWERED BY scripts/nsw_mvp_research_agent.py
+                    </span>
+                    <h3 style="font-size:1.28rem; color:#fff;">
+                        <span lang="en">NSW Grower LPG-to-Compute Savings & Pod Sizer</span>
+                        <span lang="fr">Calculateur d'Économie de Gaz (GPL) & Dimensionnement NSW</span>
+                    </h3>
+                </div>
+                <a href="mailto:pascal@regenerativecompute.io?subject=NSW%20Thermal%20Audit%20%26%201MW%20MVP%20Inquiry" class="cta-pill">
+                    ✉ <span lang="en">Request Custom Site Audit</span><span lang="fr">Demander un Audit sur Site</span>
+                </a>
+            </div>
+
+            <div class="audit-controls">
+                <div class="ctrl-card">
+                    <label for="calc-corridor"><span>1. NSW Mine / Climate Corridor</span></label>
+                    <select id="calc-corridor">
+                        <option value="hunter">Upper Hunter (Muswellbrook / Mt Arthur · 3°C min)</option>
+                        <option value="macquarie">Lake Macquarie / Central Coast (Teralba · 5.5°C min)</option>
+                        <option value="lithgow">Lithgow / Central Tablelands (Frost Belt · -2°C min)</option>
+                    </select>
+                </div>
+
+                <div class="ctrl-card">
+                    <label for="calc-crop"><span>2. Agricultural Heat Off-Taker</span></label>
+                    <select id="calc-crop">
+                        <option value="flowers">Cut Flowers & Orchids (22°C + Botrytis ctrl)</option>
+                        <option value="nursery">Propagation & Mine-Rehab Tree Nursery (25°C)</option>
+                        <option value="tomatoes">Hydroponic Tomatoes, Berries & Greens (20°C)</option>
+                        <option value="mushrooms">Gourmet Mushrooms + Barramundi RAS (365d / 27°C)</option>
+                    </select>
+                </div>
+
+                <div class="ctrl-card">
+                    <label for="calc-area">
+                        <span>3. Heated Area ($m^2$)</span>
+                        <span id="calc-area-out" style="color:var(--sun-gold); font-family:var(--font-mono);">6,500 m²</span>
+                    </label>
+                    <input type="range" id="calc-area" min="500" max="15000" step="500" value="6500" style="accent-color:var(--sun-gold);">
+                </div>
+            </div>
+
+            <div class="audit-results">
+                <div class="res-box">
+                    <span class="v" id="res-pod-kw" style="color:var(--btc-orange);">880 kW</span>
+                    <span class="k">Matched Compute Pod Size</span>
+                </div>
+                <div class="res-box">
+                    <span class="v" id="res-lpg-l" style="color:var(--water-cyan);">231,000 L/yr</span>
+                    <span class="k">Bulk LPG Displaced</span>
+                </div>
+                <div class="res-box">
+                    <span class="v" id="res-savings">$161,400 /yr</span>
+                    <span class="k">Grower Net Fuel Savings (AUD)</span>
+                </div>
+                <div class="res-box">
+                    <span class="v" id="res-co2" style="color:var(--sun-gold);">358 t/yr</span>
+                    <span class="k">Fossil CO₂ Avoided</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         04 // 113-YEAR MISSION & 24H AUTONOMOUS AI GROWTH ENGINE
+         ====================================================================== -->
     <section class="block-sec" id="madagascar-kpi">
-        <span class="sec-tag">03 // NEW CIVILIZATIONAL KPI · LOW TIME PREFERENCE (2026–2140)</span>
+        <span class="sec-tag">04 // THE 113-YEAR COVENANT (2026–2140) & 24H AI GROWTH ENGINE</span>
         <h2 class="sec-title">
-            <span lang="en">Lift Civilization Starting From the Most Vulnerable Among Us.</span>
-            <span lang="fr">Élever la Civilisation en Commençant par les Plus Vulnérables d'entre Nous.</span>
+            <span lang="en">Australia Forges the R&D. Madagascar & Earth Reap the Harvest.</span>
+            <span lang="fr">L'Australie Forge la R&D. Madagascar et la Terre Récoltent la Vie.</span>
         </h2>
 
         <div class="madagascar-panel">
-            <p style="font-size:1.06rem; color:#f8fafc; margin-bottom:1rem;">
-                <span lang="en"><strong>Our 113-Year Covenant:</strong> GDP measures how fast we burn resources; it blinds us to human hunger and ecological decay. We propose a new civilizational KPI: <em>food, pure water, and fertile soil sovereignty delivered first to the most vulnerable populations on Earth</em>—starting with bringing abundant food and water security to all <strong>Madagascans and Lemurians</strong> over the next century (2026–2140, matching Bitcoin's full issuance asymptote). If we can achieve that together—bridging Sydney engineering and Malagasy resilience—we can achieve anything, from regenerating Earth to terraforming Mars.</span>
-                <span lang="fr"><strong>Notre Pacte de 113 Ans :</strong> Le PIB mesure la vitesse à laquelle nous brûlons nos ressources ; il est aveugle à la faim et à l'érosion des sols. Nous proposons un nouvel indicateur civilisationnel : <em>la souveraineté alimentaire, hydrique et pédologique apportée en priorité aux populations les plus vulnérables</em> — en commençant par nourrir durablement tous les <strong>Malgaches et Lémuriens</strong> au cours du siècle à venir (2026–2140). Si nous accomplissons cela ensemble, nous pourrons tout accomplir, sur Terre comme sur Mars.</span>
+            <p style="font-size:1.03rem; color:#f8fafc;">
+                <span lang="en"><strong>The Indian Ocean Symmetry:</strong> Every commercial megawatt we validate with flower growers, farmers, and brownfield mines in <strong>Australia</strong> amortizes the open-source engineering needed for our 113-year civilizational KPI—bringing debt-free MOF-303 drinking water, Terra Preta soil restoration, and abundant food to the most vulnerable communities across <strong>Southern Madagascar and Lemuria</strong> (2026–2140), while flight-qualifying closed-loop life support for Mars.</span>
+                <span lang="fr"><strong>La Symétrie de l'Océan Indien :</strong> Chaque mégawatt validé avec les horticulteurs, agriculteurs et mines réhabilitées en <strong>Australie</strong> amortit l'ingénierie open-source dédiée à notre KPI civilisationnel sur 113 ans : apporter l'eau pure MOF-303, le biochar Terra Preta et l'autonomie alimentaire aux populations les plus vulnérables de <strong>Madagascar</strong> (2026–2140), tout en qualifiant le support de vie pour Mars.</span>
             </p>
-
-            <div class="kpi-grid">
-                <div class="kpi-card">
-                    <strong>113 Years</strong>
-                    <span style="font-size:0.84rem; color:#cbd5e1;">2026 → 2140 (~6.0M Bitcoin blocks). Multi-generational low time preference anchored in immutable code.</span>
-                </div>
-                <div class="kpi-card">
-                    <strong>MOF-303 Water</strong>
-                    <span style="font-size:0.84rem; color:#cbd5e1;">ASIC thermal regeneration cycles extract 1.1 L/kg/cycle of pure drinking water from arid air in Grand Sud Madagascar.</span>
-                </div>
-                <div class="kpi-card">
-                    <strong>Terra Preta</strong>
-                    <span style="font-size:0.84rem; color:#cbd5e1;">60°C compute heat pre-dries agricultural waste for pyrolysis into Biochar, locking carbon and tripling soil water retention.</span>
-                </div>
-                <div class="kpi-card">
-                    <strong>Mars Ready</strong>
-                    <span style="font-size:0.84rem; color:#cbd5e1;">Every closed-loop water, O₂, and hydroponic metric proven in Australia & Madagascar directly flight-qualifies Mars habitats.</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 4: INTERACTIVE SCALE-INVARIANT SIMULATOR -->
-    <section class="block-sec" id="scale-simulator">
-        <span class="sec-tag">04 // THERMODYNAMIC ENGINEERING CALCULATOR</span>
-        <h2 class="sec-title">
-            <span lang="en">Scale-Invariant Impact Simulator (17 W to 50 MW)</span>
-            <span lang="fr">Simulateur d'Impact Invariant d'Échelle (17 W à 50 MW)</span>
-        </h2>
-
-        <div class="sim-panel">
-            <div class="sim-controls">
-                <div class="ctrl-box">
-                    <label for="sim-kw">
-                        <span><span lang="en">Compute Power (kW)</span><span lang="fr">Puissance Calcul (kW)</span></span>
-                        <span id="sim-kw-out" style="color:var(--sun-gold); font-family:var(--font-mono);">250 kW</span>
-                    </label>
-                    <input type="range" id="sim-kw" min="1" max="100" value="55">
-                </div>
-                <div class="ctrl-box">
-                    <label for="sim-solar">
-                        <span><span lang="en">Solar / Stranded Energy Share</span><span lang="fr">Part Solaire / Énergie Fatale</span></span>
-                        <span id="sim-solar-out" style="color:var(--bio-lime); font-family:var(--font-mono);">95 %</span>
-                    </label>
-                    <input type="range" id="sim-solar" min="20" max="100" value="95">
-                </div>
-                <div class="ctrl-box">
-                    <label for="sim-mof">
-                        <span><span lang="en">Water & Biochar Coupling</span><span lang="fr">Couplage Eau MOF & Biochar</span></span>
-                        <span id="sim-mof-out" style="color:var(--water-cyan); font-family:var(--font-mono);">85 %</span>
-                    </label>
-                    <input type="range" id="sim-mof" min="10" max="100" value="85">
-                </div>
-            </div>
-
-            <div class="sim-outputs">
-                <div class="out-metric">
-                    <span class="v" id="out-heat">250 kWth</span>
-                    <span class="k"><span lang="en">Recovered Joule Heat</span><span lang="fr">Chaleur Joule Captée</span></span>
-                </div>
-                <div class="out-metric">
-                    <span class="v" id="out-water" style="color:var(--water-cyan);">3,825 L/day</span>
-                    <span class="k"><span lang="en">Pure Atmospheric Water</span><span lang="fr">Eau Pure Atmosphérique</span></span>
-                </div>
-                <div class="out-metric">
-                    <span class="v" id="out-people" style="color:var(--bio-lime);">415 people</span>
-                    <span class="k"><span lang="en">Daily Food & Water Uplift</span><span lang="fr">Humains Nourris / Jour</span></span>
-                </div>
-                <div class="out-metric">
-                    <span class="v" id="out-co2" style="color:var(--warm-amber);">1,420 t/yr</span>
-                    <span class="k"><span lang="en">CO₂e Sequestered (Biochar)</span><span lang="fr">CO₂e Séquestré (Biochar)</span></span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 5: EXPANDED GROWTH, ACQUISITION CHANNELS & 24H AI AGENT -->
-    <section class="block-sec" id="acquisition-engine">
-        <span class="sec-tag">05 // GO-TO-MARKET PLAYBOOK · ACQUISITION CHANNELS & 24H GEMINI AGENT</span>
-        <h2 class="sec-title">
-            <span lang="en">How We Grow: 4 Acquisition Engines & Your Autonomous 24h AI Lead Agent</span>
-            <span lang="fr">Notre Moteur de Croissance : 4 Canaux d'Acquisition & Agent IA Autonome 24h</span>
-        </h2>
-        <p class="sec-lead">
-            <span lang="en">Click each acquisition channel below to inspect the exact conversion funnel, target decision-makers, and ready-to-copy outreach template—powered daily by <code>scripts/daily_content_agent.py</code>.</span>
-            <span lang="fr">Cliquez sur chaque canal d'acquisition ci-dessous pour inspecter l'entonnoir de conversion exact, les décideurs cibles et le script d'approche prêt à copier — alimenté chaque jour par <code>scripts/daily_content_agent.py</code>.</span>
-        </p>
-
-        <!-- INTERACTIVE 4-CHANNEL SELECTOR -->
-        <div class="channel-tabs" role="tablist">
-            <button type="button" class="ch-tab active" data-ch="makers">1. Bitaxe Makers ($42 Topper)</button>
-            <button type="button" class="ch-tab" data-ch="australia">2. NSW Brownfield & ARENA Grants</button>
-            <button type="button" class="ch-tab" data-ch="vc">3. Frontier VCs (YC / Draper)</button>
-            <button type="button" class="ch-tab" data-ch="madagascar">4. Madagascar Food & Water NGOs</button>
         </div>
 
-        <div class="channel-detail-box" id="channel-inspector">
-            <div class="ch-grid">
-                <div>
-                    <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--bio-lime); margin-bottom:4px;" id="ch-tag">
-                        CHANNEL 01 · ZERO-CAC VIRAL HARDWARE WEDGE
-                    </div>
-                    <h3 style="font-size:1.3rem; color:#fff; margin-bottom:0.6rem;" id="ch-title">
-                        Bitaxe & Home Solo-Miner Community (100,000+ Global Nodes)
-                    </h3>
-                    <p style="font-size:0.92rem; color:var(--text-soft);" id="ch-desc">
-                        Every Bitaxe owner already has 17W of continuous heat sitting on their desk. We give away the OpenSCAD/STL cradle files free on regenerativecompute.org and sell pre-assembled borosilicate glass cloche + Terra Preta kits on regenerativecompute.io.
-                    </p>
-                    <div class="funnel-steps" id="ch-steps"></div>
-                </div>
-
-                <div>
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                        <span style="font-family:var(--font-mono); font-size:0.74rem; color:var(--sun-gold);">READY-TO-SEND OUTREACH / HOOK SCRIPT</span>
-                        <button type="button" class="copy-btn" onclick="copyText('ch-script-box')">📋 Copy Script</button>
-                    </div>
-                    <div class="copy-box" id="ch-script-box" style="min-height:195px;"></div>
-                    <div style="font-family:var(--font-mono); font-size:0.74rem; color:var(--water-cyan); margin-top:8px;" id="ch-kpi">
-                        Target Metric: 500 Founder's Batch kits ($45k AUD non-dilutive R&D funding) before Block #1,000,000.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- LIVE 24H GEMINI AGENT OUTPUT + WEEKLY CADENCE -->
-        <div class="agent-grid">
-            <div class="feed-card" id="latest-dispatch-card">
-                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
-                    <div class="feed-meta" id="feed-meta">DAY #1 · BLOCK #971,500 · PILLAR: PHYSICS & THERMODYNAMICS</div>
+        <div class="agent-grid" id="acquisition-engine">
+            <div class="feed-card">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <span style="font-family:var(--font-mono); font-size:0.73rem; color:var(--sun-gold);" id="feed-meta">24H GEMINI AGENT · LATEST DISPATCH</span>
                     <button type="button" class="copy-btn" onclick="copyText('feed-x')">📋 Copy X/Nostr</button>
                 </div>
-                <h3 id="feed-title" style="font-size:1.22rem; color:#fff; margin:0.4rem 0 0.6rem;">Bitaxe Was Half the Equation. Life Is the Other Half.</h3>
-                <p id="feed-hook" style="font-size:0.92rem; color:var(--text-soft); margin-bottom:0.8rem;">Every watt entering a CMOS gate exits as 100% Joule heat. When you snap a closed-loop biosphere dome onto a 17W Bitaxe Gamma 601, SHA-256 becomes a self-watering micro-climate.</p>
-
-                <div style="font-size:0.74rem; font-family:var(--font-mono); color:var(--sun-gold);">DAILY X / NOSTR POST:</div>
-                <div class="copy-box" id="feed-x">Loading latest daily dispatch from data/feed.json...</div>
-
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
-                    <span style="font-size:0.74rem; font-family:var(--font-mono); color:var(--warm-amber);">🎥 VIDEO DESIGN WARMTH PROMPT (VEO / SORA / MACRO):</span>
-                    <button type="button" class="copy-btn" onclick="copyText('feed-video')">📋 Copy Video Prompt</button>
-                </div>
-                <div class="copy-box" id="feed-video" style="border-color:rgba(255,140,66,0.35);">Loading video prompt...</div>
+                <h3 id="feed-title" style="font-size:1.18rem; color:#fff; margin:0.4rem 0;">Bitaxe Was Half the Equation. Life Is the Other Half.</h3>
+                <p id="feed-hook" style="font-size:0.89rem; color:var(--text-soft); margin-bottom:0.6rem;">Every 24 hours at 08:00 AEDT, GitHub Actions commits fresh bilingual content, social posts, and NSW/Madagascar outreach briefs.</p>
+                <div class="copy-box" id="feed-x">Loading data/feed.json...</div>
             </div>
 
             <div class="feed-card" style="border-color: var(--border-bio);">
-                <div class="feed-meta" style="color:var(--bio-lime);">AUTONOMOUS 7-DAY CONTENT & PROSPECT RHYTHM</div>
-                <h3 style="font-size:1.18rem; color:#fff; margin-bottom:0.6rem;">How Your GitHub Action Sustains Growth Every 24h</h3>
-                <p style="font-size:0.86rem; color:var(--text-soft); margin-bottom:0.9rem;">
-                    Every morning at <strong>08:00 AM Sydney time (21:00 UTC)</strong>, GitHub Actions runs <code>daily_content_agent.py</code> and commits a fresh bilingual dispatch + prospect brief directly into your repo:
-                </p>
-                <div class="cadence-strip">
-                    <div class="day-pill"><strong>MON · Physics</strong>100% Joule heat & scale invariance (17W → 50MW).</div>
-                    <div class="day-pill"><strong>TUE · Bitaxe</strong>Macro video of condensation rain inside desk dome.</div>
-                    <div class="day-pill"><strong>WED · Australia</strong>NSW brownfield mine shafts & Tech Central R&D.</div>
-                    <div class="day-pill"><strong>THU · Madagascar</strong>113-year food/water KPI & MOF-303 harvesting.</div>
-                    <div class="day-pill"><strong>FRI · Bedrock</strong>Physical + digital mining protecting Mother Earth.</div>
-                    <div class="day-pill"><strong>SAT · Mars Ark</strong>Closed-loop lava tube life support & Spacechains.</div>
-                    <div class="day-pill"><strong>SUN · Timechain</strong>Weekly Block #1,000,000 countdown & newsletter.</div>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <span style="font-family:var(--font-mono); font-size:0.73rem; color:var(--warm-amber);">🎥 DAILY VIDEO DESIGN WARMTH PROMPT</span>
+                    <button type="button" class="copy-btn" onclick="copyText('feed-video')">📋 Copy Prompt</button>
                 </div>
-            </div>
-        </div>
-
-        <!-- DUAL DOMAIN ARCHITECTURE -->
-        <div class="dual-org-banner">
-            <div class="domain-card" style="border-top: 3px solid var(--btc-orange);">
-                <div style="font-family:var(--font-mono); font-size:0.76rem; color:var(--btc-orange);">COMMERCIAL VENTURE & HARDWARE</div>
-                <h3 style="margin:6px 0; color:#fff;">regenerativecompute.io</h3>
-                <p style="font-size:0.88rem; color:var(--text-soft);">YC-grade venture hub, BitTerrarium™ & BitPlant™ commercial pre-orders, NSW brownfield energy partnerships, and Sydney Tech Central / Atlassian Central (June 2027) investor portal.</p>
-            </div>
-            <div class="domain-card" style="border-top: 3px solid var(--bio-lime);">
-                <div style="font-family:var(--font-mono); font-size:0.76rem; color:var(--bio-lime);">OPEN COMMONS & NON-PROFIT FOUNDATION</div>
-                <h3 style="margin:6px 0; color:#fff;">regenerativecompute.org</h3>
-                <p style="font-size:0.88rem; color:var(--text-soft);">Open-source OpenSCAD/STL cradle files for Bitaxe, DIY MOF-303 & Terra Preta recipes, Madagascar community microgrid blueprints, and public-good academic papers.</p>
+                <div class="copy-box" id="feed-video" style="min-height:150px; border-color:rgba(255,140,66,0.3);">Loading video warmth prompt...</div>
             </div>
         </div>
     </section>
@@ -831,9 +873,9 @@
 
 <footer>
     <div style="font-weight:800; letter-spacing:2px; color:var(--sun-gold); margin-bottom:0.4rem;">
-        ☀ REGENERATIVE COMPUTE · LEMURIA TECHNOLOGIES · THE SUN STANDARD
+        ☀ REGENERATIVE COMPUTE · SOLUTIONS · INVERTED MATRIX DESIGN · THERMAL CONSULTING
     </div>
-    <p>Pascal Ranoroarijaona (Ranaora) · Sydney, Australia (Tech Central / Atlassian Central June 2027) · Block #1,000,000 Launch → 113-Year Horizon (2026–2140)</p>
+    <p>Pascal Ranoroarijaona (Ranaora) · Sydney Tech Central, NSW, Australia · <code>regenerativecompute.io</code> & <code>regenerativecompute.org</code></p>
 </footer>
 
 <script>
@@ -842,54 +884,141 @@
         document.body.className = 'lang-' + lang;
         try { localStorage.setItem('rc-lang', lang); } catch(e) {}
         renderFeed();
-        renderChannel(activeChannel);
     }
 
-    function copyText(elId) {
-        const el = document.getElementById(elId);
-        if (!el) return;
-        navigator.clipboard.writeText(el.textContent).then(() => {
-            alert('Copied to clipboard!');
-        });
+    function copyText(id) {
+        const el = document.getElementById(id);
+        if (el) navigator.clipboard.writeText(el.textContent).then(() => alert('Copied!'));
     }
 
-    // 1. Live Bitcoin Block #1,000,000 Countdown via mempool.space
+    // 1. Live Bitcoin Countdown
     async function updateBitcoinCountdown() {
-        const TARGET = 1000000;
-        const GENESIS_PROMISE = 970500;
-        const HORIZON_BLOCKS = 113 * 52594.88;
+        const TARGET = 1000000, GENESIS = 970500;
         let tip = 971500;
         try {
-            const res = await fetch('https://mempool.space/api/blocks/tip/height');
-            if (res.ok) tip = parseInt(await res.text(), 10);
-        } catch (e) {}
-
+            const r = await fetch('https://mempool.space/api/blocks/tip/height');
+            if (r.ok) tip = parseInt(await r.text(), 10);
+        } catch(e) {}
         const left = Math.max(0, TARGET - tip);
-        const days = (left * 10) / 1440;
-        const pct = Math.min(100, Math.max(0, ((tip - GENESIS_PROMISE) / (TARGET - GENESIS_PROMISE)) * 100));
-        const horizonPct = Math.max(0, ((tip - GENESIS_PROMISE) / HORIZON_BLOCKS) * 100);
-
         document.getElementById('tc-current-block').textContent = tip.toLocaleString('en-US');
         document.getElementById('tc-blocks-left').textContent = left.toLocaleString('en-US');
-        document.getElementById('tc-days-left').textContent = days.toFixed(1) + ' d';
-        document.getElementById('tc-horizon-pct').textContent = horizonPct.toFixed(3) + '%';
-        document.getElementById('tc-progress-bar').style.width = Math.max(8, pct).toFixed(1) + '%';
+        document.getElementById('tc-days-left').textContent = ((left * 10) / 1440).toFixed(1) + ' d';
+        const pct = Math.min(100, Math.max(8, ((tip - GENESIS) / (TARGET - GENESIS)) * 100));
+        document.getElementById('tc-progress-bar').style.width = pct.toFixed(1) + '%';
     }
 
-    // 2. Warmth Bloom Canvas Visualization (5 Scales including NSW Brownfield)
+    // 2. NSW Sector Heat Matcher Data
+    const SECTORS = {
+        flowers: {
+            title: 'Commercial Cut Flowers & Orchids (Roses, Phalaenopsis, Lilies, Chrysanthemums)',
+            pain: 'NSW floriculture growers spend $80k–$250k AUD/yr per hectare on winter LPG/natural gas and lose up to 25% of blooms to Botrytis fungal blight caused by cold, damp night air.',
+            tailor: 'Tailored Solution: 60°C hydronic under-bench root heating + warm dry dehumidified air sweep that holds night canopy VPD steady—eliminating Botrytis and cutting fuel bills by >55%.',
+            region: 'Central Coast, Dural, Lithgow',
+            temp: '22–26°C Bench + Dry Air',
+            area: '6,800 m² Glasshouse / MW',
+            season: 'Apr–Oct Nights + Dehumid.'
+        },
+        nurseries: {
+            title: 'Wholesale Propagation & Mine-Rehab Native Tree Nurseries',
+            pain: 'Slow winter root strike creates bottlenecks—just as rezoned NSW mines (like Mt Arthur’s 4,600 ha rehab zone) require millions of native tubestock trees and forestry seedlings.',
+            tailor: 'Tailored Solution: Direct 25°C hydronic capillary-mat bench heating fed by our submerged compute loop—accelerating seedling root strike by 40% while reforesting the mine site itself!',
+            region: 'Muswellbrook, Hunter, Sydney Basin',
+            temp: '24–27°C Root-Zone Mat',
+            area: '9,500 m² Benches / MW',
+            season: 'Year-Round Propagation'
+        },
+        veg: {
+            title: 'Protected Cropping Vegetables & Berries (Truss Tomatoes, Cucumbers, Berries)',
+            pain: 'NSW protected cropping ($500M+ farm-gate value) struggles with soaring winter gas tariffs that make year-round supply contracts to Sydney’s Flemington Markets unprofitable.',
+            tailor: 'Tailored Solution: Drop-in plate heat exchanger plumbed directly into existing 55–65°C greenhouse pipe-rail loops under a discounted Thermal PPA ($0.09 AUD/kWh_th).',
+            region: 'Hunter, Orange, Bathurst, Guyra',
+            temp: '55–65°C Pipe-Rail Loop',
+            area: '7,500 m² Glasshouse / MW',
+            season: 'High Winter / Spring Peak'
+        },
+        mushrooms: {
+            title: 'Gourmet & Medicinal Mushrooms + Australian Barramundi RAS Aquaculture',
+            pain: 'Mushroom farms need 65°C steam/water daily to pasteurize hardwood blocks, while NSW Barramundi RAS tanks crash if water dips below 26–28°C—requiring 24/7/365 baseline heating.',
+            tailor: 'Tailored Solution: Our highest-utilization 365-day match! 70°C primary manifold pasteurizes mushroom substrate, steps down to 28°C for Barramundi tanks, and pipes mushroom CO₂ into adjacent greenhouses.',
+            region: 'Lake Macquarie, Lithgow, Mittagong',
+            temp: '65°C Pasteurize + 28°C RAS',
+            area: '365-Day Flat Baseload',
+            season: '100% Year-Round Demand'
+        },
+        drying: {
+            title: 'Summer Heat Sink: Botanical / Herb / Macadamia Drying & Biochar Pyrolysis',
+            pain: 'What happens in January when NSW greenhouses don’t need space heating? Conventional cogeneration dumps heat; agricultural dehydrators still burn fossil gas.',
+            tailor: 'Tailored Solution: Seasonal valve switch! In summer, 100% of 68°C compute heat routes to continuous botanical/timber/nut drying tunnels, Biochar pre-drying, or a 62°C Silica-Gel adsorption chiller.',
+            region: 'Hunter Wineries, Northern Rivers, NSW',
+            temp: '65–70°C Dry Air / Chiller',
+            area: '220+ t/yr Biochar + Herbs',
+            season: 'Peak Summer Absorption'
+        }
+    };
+
+    function selectSector(k) {
+        const s = SECTORS[k];
+        if (!s) return;
+        document.querySelectorAll('.sec-pill').forEach(b => b.classList.toggle('active', b.dataset.sec === k));
+        document.getElementById('m-title').textContent = s.title;
+        document.getElementById('m-pain').textContent = s.pain;
+        document.getElementById('m-tailor').textContent = s.tailor;
+        document.getElementById('m-region').textContent = s.region;
+        document.getElementById('m-temp').textContent = s.temp;
+        document.getElementById('m-area').textContent = s.area;
+        document.getElementById('m-season').textContent = s.season;
+    }
+
+    // 3. Interactive B2B LPG-Displacement & MVP Sizer
+    const CORRIDOR_DATA = {
+        hunter:    { tMin: 3.0,  hrs: 3400 },
+        macquarie: { tMin: 5.5,  hrs: 2850 },
+        lithgow:   { tMin: -2.0, hrs: 4800 }
+    };
+    const CROP_DATA = {
+        flowers:   { tTarget: 22.0, u: 5.2, lf: 0.46, allYear: false },
+        nursery:   { tTarget: 25.0, u: 4.2, lf: 0.48, allYear: false },
+        tomatoes:  { tTarget: 20.0, u: 5.6, lf: 0.45, allYear: false },
+        mushrooms: { tTarget: 27.0, u: 3.5, lf: 0.75, allYear: true }
+    };
+
+    function updateAuditCalc() {
+        const cor = CORRIDOR_DATA[document.getElementById('calc-corridor').value];
+        const crop = CROP_DATA[document.getElementById('calc-crop').value];
+        const area = parseFloat(document.getElementById('calc-area').value);
+        document.getElementById('calc-area-out').textContent = area.toLocaleString('en-US') + ' m²';
+
+        const dT = Math.max(5, crop.tTarget - cor.tMin);
+        const peakKwTh = (crop.u * (area * 1.35) * dT) / 1000.0;
+        const hrs = crop.allYear ? 8000 : cor.hrs;
+        const annualKwhTh = peakKwTh * crop.lf * hrs;
+
+        const lpgLiters = annualKwhTh / 6.12;
+        const lpgCost = lpgLiters * 1.25;
+        const ppaCost = annualKwhTh * 0.09;
+        const netSavings = Math.max(0, lpgCost - ppaCost);
+        const co2Tons = (lpgLiters * 1.55) / 1000.0;
+        const podKw = Math.round(peakKwTh / 0.95);
+
+        document.getElementById('res-pod-kw').textContent = podKw >= 1000 ? (podKw / 1000).toFixed(2) + ' MW' : podKw + ' kW';
+        document.getElementById('res-lpg-l').textContent = Math.round(lpgLiters).toLocaleString('en-US') + ' L/yr';
+        document.getElementById('res-savings').textContent = '$' + Math.round(netSavings).toLocaleString('en-US') + ' /yr';
+        document.getElementById('res-co2').textContent = Math.round(co2Tons).toLocaleString('en-US') + ' t/yr';
+    }
+
+    // 4. Warmth Stage Canvas
     (function() {
         const cv = document.getElementById('bloomCanvas');
         if (!cv) return;
         const ctx = cv.getContext('2d');
-        let W = 0, H = 0, dpr = 1;
-        let currentScale = 'bitaxe';
+        let W = 0, H = 0, dpr = 1, currentScale = 'bitaxe';
 
         const SCALES = {
-            bitaxe: { kw: '17 Wth', label: '17 Wth → 27.5°C Moss Dome · Self-Watering Rain Cycle Active', leaves: 12 },
-            bitplant: { kw: '1.5 kWth', label: '1.5 kWth Sydney Benchtop → 72-Cell Hydroponic Dome + 45 L/day Distilled Water', leaves: 24 },
-            australia: { kw: '5.0 MWth', label: '5.0 MWth NSW Brownfield Bedrock → Natural Shaft Draft + 90,000 L/day Water', leaves: 36 },
-            madagascar: { kw: '250 kWth', label: '250 kWth Madagascar Solar Pod → 3,825 L/day MOF-303 Water + Terra Preta Biochar', leaves: 44 },
-            mars: { kw: '1.0 MWth', label: '1.0 MWth Mars Lava Tube → Permafrost Melt + O₂ Pressurized Greenhouse', leaves: 30 }
+            bitaxe:    { kw: '17 Wth',   label: 'T1 · 17 Wth → 27.5°C Moss Dome · Self-Watering Rain Cycle', leaves: 12 },
+            bitplant:  { kw: '140 Wth',  label: 'T2 · 140 Wth → 72-Cell Nursery Bench & Propagation Dome', leaves: 22 },
+            agskid:    { kw: '250 kWth', label: 'T3 · 250 kWth → Commercial Cut-Flower & Orchid Glasshouse Loop', leaves: 32 },
+            nsw_mvp:   { kw: '1.0 MWth', label: 'T4 · 1.0 MWth NSW Inverted Matrix (-25m) → PUE 1.008 + Bio-Hub + MOF Water', leaves: 42 },
+            planetary: { kw: '25 MWth',  label: 'T5 · 25 MWth Deep Bedrock → Madagascar Microgrids & Mars Lava Tubes', leaves: 38 }
         };
 
         document.querySelectorAll('.mode-btn').forEach(btn => {
@@ -903,261 +1032,107 @@
 
         function resize() {
             dpr = Math.min(window.devicePixelRatio || 1, 2);
-            W = cv.clientWidth;
-            H = cv.clientHeight;
-            cv.width = W * dpr;
-            cv.height = H * dpr;
+            W = cv.clientWidth; H = cv.clientHeight;
+            cv.width = W * dpr; cv.height = H * dpr;
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         }
         new ResizeObserver(resize).observe(cv);
         resize();
 
-        const drops = Array.from({ length: 48 }, () => ({
-            ang: (Math.random() - 0.5) * 2.4,
-            prog: Math.random(),
-            spd: 0.18 + Math.random() * 0.25
-        }));
-
-        const heatMotes = Array.from({ length: 55 }, () => ({
-            x: (Math.random() - 0.5) * 180,
-            y: Math.random(),
-            r: 1.5 + Math.random() * 2.5,
-            spd: 0.25 + Math.random() * 0.4
-        }));
+        const motes = Array.from({ length: 50 }, () => ({ x: (Math.random() - 0.5) * 190, y: Math.random(), r: 1.5 + Math.random() * 2.2, spd: 0.25 + Math.random() * 0.4 }));
+        const drops = Array.from({ length: 42 }, () => ({ ang: (Math.random() - 0.5) * 2.4, prog: Math.random(), spd: 0.18 + Math.random() * 0.25 }));
 
         function draw(now) {
             requestAnimationFrame(draw);
-            const t = now * 0.001;
-            const cfg = SCALES[currentScale];
+            const t = now * 0.001, cfg = SCALES[currentScale];
             ctx.clearRect(0, 0, W, H);
-
-            const cx = W * 0.5;
-            const baseY = H * 0.78;
-            const domeR = Math.min(W * 0.28, 165);
+            const cx = W * 0.5, baseY = H * 0.78, domeR = Math.min(W * 0.26, 150);
 
             const amb = ctx.createRadialGradient(cx, baseY - domeR * 0.6, 10, cx, baseY - domeR * 0.6, domeR * 2.1);
             amb.addColorStop(0, 'rgba(255, 180, 60, 0.22)');
             amb.addColorStop(0.5, 'rgba(52, 211, 153, 0.07)');
             amb.addColorStop(1, 'rgba(0, 0, 0, 0)');
-            ctx.fillStyle = amb;
-            ctx.fillRect(0, 0, W, H);
+            ctx.fillStyle = amb; ctx.fillRect(0, 0, W, H);
 
-            // Bedrock / Charred Timber + ASIC Core
-            ctx.fillStyle = currentScale === 'australia' ? '#1e1b24' : '#1c1510';
-            ctx.strokeStyle = currentScale === 'australia' ? '#b366ff' : '#f7931a';
+            ctx.fillStyle = (currentScale === 'nsw_mvp' || currentScale === 'planetary') ? '#1c1824' : '#1c1510';
+            ctx.strokeStyle = (currentScale === 'nsw_mvp') ? '#b366ff' : '#f7931a';
             ctx.lineWidth = 2;
-            ctx.beginPath();
-            ctx.roundRect(cx - domeR * 1.05, baseY, domeR * 2.1, 36, 10);
-            ctx.fill();
-            ctx.stroke();
+            ctx.beginPath(); ctx.roundRect(cx - domeR * 1.08, baseY, domeR * 2.16, 36, 10); ctx.fill(); ctx.stroke();
 
             const pulse = 0.75 + 0.25 * Math.sin(t * 3.2);
             ctx.fillStyle = `rgba(247, 147, 26, ${0.35 + 0.35 * pulse})`;
-            ctx.beginPath();
-            ctx.roundRect(cx - 64, baseY + 8, 128, 20, 5);
-            ctx.fill();
-            ctx.fillStyle = '#fff7ed';
-            ctx.font = '700 11px "Fira Code", monospace';
-            ctx.textAlign = 'center';
-            ctx.fillText(`₿ ASIC CORE · ${cfg.kw}`, cx, baseY + 22);
+            ctx.beginPath(); ctx.roundRect(cx - 70, baseY + 8, 140, 20, 5); ctx.fill();
+            ctx.fillStyle = '#fff7ed'; ctx.font = '700 11px "Fira Code", monospace'; ctx.textAlign = 'center';
+            ctx.fillText(`₿ COMPUTE · ${cfg.kw}`, cx, baseY + 22);
 
-            ctx.fillStyle = '#94a3b8';
-            ctx.fillRect(cx - domeR * 0.96, baseY - 8, domeR * 1.92, 8);
-            ctx.fillStyle = '#1f1a17';
-            ctx.beginPath();
-            ctx.ellipse(cx, baseY - 10, domeR * 0.88, 16, 0, 0, Math.PI * 2);
-            ctx.fill();
+            ctx.fillStyle = '#94a3b8'; ctx.fillRect(cx - domeR * 0.96, baseY - 8, domeR * 1.92, 8);
+            ctx.fillStyle = '#1f1a17'; ctx.beginPath(); ctx.ellipse(cx, baseY - 10, domeR * 0.88, 15, 0, 0, Math.PI * 2); ctx.fill();
 
-            heatMotes.forEach(m => {
-                m.y += 0.004 * m.spd;
-                if (m.y > 1) m.y = 0;
-                const mx = cx + m.x * (1 - m.y * 0.35) + Math.sin(t * 2 + m.x) * 6;
-                const my = (baseY - 14) - m.y * (domeR * 1.15);
+            motes.forEach(m => {
+                m.y += 0.004 * m.spd; if (m.y > 1) m.y = 0;
+                const mx = cx + m.x * (1 - m.y * 0.35) + Math.sin(t * 2 + m.x) * 5;
+                const my = (baseY - 14) - m.y * (domeR * 1.12);
                 ctx.fillStyle = `rgba(255, 204, 102, ${(1 - m.y) * 0.55})`;
-                ctx.beginPath();
-                ctx.arc(mx, my, m.r, 0, Math.PI * 2);
-                ctx.fill();
+                ctx.beginPath(); ctx.arc(mx, my, m.r, 0, Math.PI * 2); ctx.fill();
             });
 
             for (let i = 0; i < cfg.leaves; i++) {
                 const frac = (i / (cfg.leaves - 1 || 1)) - 0.5;
                 const lx = cx + frac * domeR * 1.45;
-                const hLeaf = (1 - Math.abs(frac) * 1.3) * (domeR * 0.62) + 18;
-                const sway = Math.sin(t * 1.8 + i) * 4;
-                ctx.strokeStyle = i % 2 === 0 ? '#34d399' : '#44ee77';
+                const hLeaf = (1 - Math.abs(frac) * 1.3) * (domeR * 0.6) + 18;
+                const sway = Math.sin(t * 1.8 + i) * 3.5;
+                ctx.strokeStyle = i % 3 === 0 && currentScale === 'agskid' ? '#f472b6' : (i % 2 === 0 ? '#34d399' : '#44ee77');
                 ctx.lineWidth = 3;
-                ctx.beginPath();
-                ctx.moveTo(lx, baseY - 12);
+                ctx.beginPath(); ctx.moveTo(lx, baseY - 12);
                 ctx.quadraticCurveTo(lx + sway, baseY - 12 - hLeaf * 0.6, lx + sway * 1.4, baseY - 12 - hLeaf);
                 ctx.stroke();
             }
 
-            ctx.strokeStyle = 'rgba(224, 242, 254, 0.55)';
-            ctx.lineWidth = 2.5;
-            ctx.beginPath();
-            ctx.arc(cx, baseY - 10, domeR * 0.9, Math.PI, 0, false);
-            ctx.stroke();
+            ctx.strokeStyle = 'rgba(224, 242, 254, 0.55)'; ctx.lineWidth = 2.4;
+            ctx.beginPath(); ctx.arc(cx, baseY - 10, domeR * 0.9, Math.PI, 0, false); ctx.stroke();
 
             drops.forEach(d => {
-                d.prog += 0.0025 * d.spd;
-                if (d.prog > 1) d.prog = 0;
+                d.prog += 0.0025 * d.spd; if (d.prog > 1) d.prog = 0;
                 const theta = -Math.PI * 0.5 + d.ang * (0.2 + d.prog * 0.8);
-                const dx = cx + Math.sin(theta) * (domeR * 0.88);
-                const dy = (baseY - 10) - Math.cos(theta) * (domeR * 0.88);
                 ctx.fillStyle = 'rgba(125, 211, 252, 0.78)';
                 ctx.beginPath();
-                ctx.arc(dx, dy, 2.2, 0, Math.PI * 2);
+                ctx.arc(cx + Math.sin(theta) * (domeR * 0.88), (baseY - 10) - Math.cos(theta) * (domeR * 0.88), 2.1, 0, Math.PI * 2);
                 ctx.fill();
             });
         }
         requestAnimationFrame(draw);
     })();
 
-    // 3. Scale-Invariant Impact Simulator
-    function updateSim() {
-        const slider = parseFloat(document.getElementById('sim-kw').value);
-        const kw = Math.pow(10, -1.77 + (slider / 100) * 6.47);
-        const solar = parseFloat(document.getElementById('sim-solar').value) / 100;
-        const mof = parseFloat(document.getElementById('sim-mof').value) / 100;
-
-        const kwLabel = kw < 1 ? `${Math.round(kw * 1000)} W` : (kw < 1000 ? `${kw.toFixed(1)} kW` : `${(kw / 1000).toFixed(2)} MW`);
-        document.getElementById('sim-kw-out').textContent = kwLabel;
-        document.getElementById('sim-solar-out').textContent = `${Math.round(solar * 100)} %`;
-        document.getElementById('sim-mof-out').textContent = `${Math.round(mof * 100)} %`;
-
-        const waterLiters = kw * 18.0 * mof;
-        const people = Math.max(0, Math.round(waterLiters / 9.2));
-        const co2Tons = kw * 6.68 * solar * mof;
-
-        document.getElementById('out-heat').textContent = kw < 1 ? `${Math.round(kw * 1000)} Wth` : `${kw.toFixed(1)} kWth`;
-        document.getElementById('out-water').textContent = waterLiters < 10 ? `${waterLiters.toFixed(2)} L/day` : `${Math.round(waterLiters).toLocaleString()} L/day`;
-        document.getElementById('out-people').textContent = people < 1 ? '1 Desk Ecosystem' : `${people.toLocaleString()} people`;
-        document.getElementById('out-co2').textContent = co2Tons < 1 ? `${(co2Tons * 1000).toFixed(0)} kg/yr` : `${Math.round(co2Tons).toLocaleString()} t/yr`;
-    }
-
-    // 4. Interactive Acquisition Channel Inspector
-    const CHANNELS = {
-        makers: {
-            tag: 'CHANNEL 01 · ZERO-CAC VIRAL HARDWARE WEDGE',
-            title: 'Bitaxe & Home Solo-Miner Community (100,000+ Global Nodes)',
-            desc: 'Every Bitaxe owner already has 17W of continuous heat sitting on their desk. We give away the OpenSCAD/STL cradle files free on regenerativecompute.org and sell pre-assembled borosilicate glass cloche + Terra Preta kits on regenerativecompute.io.',
-            steps: [
-                ['1. DISCOVERY (X / Nostr / YouTube Shorts)', '15-second macro video of warm golden light, rising convection shimmer, and water droplets raining onto green moss above a hashing Bitaxe.'],
-                ['2. OPEN COMMONS HOOK (regenerativecompute.org)', 'Free download of the 3D-printable PETG cradle & thermal dish assembly guide—turning makers into evangelists.'],
-                ['3. TURN-KEY CONVERSION (regenerativecompute.io)', 'One-click pre-order for the $89 AUD Founder’s Batch Kit (hand-blown borosilicate dome, anodized dish, Terra Preta biochar & moss).']
-            ],
-            script: `Bitaxe was half the equation: open-source silicon hashing at 17W on your desk.
-
-We built the other half: a $42 snap-on borosilicate biosphere topper that captures 100% of that Joule heat to run a self-watering Terra Preta moss & herb dome.
-
-Free STL files on regenerativecompute.org | Founder's Batch kits on regenerativecompute.io`,
-            kpi: 'Target Metric: 500 Founder’s Batch kits ($44,500 AUD non-dilutive R&D funding) before Block #1,000,000.'
-        },
-        australia: {
-            tag: 'CHANNEL 02 · INTERMEDIATE R&D CRUCIBLE (NSW BROWNFIELD & GRANTS)',
-            title: 'Australian Brownfield Mine Operators, Solar Farms & ARENA CleanTech',
-            desc: 'Australia is the geological mirror of Madagascar—with advanced mining engineering, abundant curtailed daytime solar, and thousands of legacy mine sites needing rehabilitation. Physical and digital mining work hand in hand to turn liabilities into regenerative infrastructure.',
-            steps: [
-                ['1. SYDNEY TECH CENTRAL LAB (Now → June 2027)', 'Validate our 1.5 kW benchtop immersion + atmospheric water prototype in Sydney ahead of our Atlassian Central commercial launch.'],
-                ['2. BROWNFIELD SHAFT PARTNERSHIPS (Hunter Valley / Lithgow)', 'Partner with mine rehabilitation owners to install modular immersion pods utilizing deep bedrock thermal inertia (~19°C) and natural shaft draft.'],
-                ['3. NON-DILUTIVE CLEAN-ENERGY GRANTS (ARENA / NSW Net Zero)', 'Apply via regenerativecompute.org + .io for grid-stabilization (<50ms demand response) and mine-site ecological remediation funding.']
-            ],
-            script: `Subject: Turning NSW Brownfield Mine Shafts into Grid-Stabilizing Water & Compute Hubs
-
-Hi [Name],
-
-At Regenerative Compute (Sydney Tech Central), we unite physical and digital mining to rehabilitate decommissioned Australian mine sites.
-
-By placing immersion-cooled compute deep under bedrock, we capture 100% of Joule heat to drive MOF-303 atmospheric water harvesting and Biochar soil remediation—while giving the NSW grid a sub-50ms controllable load resource that absorbs curtailed daytime solar.
-
-Would welcome 15 minutes to share our Sydney R&D roadmap.`,
-            kpi: 'Target Metric: 1 NSW Brownfield 250 kW pilot LOI + $250k–$500k AUD CleanTech grant pipeline by June 2027.'
-        },
-        vc: {
-            tag: 'CHANNEL 03 · FRONTIER DEEPTECH & BITCOIN ECOSYSTEM VENTURE',
-            title: 'Y Combinator, Draper Associates (Tim Draper) & Sovereign Tech Funds',
-            desc: 'Positioning Regenerative Compute as a category-defining thermodynamic infrastructure company: cash-flow positive on Earth Day 1 via Australian curtailed solar, and flight-qualifying the exact closed-loop life support needed for Mars.',
-            steps: [
-                ['1. TIMECHAIN ANCHOR PROOF', 'Demonstrate live Block #1,000,000 countdown and cryptographic SHA-256 covenant on regenerativecompute.io.'],
-                ['2. TANGIBLE DESK DEMO ("MARS SEED" UNIT #001)', 'Ship a live BitTerrarium unit directly to partner desks in Silicon Valley and Sydney so investors feel the 100% Joule heat cycle firsthand.'],
-                ['3. SEED ROUND SYNDICATION (Target Block #1,000,000)', 'Raise pre-seed/seed capital to scale from Sydney 1.5 kW benchtop to 1 MW Australian brownfield & Madagascar export pods.']
-            ],
-            script: `Hi [Partner Name],
-
-Following your frontier thesis on new sovereign infrastructure and space:
-
-Every watt entering an immersed Bitcoin ASIC or Edge-AI chip exits as 100% useful heat at 60°C. We turn compute into active metabolic life support—forging our R&D in Australian brownfield mines first, exporting self-funding water/food microgrids to Madagascar, and flight-qualifying closed-loop habitats for Mars.
-
-Live Block #1,000,000 countdown & simulator: https://regenerativecompute.io`,
-            kpi: 'Target Metric: $1.5M–$2.5M Seed Round anchored at Block #1,000,000 (mid-2027).'
-        },
-        madagascar: {
-            tag: 'CHANNEL 04 · 113-YEAR CIVILIZATIONAL UPLIFT DEPLOYMENT (2028–2140)',
-            title: 'Southern Madagascar (Androy / Anosy) Agroforestry & Sovereign Aid Partners',
-            desc: 'Once hardware CAPEX is amortized and battle-tested in Australia, pre-assembled solar-compute pods deploy to arid Grand Sud Madagascar—delivering debt-free drinking water, Terra Preta soil regeneration, and year-round food security.',
-            steps: [
-                ['1. AUSTRALIAN HARDWARE AMORTIZATION', 'Use commercial compute & grid-balancing revenues in Australia to subsidize the hardware BOM for Madagascar community deployments.'],
-                ['2. LOCAL COOPERATIVE CO-DESIGN', 'Partner with Malagasy agronomists and solar microgrid operators to pair MOF-303 atmospheric water wheels with native drought-resilient crops & Lemurian forest corridors.'],
-                ['3. OPEN-SOURCE REPLICATION (regenerativecompute.org)', 'Publish full telemetry and maintenance playbooks so local technicians own and operate every pod independently over the 113-year horizon.']
-            ],
-            script: `Subject: Debt-Free Solar Water & Terra Preta Soil Microgrids for Grand Sud Madagascar
-
-Bonjour [Nom],
-
-Nous développons des micro-réseaux solaires autonomes où le calcul informatique refroidi par immersion finance lui-même l'infrastructure tout en fournissant 100 % de sa chaleur thermique (60 °C) pour extraire de l'eau pure de l'air (MOF-303) et produire du Biochar Terra Preta.
-
-Après validation dans les sites miniers australiens, notre objectif sur 113 ans est d'apporter la souveraineté hydrique et alimentaire aux communautés les plus vulnérables de Madagascar.`,
-            kpi: 'Target Metric: First 250 kW solar-water-biochar community hub producing 3,800+ L/day pure water in Southern Madagascar.'
-        }
-    };
-
-    let activeChannel = 'makers';
-    function renderChannel(key) {
-        activeChannel = key;
-        const ch = CHANNELS[key];
-        if (!ch) return;
-        document.querySelectorAll('.ch-tab').forEach(b => b.classList.toggle('active', b.dataset.ch === key));
-        document.getElementById('ch-tag').textContent = ch.tag;
-        document.getElementById('ch-title').textContent = ch.title;
-        document.getElementById('ch-desc').textContent = ch.desc;
-        document.getElementById('ch-script-box').textContent = ch.script;
-        document.getElementById('ch-kpi').textContent = ch.kpi;
-        document.getElementById('ch-steps').innerHTML = ch.steps.map(([head, body]) => `
-            <div class="f-step">
-                <strong>${head}</strong>
-                <span style="color:#cbd5e1;">${body}</span>
-            </div>
-        `).join('');
-    }
-
-    // 5. Load Daily AI Agent Feed JSON
-    let cachedFeed = null;
+    // 5. Load 24h AI Feed
     async function renderFeed() {
         const isFr = document.body.classList.contains('lang-fr');
-        if (!cachedFeed) {
-            try {
-                const r = await fetch('data/feed.json');
-                if (r.ok) cachedFeed = await r.json();
-            } catch (e) {}
-        }
-        if (cachedFeed && cachedFeed.posts && cachedFeed.posts.length) {
-            const p = cachedFeed.posts[0];
-            document.getElementById('feed-meta').textContent = `DAY #${p.day_number} · ${p.date} · ${p.pillar.toUpperCase()}`;
-            document.getElementById('feed-title').textContent = isFr ? p.title_fr : p.title_en;
-            document.getElementById('feed-hook').textContent = isFr ? p.hook_fr : p.hook_en;
-            document.getElementById('feed-x').textContent = p.x_post;
-            document.getElementById('feed-video').textContent = p.video_warmth_prompt;
-        }
+        try {
+            const r = await fetch('data/feed.json');
+            if (r.ok) {
+                const feed = await r.json();
+                if (feed.posts && feed.posts.length) {
+                    const p = feed.posts[0];
+                    document.getElementById('feed-meta').textContent = `DAY #${p.day_number} · ${p.date} · ${p.pillar.toUpperCase()}`;
+                    document.getElementById('feed-title').textContent = isFr ? p.title_fr : p.title_en;
+                    document.getElementById('feed-hook').textContent = isFr ? p.hook_fr : p.hook_en;
+                    document.getElementById('feed-x').textContent = p.x_post;
+                    document.getElementById('feed-video').textContent = p.video_warmth_prompt;
+                }
+            }
+        } catch(e) {}
     }
 
     window.addEventListener('DOMContentLoaded', () => {
-        ['sim-kw', 'sim-solar', 'sim-mof'].forEach(id => document.getElementById(id).addEventListener('input', updateSim));
-        document.querySelectorAll('.ch-tab').forEach(btn => {
-            btn.addEventListener('click', () => renderChannel(btn.dataset.ch));
+        document.querySelectorAll('.sec-pill').forEach(btn => {
+            btn.addEventListener('click', () => selectSector(btn.dataset.sec));
         });
-        updateSim();
+        ['calc-corridor', 'calc-crop', 'calc-area'].forEach(id => {
+            document.getElementById(id).addEventListener('input', updateAuditCalc);
+            document.getElementById(id).addEventListener('change', updateAuditCalc);
+        });
+        selectSector('flowers');
+        updateAuditCalc();
         updateBitcoinCountdown();
-        renderChannel('makers');
         renderFeed();
     });
 </script>

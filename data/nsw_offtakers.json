@@ -1,0 +1,84 @@
+{
+  "updated_at": "2026-11-20T18:45:00+11:00",
+  "nsw_mine_corridors": [
+    {
+      "id": "macquarie_teralba",
+      "name": "Macquarie Coal Complex (Teralba / West Wallsend, Lake Macquarie)",
+      "distance_sydney_km": 135,
+      "rezoning_status": "NSW Rezoned Employment & Industrial Precinct (Oct 2026 — 500 ha developable)",
+      "winter_min_c": 6.0,
+      "grid_solar_profile": "Ausgrid 33kV/132kV + Newcastle/Hunter VRE curtailment",
+      "nearby_heat_buyers": "Central Coast / Mangrove Mountain cut-flower growers, wholesale propagation nurseries, Barramundi RAS"
+    },
+    {
+      "id": "mt_arthur_hunter",
+      "name": "Upper Hunter Brownfield Belt (Muswellbrook / Singleton / Mt Arthur Precinct)",
+      "distance_sydney_km": 245,
+      "rezoning_status": "800 ha early industrial activation + 4,600 ha agricultural/rehab land (Oct 2026)",
+      "winter_min_c": 3.5,
+      "grid_solar_profile": "Hunter-Central Coast REZ — negative daytime solar spot prices",
+      "nearby_heat_buyers": "Native mine-rehab tree nurseries, Hunter viticulture & olive/herb dehydration, hydroponic glasshouses"
+    },
+    {
+      "id": "lithgow_tablelands",
+      "name": "Lithgow & Central Tablelands (Lithgow / Oberon / Bathurst / Orange)",
+      "distance_sydney_km": 145,
+      "rezoning_status": "Legacy underground coal adits & power corridors; highest Heating Degree Days in NSW",
+      "winter_min_c": -2.0,
+      "grid_solar_profile": "Central-West Orana REZ boundary + legacy 132kV substation infrastructure",
+      "nearby_heat_buyers": "Cold-climate floriculture (roses, orchids, lilies), gourmet mushroom pasteurization, berry/tomato glasshouses"
+    }
+  ],
+  "offtaker_archetypes": [
+    {
+      "id": "floriculture",
+      "sector_en": "Commercial Cut Flowers & Orchids",
+      "sector_fr": "Floriculture Commerciale & Orchidées",
+      "target_temp_c": "20–26°C air / root bench + dehumidification",
+      "pain_point_en": "Winter LPG bills ($80k–$250k/yr per ha) and Botrytis fungal rot from cold damp nights.",
+      "pain_point_fr": "Factures de gaz GPL hivernales (80k–250k $/an/ha) et pourriture grise (Botrytis) liée à l'humidité froide.",
+      "thermal_load_kw_per_1000m2": 135,
+      "recommended_tier": "Tier 3 (250 kW Skid) or Tier 4 (1 MW Inverted Matrix Pod)"
+    },
+    {
+      "id": "nursery",
+      "sector_en": "Propagation & Mine-Rehab Tree Nurseries",
+      "sector_fr": "Pépinières de Multiplication & Reforestation Minière",
+      "target_temp_c": "24–27°C hydronic bottom-heat benches",
+      "pain_point_en": "Slow winter root strike; NSW mines need millions of native tubestock seedlings for mandatory land rehab.",
+      "pain_point_fr": "Enracinement hivernal lent ; besoin massif de plants indigènes pour réhabiliter les mines du NSW.",
+      "thermal_load_kw_per_1000m2": 95,
+      "recommended_tier": "Tier 2 (BitPlant 15–50 kW) or Tier 3 (250 kW Nursery Hub)"
+    },
+    {
+      "id": "glasshouse_veg",
+      "sector_en": "Protected Cropping (Truss Tomatoes, Berries, Asian Greens)",
+      "sector_fr": "Maraîchage sous Serre (Tomates, Baies, Légumes Feuilles)",
+      "target_temp_c": "55–65°C hydronic pipe-rail -> 22°C root zone",
+      "pain_point_en": "High winter gas costs block year-round contracts with Sydney supermarkets (Flemington Markets).",
+      "pain_point_fr": "Le coût du chauffage au gaz bloque la production 4 saisons vers le marché de Sydney.",
+      "thermal_load_kw_per_1000m2": 125,
+      "recommended_tier": "Tier 4 (1 MW Inverted Matrix -> heats 6,500–8,000 m² glasshouse)"
+    },
+    {
+      "id": "mushrooms_aquaculture",
+      "sector_en": "Gourmet Mushrooms & Barramundi RAS Aquaculture",
+      "sector_fr": "Champignons Médicinaux & Aquaculture Barramundi RAS",
+      "target_temp_c": "65°C substrate pasteurization + 28°C RAS water",
+      "pain_point_en": "24/7 year-round flat thermal load (not just winter!), making immersion compute a 365-day 100% heat match.",
+      "pain_point_fr": "Besoin thermique constant 365 j/an (pasteurisation 65°C + bassins 28°C), idéal pour le minage 24/7.",
+      "thermal_load_kw_per_1000m2": 160,
+      "recommended_tier": "Tier 4 (1 MW Inverted Matrix Bio-Hub)"
+    },
+    {
+      "id": "drying_biochar",
+      "sector_en": "Botanical / Timber / Macadamia Drying & Biochar",
+      "sector_fr": "Séchage Botanique / Bois / Macadamia & Biochar",
+      "target_temp_c": "60–70°C continuous dry air tunnel",
+      "pain_point_en": "Summer heat sink! Absorbs 100% of compute heat during hot NSW months when greenhouses need zero heating.",
+      "pain_point_fr": "Exutoire estival idéal : absorbe 100 % de la chaleur en été quand les serres n'ont plus besoin de chauffage.",
+      "thermal_load_kw_per_1000m2": 200,
+      "recommended_tier": "Tier 3 / Tier 4 Summer Balancing Module"
+    }
+  ]
+}
