@@ -1,43 +1,42 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><style data-unocss-runtime-layer="default"></style><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <title>Open-Hardware Engineering Manual : BitTerrarium · Pico-BitAquaponics · BitPlant · Life-Pulse | Regenerative Compute</title>
-    <meta name="description" content="Complete zero-workshop Open-Hardware manual (Amazon AU + Bunnings + Online 3D Print): BitTerrarium (17W), Pico-BitAquaponics (1.35L Prawns & Wolffia), BitPlant (140W Nano 3S), Life-Pulse ESP32-C3 WebSerial telemetry & 4 parametric OpenSCAD models." />
+    <meta name="description" content="Complete zero-workshop Open-Hardware manual (Amazon AU + Bunnings + Online 3D Print): BitTerrarium (17W), Pico-BitAquaponics (1.35L Prawns &amp; Wolffia), BitPlant (140W Nano 3S), Life-Pulse ESP32-C3 WebSerial telemetry &amp; 4 parametric OpenSCAD models.">
 
     <!-- Google Fonts: Inter (UI) & Fira Code (Telemetry / CAD / Firmware) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS CDN for Fluid Responsive Layout -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- UnoCSS Runtime with Preset-Wind Active -->
+    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/preset-wind.global.js"></script>
     <script>
-      tailwind.config = {
+      window.__unocss = {
+        presets: [window.__unocss_preset_wind()],
         theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-              mono: ['Fira Code', 'monospace']
-            },
-            colors: {
-              bgDark: '#050608',
-              panelBg: '#0d0f14',
-              sunGold: '#ffcc00',
-              btcOrange: '#f7931a',
-              warmAmber: '#ff8c42',
-              bioLime: '#44ee77',
-              bioEmerald: '#10b981',
-              waterCyan: '#00e5ff',
-              purpleAccent: '#b366ff',
-              dangerRed: '#ef4444'
-            }
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['Fira Code', 'monospace']
+          },
+          colors: {
+            bgDark: '#050608',
+            panelBg: '#0d0f14',
+            sunGold: '#ffcc00',
+            btcOrange: '#f7931a',
+            warmAmber: '#ff8c42',
+            bioLime: '#44ee77',
+            bioEmerald: '#10b981',
+            waterCyan: '#00e5ff',
+            purpleAccent: '#b366ff',
+            dangerRed: '#ef4444'
           }
         }
       };
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/core.global.js"></script>
 
     <!-- MathJax v3 for Thermodynamic, Psychrometric & Stoichiometric Equations -->
     <script>
@@ -49,7 +48,7 @@
         svg: { fontCache: 'global' }
       };
     </script>
-    <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script id="MathJax-script" defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <style>
         /* ============================================================================
@@ -276,7 +275,809 @@
         }
 
     </style>
-</head>
+<style type="text/css">.CtxtMenu_InfoClose {  top:.2em; right:.2em;}
+.CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
+.CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
+.CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true"); /* IE */}
+</style><style type="text/css">.CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: "Courier New", Courier;  font-size:24px;  color:#F0F0F0}
+.CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}
+.CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}
+.CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}
+.CtxtMenu_MenuClose:hover:focus {  outline:none}
+</style><style type="text/css">.CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}
+.CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}
+.CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}
+.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}
+.CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}
+.CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}
+.CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }
+.CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}
+.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}
+.CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}
+.CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}
+.CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}
+.CtxtMenu_MenuSlider {  left: .1em;}
+.CtxtMenu_SliderValue {  position:absolute; right:.1em; padding-top:.25em; color:#333333;  font-size: .75em}
+.CtxtMenu_SliderBar {  outline: none; background: #d3d3d3}
+.CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}
+.CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}
+.CtxtMenu_MenuDisabled {  color:GrayText}
+.CtxtMenu_MenuActive {  background-color: #606872;  color: white;}
+.CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}
+.CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}
+.CtxtMenu_ContextMenu:focus {  outline:none}
+.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}
+.CtxtMenu_SelectionMenu {  position:relative; float:left;  border-bottom: none; -webkit-box-shadow:none; -webkit-border-radius:0px; }
+.CtxtMenu_SelectionItem {  padding-right: 1em;}
+.CtxtMenu_Selection {  right: 40%; width:50%; }
+.CtxtMenu_SelectionBox {  padding: 0em; max-height:20em; max-width: none;  background-color:#FFFFFF;}
+.CtxtMenu_SelectionDivider {  clear: both; border-top: 2px solid #000000;}
+.CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}
+</style><style id="MJX-CHTML-styles">
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+_::-webkit-full-page-media, _:future, :root mjx-container {
+  will-change: opacity;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-math {
+  display: inline-block;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  font-size-adjust: none;
+  letter-spacing: normal;
+  border-collapse: collapse;
+  word-wrap: normal;
+  word-spacing: normal;
+  white-space: nowrap;
+  direction: ltr;
+  padding: 1px 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 0;
+}
+
+mjx-container[jax="CHTML"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="CHTML"][justify="right"] {
+  text-align: right;
+}
+
+mjx-msub {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mi {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c {
+  display: inline-block;
+}
+
+mjx-utext {
+  display: inline-block;
+  padding: .75em 0 .2em 0;
+}
+
+mjx-TeXAtom {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mn {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mo {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-stretchy-h {
+  display: inline-table;
+  width: 100%;
+}
+
+mjx-stretchy-h > * {
+  display: table-cell;
+  width: 0;
+}
+
+mjx-stretchy-h > * > mjx-c {
+  display: inline-block;
+  transform: scalex(1.0000001);
+}
+
+mjx-stretchy-h > * > mjx-c::before {
+  display: inline-block;
+  width: initial;
+}
+
+mjx-stretchy-h > mjx-ext {
+  /* IE */ overflow: hidden;
+  /* others */ overflow: clip visible;
+  width: 100%;
+}
+
+mjx-stretchy-h > mjx-ext > mjx-c::before {
+  transform: scalex(500);
+}
+
+mjx-stretchy-h > mjx-ext > mjx-c {
+  width: 0;
+}
+
+mjx-stretchy-h > mjx-beg > mjx-c {
+  margin-right: -.1em;
+}
+
+mjx-stretchy-h > mjx-end > mjx-c {
+  margin-left: -.1em;
+}
+
+mjx-stretchy-v {
+  display: inline-block;
+}
+
+mjx-stretchy-v > * {
+  display: block;
+}
+
+mjx-stretchy-v > mjx-beg {
+  height: 0;
+}
+
+mjx-stretchy-v > mjx-end > mjx-c {
+  display: block;
+}
+
+mjx-stretchy-v > * > mjx-c {
+  transform: scaley(1.0000001);
+  transform-origin: left center;
+  overflow: hidden;
+}
+
+mjx-stretchy-v > mjx-ext {
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  border: 0px solid transparent;
+  /* IE */ overflow: hidden;
+  /* others */ overflow: visible clip;
+}
+
+mjx-stretchy-v > mjx-ext > mjx-c::before {
+  width: initial;
+  box-sizing: border-box;
+}
+
+mjx-stretchy-v > mjx-ext > mjx-c {
+  transform: scaleY(500) translateY(.075em);
+  overflow: visible;
+}
+
+mjx-mark {
+  display: inline-block;
+  height: 0px;
+}
+
+mjx-msup {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mspace {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-msubsup {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-script {
+  display: inline-block;
+  padding-right: .05em;
+  padding-left: .033em;
+}
+
+mjx-script > mjx-spacer {
+  display: block;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+
+mjx-c.mjx-c1D447.TEX-I::before {
+  padding: 0.677em 0.704em 0 0;
+  content: "T";
+}
+
+mjx-c.mjx-c1D452.TEX-I::before {
+  padding: 0.442em 0.466em 0.011em 0;
+  content: "e";
+}
+
+mjx-c.mjx-c1D465.TEX-I::before {
+  padding: 0.442em 0.572em 0.011em 0;
+  content: "x";
+}
+
+mjx-c.mjx-c1D461.TEX-I::before {
+  padding: 0.626em 0.361em 0.011em 0;
+  content: "t";
+}
+
+mjx-c.mjx-c1D44E.TEX-I::before {
+  padding: 0.441em 0.529em 0.01em 0;
+  content: "a";
+}
+
+mjx-c.mjx-c1D45A.TEX-I::before {
+  padding: 0.442em 0.878em 0.011em 0;
+  content: "m";
+}
+
+mjx-c.mjx-c1D44F.TEX-I::before {
+  padding: 0.694em 0.429em 0.011em 0;
+  content: "b";
+}
+
+mjx-c.mjx-c1D702.TEX-I::before {
+  padding: 0.442em 0.497em 0.216em 0;
+  content: "\3B7";
+}
+
+mjx-c.mjx-c1D450.TEX-I::before {
+  padding: 0.442em 0.433em 0.011em 0;
+  content: "c";
+}
+
+mjx-c.mjx-c1D45C.TEX-I::before {
+  padding: 0.441em 0.485em 0.011em 0;
+  content: "o";
+}
+
+mjx-c.mjx-c1D462.TEX-I::before {
+  padding: 0.442em 0.572em 0.011em 0;
+  content: "u";
+}
+
+mjx-c.mjx-c1D45D.TEX-I::before {
+  padding: 0.442em 0.503em 0.194em 0;
+  content: "p";
+}
+
+mjx-c.mjx-c1D459.TEX-I::before {
+  padding: 0.694em 0.298em 0.011em 0;
+  content: "l";
+}
+
+mjx-c.mjx-c1D443.TEX-I::before {
+  padding: 0.683em 0.751em 0 0;
+  content: "P";
+}
+
+mjx-c.mjx-c1D434.TEX-I::before {
+  padding: 0.716em 0.75em 0 0;
+  content: "A";
+}
+
+mjx-c.mjx-c1D446.TEX-I::before {
+  padding: 0.705em 0.645em 0.022em 0;
+  content: "S";
+}
+
+mjx-c.mjx-c1D43C.TEX-I::before {
+  padding: 0.683em 0.504em 0 0;
+  content: "I";
+}
+
+mjx-c.mjx-c1D436.TEX-I::before {
+  padding: 0.705em 0.76em 0.022em 0;
+  content: "C";
+}
+
+mjx-c.mjx-c31::before {
+  padding: 0.666em 0.5em 0 0;
+  content: "1";
+}
+
+mjx-c.mjx-c38::before {
+  padding: 0.666em 0.5em 0.022em 0;
+  content: "8";
+}
+
+mjx-c.mjx-c2013::before {
+  padding: 0.285em 0.5em 0 0;
+  content: "\2013";
+}
+
+mjx-c.mjx-c37::before {
+  padding: 0.676em 0.5em 0.022em 0;
+  content: "7";
+}
+
+mjx-c.mjx-c1D44A.TEX-I::before {
+  padding: 0.683em 1.048em 0.022em 0;
+  content: "W";
+}
+
+mjx-c.mjx-c3C::before {
+  padding: 0.54em 0.778em 0.04em 0;
+  content: "<";
+}
+
+mjx-c.mjx-c35::before {
+  padding: 0.666em 0.5em 0.022em 0;
+  content: "5";
+}
+
+mjx-c.mjx-c34::before {
+  padding: 0.677em 0.5em 0 0;
+  content: "4";
+}
+
+mjx-c.mjx-c2218::before {
+  padding: 0.444em 0.5em 0 0;
+  content: "\2218";
+}
+
+mjx-c.mjx-c32::before {
+  padding: 0.666em 0.5em 0 0;
+  content: "2";
+}
+
+mjx-c.mjx-c30::before {
+  padding: 0.666em 0.5em 0.022em 0;
+  content: "0";
+}
+
+mjx-c.mjx-c2E::before {
+  padding: 0.12em 0.278em 0 0;
+  content: ".";
+}
+
+mjx-c.mjx-c2C::before {
+  padding: 0.121em 0.278em 0.194em 0;
+  content: ",";
+}
+
+mjx-c.mjx-c33::before {
+  padding: 0.665em 0.5em 0.022em 0;
+  content: "3";
+}
+
+mjx-c.mjx-c1D441.TEX-I::before {
+  padding: 0.683em 0.888em 0 0;
+  content: "N";
+}
+
+mjx-c.mjx-c1D43B.TEX-I::before {
+  padding: 0.683em 0.888em 0 0;
+  content: "H";
+}
+
+mjx-c.mjx-c1D442.TEX-I::before {
+  padding: 0.704em 0.763em 0.022em 0;
+  content: "O";
+}
+
+mjx-c.mjx-c2212::before {
+  padding: 0.583em 0.778em 0.082em 0;
+  content: "\2212";
+}
+
+mjx-c.mjx-c2B::before {
+  padding: 0.583em 0.778em 0.082em 0;
+  content: "+";
+}
+
+mjx-c.mjx-c1D440.TEX-I::before {
+  padding: 0.683em 1.051em 0 0;
+  content: "M";
+}
+
+mjx-c.mjx-c1D454.TEX-I::before {
+  padding: 0.442em 0.477em 0.205em 0;
+  content: "g";
+}
+
+mjx-c.mjx-c3E::before {
+  padding: 0.54em 0.778em 0.04em 0;
+  content: ">";
+}
+
+mjx-c.mjx-c2F::before {
+  padding: 0.75em 0.5em 0.25em 0;
+  content: "/";
+}
+
+mjx-c.mjx-c2194::before {
+  padding: 0.511em 1em 0.011em 0;
+  content: "\2194";
+}
+
+mjx-c.mjx-c1D444.TEX-I::before {
+  padding: 0.704em 0.791em 0.194em 0;
+  content: "Q";
+}
+
+mjx-c.mjx-c210E.TEX-I::before {
+  padding: 0.694em 0.576em 0.011em 0;
+  content: "h";
+}
+
+mjx-c.mjx-c3D::before {
+  padding: 0.583em 0.778em 0.082em 0;
+  content: "=";
+}
+</style></head>
 <body class="lang-en antialiased selection:bg-amber-500/30 selection:text-amber-200">
 
 <!-- Non-Blocking Toast Notification Container (Zero alert() usage) -->
@@ -435,19 +1236,15 @@
                     <span lang="en">REAL-TIME COUPLED THERMODYNAMIC &amp; BIOLOGICAL WORKBENCH</span>
                     <span lang="fr">BANC D'ESSAI THERMODYNAMIQUE &amp; BIOLOGIQUE EN TEMPS RÉEL</span>
                 </span>
-                <h2 id="wb-title" class="text-xl sm:text-2xl font-extrabold text-white">
-                    BitTerrarium™ Topper (17 W · Dry Cloche Biosphere)
-                </h2>
+                <h2 id="wb-title" class="text-xl sm:text-2xl font-extrabold text-white">BitTerrarium™ Topper (17 W · Dry Cloche Biosphere)</h2>
             </div>
-            <span class="font-mono text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300" id="wb-footprint-badge">
-                Footprint: 158 × 158 × 210 mm
-            </span>
+            <span class="font-mono text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300" id="wb-footprint-badge">Footprint: 158 × 158 × 210 mm</span>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
             <!-- Left 7 Cols: Animated 2D CAD Cross-Section Canvas -->
             <div class="lg:col-span-7 rounded-xl overflow-hidden border border-white/10 bg-gradient-to-b from-[#151310] to-[#05070b] flex flex-col justify-between">
-                <canvas id="hwCanvas" class="responsive-cv h-[380px] sm:h-[440px]"></canvas>
+                <canvas id="hwCanvas" class="responsive-cv h-[380px] sm:h-[440px]" width="1894" height="947"></canvas>
                 <div class="px-4 py-2.5 bg-black/60 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-slate-400">
                     <span id="wb-canvas-caption">
                         <span lang="en">● Animated cross-section: orange = Joule heat plume · cyan = condensed H₂O / DO</span>
@@ -463,7 +1260,7 @@
                 <div class="space-y-3">
                     <div class="p-3 rounded-xl bg-white/[0.03] border border-white/10">
                         <label for="sl-amb" class="flex justify-between text-xs font-semibold text-slate-200 mb-1.5">
-                            <span><span lang="en">1. Room Ambient Temp ($T_{	ext{amb}}$)</span><span lang="fr">1. Température Pièce ($T_{	ext{amb}}$)</span></span>
+                            <span><span lang="en">1. Room Ambient Temp (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="0" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.12em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-texatom></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>T</mi><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>x</mi><mi>t</mi><mrow data-mjx-texclass="ORD"><mi>a</mi><mi>m</mi><mi>b</mi></mrow></mrow></msub></math></mjx-assistive-mml></mjx-container>)</span><span lang="fr">1. Température Pièce (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="1" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.12em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-texatom></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>T</mi><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>x</mi><mi>t</mi><mrow data-mjx-texclass="ORD"><mi>a</mi><mi>m</mi><mi>b</mi></mrow></mrow></msub></math></mjx-assistive-mml></mjx-container>)</span></span>
                             <span id="out-amb" class="font-mono text-[#00e5ff] font-bold">20.5 °C</span>
                         </label>
                         <input type="range" id="sl-amb" min="12" max="32" step="0.5" value="20.5" class="w-full">
@@ -471,7 +1268,7 @@
 
                     <div class="p-3 rounded-xl bg-white/[0.03] border border-white/10">
                         <label for="sl-baffle" class="flex justify-between text-xs font-semibold text-slate-200 mb-1.5">
-                            <span><span lang="en">2. Baffle / Damper Coupling ($\eta_{	ext{couple}}$)</span><span lang="fr">2. Ouverture Baffle / Volet ($\eta_{	ext{couple}}$)</span></span>
+                            <span><span lang="en">2. Baffle / Damper Coupling (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="2" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D702 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45C TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D462 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D459 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-texatom></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>η</mi><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>x</mi><mi>t</mi><mrow data-mjx-texclass="ORD"><mi>c</mi><mi>o</mi><mi>u</mi><mi>p</mi><mi>l</mi><mi>e</mi></mrow></mrow></msub></math></mjx-assistive-mml></mjx-container>)</span><span lang="fr">2. Ouverture Baffle / Volet (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="3" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D702 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45C TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D462 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D459 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-texatom></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>η</mi><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>x</mi><mi>t</mi><mrow data-mjx-texclass="ORD"><mi>c</mi><mi>o</mi><mi>u</mi><mi>p</mi><mi>l</mi><mi>e</mi></mrow></mrow></msub></math></mjx-assistive-mml></mjx-container>)</span></span>
                             <span id="out-baffle" class="font-mono text-[#f7931a] font-bold">35 %</span>
                         </label>
                         <input type="range" id="sl-baffle" min="15" max="85" step="1" value="35" class="w-full">
@@ -487,7 +1284,7 @@
 
                     <div class="p-3 rounded-xl bg-white/[0.03] border border-white/10">
                         <label for="sl-watts" class="flex justify-between text-xs font-semibold text-slate-200 mb-1.5">
-                            <span><span lang="en">4. ASIC Electrical Input ($P_{	ext{ASIC}}$)</span><span lang="fr">4. Puissance Électrique ASIC ($P_{	ext{ASIC}}$)</span></span>
+                            <span><span lang="en">4. ASIC Electrical Input (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="4" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D443 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.153em; margin-left: -0.109em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43C TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-texatom></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>P</mi><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>x</mi><mi>t</mi><mrow data-mjx-texclass="ORD"><mi>A</mi><mi>S</mi><mi>I</mi><mi>C</mi></mrow></mrow></msub></math></mjx-assistive-mml></mjx-container>)</span><span lang="fr">4. Puissance Électrique ASIC (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="5" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D443 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.153em; margin-left: -0.109em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43C TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-texatom></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>P</mi><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>x</mi><mi>t</mi><mrow data-mjx-texclass="ORD"><mi>A</mi><mi>S</mi><mi>I</mi><mi>C</mi></mrow></mrow></msub></math></mjx-assistive-mml></mjx-container>)</span></span>
                             <span id="out-watts" class="font-mono text-[#ffcc00] font-bold">17.0 W</span>
                         </label>
                         <input type="range" id="sl-watts" min="10" max="24" step="0.5" value="17.0" class="w-full">
@@ -497,35 +1294,33 @@
                 <!-- 8 Telemetry Output Cards -->
                 <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-2.5">
                     <div class="p-2.5 rounded-xl bg-[#04060a] border border-white/10 text-center">
-                        <span id="tel-bio-temp" class="block font-mono text-base font-extrabold text-[#ffcc00]">27.2 °C</span>
+                        <span id="tel-bio-temp" class="block font-mono text-base font-extrabold text-[#ffcc00]">27.3 °C</span>
                         <span class="text-[10px] uppercase tracking-wider text-slate-400"><span lang="en">Water / Root Temp</span><span lang="fr">Temp. Eau / Racines</span></span>
                     </div>
                     <div class="p-2.5 rounded-xl bg-[#04060a] border border-white/10 text-center">
-                        <span id="tel-asic-temp" class="block font-mono text-base font-extrabold text-[#f7931a]">51.4 °C</span>
+                        <span id="tel-asic-temp" class="block font-mono text-base font-extrabold text-[#f7931a]">49.9 °C</span>
                         <span class="text-[10px] uppercase tracking-wider text-slate-400"><span lang="en">ASIC Silicon Core</span><span lang="fr">Puce Silicium ASIC</span></span>
                     </div>
                     <div class="p-2.5 rounded-xl bg-[#04060a] border border-white/10 text-center">
-                        <span id="tel-do" class="block font-mono text-base font-extrabold text-[#00e5ff]">8.02 mg/L</span>
+                        <span id="tel-do" class="block font-mono text-base font-extrabold text-[#00e5ff]">7.93 mg/L</span>
                         <span class="text-[10px] uppercase tracking-wider text-slate-400"><span lang="en">Dissolved O₂ Sat.</span><span lang="fr">O₂ Dissous (DO)</span></span>
                     </div>
                     <div class="p-2.5 rounded-xl bg-[#04060a] border border-white/10 text-center">
-                        <span id="tel-vpd" class="block font-mono text-base font-extrabold text-purple-300">0.68 kPa</span>
+                        <span id="tel-vpd" class="block font-mono text-base font-extrabold text-purple-300">0.72 kPa</span>
                         <span class="text-[10px] uppercase tracking-wider text-slate-400"><span lang="en">Dome Canopy VPD</span><span lang="fr">Déficit VPD Dôme</span></span>
                     </div>
                     <div class="p-2.5 rounded-xl bg-[#04060a] border border-white/10 text-center">
-                        <span id="tel-water-flux" class="block font-mono text-base font-extrabold text-[#00e5ff]">43 mL/d</span>
+                        <span id="tel-water-flux" class="block font-mono text-base font-extrabold text-[#00e5ff]">43 mL/d rain</span>
                         <span class="text-[10px] uppercase tracking-wider text-slate-400"><span lang="en">Rain / Evap Cycle</span><span lang="fr">Pluie / Évap. Jour</span></span>
                     </div>
                     <div class="p-2.5 rounded-xl bg-[#04060a] border border-white/10 text-center">
-                        <span id="tel-wolffia" class="block font-mono text-base font-extrabold text-[#44ee77]">41 hrs</span>
+                        <span id="tel-wolffia" class="block font-mono text-base font-extrabold text-[#44ee77]">Moss +18%/mo</span>
                         <span class="text-[10px] uppercase tracking-wider text-slate-400"><span lang="en">Wolffia Doubling</span><span lang="fr">Doublement Wolffia</span></span>
                     </div>
                 </div>
 
                 <!-- Dynamic Safety Banner -->
-                <div id="wb-safety" class="p-3 rounded-xl text-xs border-l-4 border-[#44ee77] bg-[#44ee77]/10 text-slate-100 leading-relaxed">
-                    ● Optimal Symbiotic Zone (24–28°C): Prawn gills oxygenated, zero ASIC thermal throttling.
-                </div>
+                <div id="wb-safety" class="p-3 rounded-xl text-xs border-l-4 border-[#44ee77] bg-[#44ee77]/10 text-slate-100 leading-relaxed" style="border-left-color: rgb(68, 238, 119); background: rgba(68, 238, 119, 0.1);">● Optimal Symbiotic Zone (24–28°C): High dissolved O₂ for prawns, ASIC silicon safely under 60°C.</div>
             </div>
         </div>
     </section>
@@ -596,8 +1391,8 @@
                         <span lang="fr"><strong>Verrerie Borosilicate :</strong> Chercher <code>"1500ml Low Form Borosilicate Glass Beaker"</code> (diamètre externe `115 mm ± 1 mm`, le bec verseur intégré laisse passer proprement les fils des capteurs !) et <code>"15cm Glass Cloche Bell Jar Dome"</code>.</span>
                     </li>
                     <li>
-                        <span lang="en"><strong>Whisper-Quiet Air &amp; Light:</strong> Search <code>"USB Piezo Mini Aquarium Air Pump 1W Silent"</code> (`<28 dB`, hangs on silicone loop) + <code>"USB LED Halo Ring Plant Grow Light Timer 6500K"</code> (set built-in timer to `12h ON / 12h OFF`).</span>
-                        <span lang="fr"><strong>Air &amp; Lumière Silencieux :</strong> Chercher <code>"USB Piezo Mini Aquarium Air Pump 1W Silent"</code> (`<28 dB`) + <code>"USB LED Halo Ring Plant Grow Light Timer 6500K"</code> (minuterie intégrée `12h ON / 12h OFF`).</span>
+                        <span lang="en"><strong>Whisper-Quiet Air &amp; Light:</strong> Search <code>"USB Piezo Mini Aquarium Air Pump 1W Silent"</code> (`&lt;28 dB`, hangs on silicone loop) + <code>"USB LED Halo Ring Plant Grow Light Timer 6500K"</code> (set built-in timer to `12h ON / 12h OFF`).</span>
+                        <span lang="fr"><strong>Air &amp; Lumière Silencieux :</strong> Chercher <code>"USB Piezo Mini Aquarium Air Pump 1W Silent"</code> (`&lt;28 dB`) + <code>"USB LED Halo Ring Plant Grow Light Timer 6500K"</code> (minuterie intégrée `12h ON / 12h OFF`).</span>
                     </li>
                     <li>
                         <span lang="en"><strong>Mandatory Prawn Water Kit:</strong> <code>"Seachem Prime 50ml"</code> (neutralizes Sydney chloramine + detoxifies emergency ammonia), <code>"API Freshwater Master Test Kit"</code>, and <code>"API GH &amp; KH Test Kit"</code>.</span>
@@ -617,7 +1412,7 @@
                     <span class="font-mono text-xs text-slate-400">JLC3DP · PCBWay · Craftcloud AU</span>
                 </div>
                 <h3 class="text-lg font-bold text-white mb-2">
-                    <span lang="en">How to Order Prints Online ($18–$32 AUD)</span>
+                    <span lang="en">How to Order Prints Online (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="6" style="font-size: 117.2%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c38"></mjx-c></mjx-mn><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2013"></mjx-c></mjx-mo></mjx-texatom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>18</mn><mrow data-mjx-texclass="ORD"><mo>–</mo></mrow></math></mjx-assistive-mml></mjx-container>32 AUD)</span>
                     <span lang="fr">Commander vos Pièces 3D en Ligne (18–32 $)</span>
                 </h3>
                 <ul class="space-y-2 text-xs text-slate-300 list-disc pl-4 leading-relaxed">
@@ -678,14 +1473,212 @@
                             <th class="py-3 px-4 text-right">AUD</th>
                         </tr>
                     </thead>
-                    <tbody id="master-bom-tbody" class="divide-y divide-white/[0.06] text-slate-300"></tbody>
+                    <tbody id="master-bom-tbody" class="divide-y divide-white/[0.06] text-slate-300">
+                <tr class="hover:bg-white/[0.03] transition-colors">
+                    <td class="py-3 px-4">
+                        <div class="font-semibold text-white">15cm Borosilicate Glass Cloche Bell Jar Dome</div>
+                        <div class="font-mono text-[11px] text-slate-400 mt-0.5">Amazon: "15cm Glass Cloche Bell Jar Dome"</div>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap"><span class="sup-badge sup-amazon">Amazon AU</span></td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-300">bitterrarium, bitaquaponics</td>
+                    <td class="py-3 px-3 text-xs text-slate-300">146–150mm OD dome trapping moisture for closed rain loop</td>
+                    <td class="py-3 px-4 text-right font-mono font-bold text-[#ffcc00] whitespace-nowrap">$16</td>
+                </tr>
+            
+                <tr class="hover:bg-white/[0.03] transition-colors">
+                    <td class="py-3 px-4">
+                        <div class="font-semibold text-white">1500mL Low-Form Borosilicate 3.3 Lab Beaker (115mm OD)</div>
+                        <div class="font-mono text-[11px] text-slate-400 mt-0.5">Amazon: "1500ml Low Form Borosilicate Glass Beaker"</div>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap"><span class="sup-badge sup-amazon">Amazon AU</span></td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-300">bitaquaponics, lifepulse</td>
+                    <td class="py-3 px-3 text-xs text-slate-300">115mm OD × 140mm H; pouring spout passes 5V cables cleanly</td>
+                    <td class="py-3 px-4 text-right font-mono font-bold text-[#ffcc00] whitespace-nowrap">$14</td>
+                </tr>
+            
+                <tr class="hover:bg-white/[0.03] transition-colors">
+                    <td class="py-3 px-4">
+                        <div class="font-semibold text-white">Anodized Aluminium Dish / Transfer Disc (150mm or 112mm)</div>
+                        <div class="font-mono text-[11px] text-slate-400 mt-0.5">Amazon: "150mm Round Aluminium Cake Pan" / "112mm Aluminium Disc"</div>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap"><span class="sup-badge sup-amazon">Amazon AU</span></td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-300">bitterrarium, bitaquaponics</td>
+                    <td class="py-3 px-3 text-xs text-slate-300">1.5mm thick waterproof thermal transfer plate above Bitaxe</td>
+                    <td class="py-3 px-4 text-right font-mono font-bold text-[#ffcc00] whitespace-nowrap">$7</td>
+                </tr>
+            
+                <tr class="hover:bg-white/[0.03] transition-colors">
+                    <td class="py-3 px-4">
+                        <div class="font-semibold text-white">Selleys Glass Silicone (100% Acetic Aquarium-Safe)</div>
+                        <div class="font-mono text-[11px] text-slate-400 mt-0.5">Bunnings Adhesives Aisle: "Selleys Glass Silicone Clear 75g"</div>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap"><span class="sup-badge sup-bunnings">Bunnings</span></td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-300">bitaquaponics</td>
+                    <td class="py-3 px-3 text-xs text-slate-300">CRITICAL: Never use mould-resistant bathroom silicone (toxic to prawns!)</td>
+                    <td class="py-3 px-4 text-right font-mono font-bold text-[#ffcc00] whitespace-nowrap">$10</td>
+                </tr>
+            
+                <tr class="hover:bg-white/[0.03] transition-colors">
+                    <td class="py-3 px-4">
+                        <div class="font-semibold text-white">Pope 4mm Black Poly Tube + Check Valve + In-Line Tap</div>
+                        <div class="font-mono text-[11px] text-slate-400 mt-0.5">Bunnings Irrigation Aisle: "Pope 4mm Micro Irrigation"</div>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap"><span class="sup-badge sup-bunnings">Bunnings</span></td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-300">bitaquaponics</td>
+                    <td class="py-3 px-3 text-xs text-slate-300">Check valve prevents back-siphon; tap valve acts as prawn dripper</td>
+                    <td class="py-3 px-4 text-right font-mono font-bold text-[#ffcc00] whitespace-nowrap">$9</td>
+                </tr>
+            
+                <tr class="hover:bg-white/[0.03] transition-colors">
+                    <td class="py-3 px-4">
+                        <div class="font-semibold text-white">Yates 5L Hydroponic Clay Pebbles (LECA) + Horticultural Charcoal</div>
+                        <div class="font-mono text-[11px] text-slate-400 mt-0.5">Bunnings Indoor Garden Aisle: "Yates Hydroponic Clay Pebbles"</div>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap"><span class="sup-badge sup-bunnings">Bunnings</span></td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-300">bitterrarium, bitaquaponics</td>
+                    <td class="py-3 px-3 text-xs text-slate-300">Boil &amp; rinse 3×; forms high-surface nitrifying biofilter + Terra Preta</td>
+                    <td class="py-3 px-4 text-right font-mono font-bold text-[#ffcc00] whitespace-nowrap">$14</td>
+                </tr>
+            
+                <tr class="hover:bg-white/[0.03] transition-colors">
+                    <td class="py-3 px-4">
+                        <div class="font-semibold text-white">Brunnings Sphagnum Moss + Live Moss / Fittonia</div>
+                        <div class="font-mono text-[11px] text-slate-400 mt-0.5">Bunnings Nursery: "Brunnings Sphagnum Moss" + indoor mini fern</div>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap"><span class="sup-badge sup-bunnings">Bunnings</span></td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-300">bitterrarium</td>
+                    <td class="py-3 px-3 text-xs text-slate-300">Moisture sponge &amp; hardy low-light tropical foliage for 27°C dome</td>
+                    <td class="py-3 px-4 text-right font-mono font-bold text-[#ffcc00] whitespace-nowrap">$10</td>
+                </tr>
+            
+                <tr class="hover:bg-white/[0.03] transition-colors">
+                    <td class="py-3 px-4">
+                        <div class="font-semibold text-white">USB Piezo Mini Aquarium Air Pump (1.2W Silent &lt;28 dB)</div>
+                        <div class="font-mono text-[11px] text-slate-400 mt-0.5">Amazon: "USB Piezo Mini Aquarium Air Pump Silent"</div>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap"><span class="sup-badge sup-amazon">Amazon AU</span></td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-300">bitaquaponics</td>
+                    <td class="py-3 px-3 text-xs text-slate-300">Drives 3D-printed Air-Lift water circulation with zero moving impellers</td>
+                    <td class="py-3 px-4 text-right font-mono font-bold text-[#ffcc00] whitespace-nowrap">$11</td>
+                </tr>
+            
+                <tr class="hover:bg-white/[0.03] transition-colors">
+                    <td class="py-3 px-4">
+                        <div class="font-semibold text-white">USB LED Halo Ring Plant Grow Light (6500K + 12h Timer)</div>
+                        <div class="font-mono text-[11px] text-slate-400 mt-0.5">Amazon: "USB Halo Ring Plant Grow Light Timer"</div>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap"><span class="sup-badge sup-amazon">Amazon AU</span></td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-300">bitterrarium, bitaquaponics</td>
+                    <td class="py-3 px-3 text-xs text-slate-300">160 µmol/m²/s PAR spectrum driving Wolffia &amp; moss photosynthesis</td>
+                    <td class="py-3 px-4 text-right font-mono font-bold text-[#ffcc00] whitespace-nowrap">$12</td>
+                </tr>
+            
+                <tr class="hover:bg-white/[0.03] transition-colors">
+                    <td class="py-3 px-4">
+                        <div class="font-semibold text-white">Seachem Prime 50mL + API Freshwater Master Test Kit + Cuttlebone</div>
+                        <div class="font-mono text-[11px] text-slate-400 mt-0.5">Amazon: "Seachem Prime 50ml" + "API Freshwater Master Test Kit"</div>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap"><span class="sup-badge sup-amazon">Amazon AU</span></td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-300">bitaquaponics</td>
+                    <td class="py-3 px-3 text-xs text-slate-300">Removes Sydney chloramine, verifies NH3/NO2=0, supplies Ca²⁺ for molts</td>
+                    <td class="py-3 px-4 text-right font-mono font-bold text-[#ffcc00] whitespace-nowrap">$24</td>
+                </tr>
+            
+                <tr class="hover:bg-white/[0.03] transition-colors">
+                    <td class="py-3 px-4">
+                        <div class="font-semibold text-white">Online 3D Print — BitTerrarium PETG Set (3 parts)</div>
+                        <div class="font-mono text-[11px] text-slate-400 mt-0.5">JLC3DP / PCBWay / Craftcloud: FDM PETG 0.2mm 30% infill</div>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap"><span class="sup-badge sup-3d">Online 3D</span></td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-300">bitterrarium</td>
+                    <td class="py-3 px-3 text-xs text-slate-300">cradle + gutter_ring + led_crown (~110g black/amber PETG)</td>
+                    <td class="py-3 px-4 text-right font-mono font-bold text-[#ffcc00] whitespace-nowrap">$14</td>
+                </tr>
+            
+                <tr class="hover:bg-white/[0.03] transition-colors">
+                    <td class="py-3 px-4">
+                        <div class="font-semibold text-white">Online 3D Print — Pico-BitAquaponics Virgin PETG Set (5 parts)</div>
+                        <div class="font-mono text-[11px] text-slate-400 mt-0.5">JLC3DP / PCBWay / Craftcloud: FDM Natural/Clear PETG (NO RESIN!)</div>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap"><span class="sup-badge sup-3d">Online 3D</span></td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-300">bitaquaponics</td>
+                    <td class="py-3 px-3 text-xs text-slate-300">base_cradle + thermal_baffle + airlift_tube + hydro_basket + cloche_ring</td>
+                    <td class="py-3 px-4 text-right font-mono font-bold text-[#ffcc00] whitespace-nowrap">$19</td>
+                </tr>
+            
+                <tr class="hover:bg-white/[0.03] transition-colors">
+                    <td class="py-3 px-4">
+                        <div class="font-semibold text-white">4–5 Neocaridina Dwarf Prawns + 15g Live Wolffia arrhiza Starter</div>
+                        <div class="font-mono text-[11px] text-slate-400 mt-0.5">Sydney Aquarium Shop / eBay AU: "Red Cherry Shrimp" + "Live Wolffia"</div>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap"><span class="sup-badge sup-aqua">Aquarium/Nursery</span></td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-300">bitaquaponics</td>
+                    <td class="py-3 px-3 text-xs text-slate-300">Quarantine Wolffia 3 min in Prime + salt dip before introducing</td>
+                    <td class="py-3 px-4 text-right font-mono font-bold text-[#ffcc00] whitespace-nowrap">$22</td>
+                </tr>
+            
+                <tr class="hover:bg-white/[0.03] transition-colors">
+                    <td class="py-3 px-4">
+                        <div class="font-semibold text-white">72-Cell Heavy-Duty Propagation Dome Tray (540 × 280 mm)</div>
+                        <div class="font-mono text-[11px] text-slate-400 mt-0.5">Amazon: "72 Cell Seed Starter Tray with Humidity Dome Heavy Duty"</div>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap"><span class="sup-badge sup-amazon">Amazon AU</span></td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-300">bitplant</td>
+                    <td class="py-3 px-3 text-xs text-slate-300">Sits directly over BitPlant diffuser plenum at steady 25°C root temp</td>
+                    <td class="py-3 px-4 text-right font-mono font-bold text-[#ffcc00] whitespace-nowrap">$38</td>
+                </tr>
+            
+                <tr class="hover:bg-white/[0.03] transition-colors">
+                    <td class="py-3 px-4">
+                        <div class="font-semibold text-white">Bastion 1200×600×20mm XPS Foam Board + 100mm Alu Flex Duct</div>
+                        <div class="font-mono text-[11px] text-slate-400 mt-0.5">Bunnings Building &amp; HVAC Aisles</div>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap"><span class="sup-badge sup-bunnings">Bunnings</span></td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-300">bitplant</td>
+                    <td class="py-3 px-3 text-xs text-slate-300">Zero-tool knife-scored thermal base + 4" insulated ducting</td>
+                    <td class="py-3 px-4 text-right font-mono font-bold text-[#ffcc00] whitespace-nowrap">$28</td>
+                </tr>
+            
+                <tr class="hover:bg-white/[0.03] transition-colors">
+                    <td class="py-3 px-4">
+                        <div class="font-semibold text-white">Online 3D Print — BitPlant ASA/PETG Manifold Set (3 parts)</div>
+                        <div class="font-mono text-[11px] text-slate-400 mt-0.5">JLC3DP / PCBWay: FDM ASA or PETG 30% infill</div>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap"><span class="sup-badge sup-3d">Online 3D</span></td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-300">bitplant</td>
+                    <td class="py-3 px-3 text-xs text-slate-300">exhaust_hood (205×58.5mm Nano 3S) + rotary_damper + tray_diffuser</td>
+                    <td class="py-3 px-4 text-right font-mono font-bold text-[#ffcc00] whitespace-nowrap">$22</td>
+                </tr>
+            
+                <tr class="hover:bg-white/[0.03] transition-colors">
+                    <td class="py-3 px-4">
+                        <div class="font-semibold text-white">ESP32-C3 SuperMini + DS18B20 + SHT40 + Analog TDS + Wago 221</div>
+                        <div class="font-mono text-[11px] text-slate-400 mt-0.5">Amazon AU: Solderless sensor bundle + Wago 221 lever connectors</div>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap"><span class="sup-badge sup-amazon">Amazon AU</span></td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-300">lifepulse</td>
+                    <td class="py-3 px-3 text-xs text-slate-300">Zero-solder USB-C WebSerial &amp; Wi-Fi telemetry + AxeOS safety throttle</td>
+                    <td class="py-3 px-4 text-right font-mono font-bold text-[#ffcc00] whitespace-nowrap">$21</td>
+                </tr>
+            
+                <tr class="hover:bg-white/[0.03] transition-colors">
+                    <td class="py-3 px-4">
+                        <div class="font-semibold text-white">Online 3D Print — Life-Pulse Rim Clip Pod (PETG)</div>
+                        <div class="font-mono text-[11px] text-slate-400 mt-0.5">JLC3DP / PCBWay: lifepulse_sensor_clip.scad in FDM PETG</div>
+                    </td>
+                    <td class="py-3 px-3 whitespace-nowrap"><span class="sup-badge sup-3d">Online 3D</span></td>
+                    <td class="py-3 px-3 font-mono text-[11px] text-slate-300">lifepulse</td>
+                    <td class="py-3 px-3 text-xs text-slate-300">Snaps onto 2.5mm beaker wall; houses ESP32-C3 + 2× Wago 221 blocks</td>
+                    <td class="py-3 px-4 text-right font-mono font-bold text-[#ffcc00] whitespace-nowrap">$5</td>
+                </tr>
+            </tbody>
                     <tfoot>
                         <tr class="bg-white/[0.04] font-mono text-xs font-bold text-white">
                             <td colspan="4" class="py-3.5 px-4 text-right">
                                 <span lang="en">FILTERED SHOPPING LIST TOTAL (Excludes existing Bitaxe / Avalon miner):</span>
                                 <span lang="fr">TOTAL DE LA SÉLECTION FILTRÉE (Hors mineur Bitaxe / Avalon existant) :</span>
                             </td>
-                            <td id="master-bom-total" class="py-3.5 px-4 text-right text-base text-[#44ee77]">$0 AUD</td>
+                            <td id="master-bom-total" class="py-3.5 px-4 text-right text-base text-[#44ee77]">$296 AUD</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -708,23 +1701,23 @@
         </div>
 
         <!-- PANE 01: BITTERRARIUM -->
-        <div id="pane-bitterrarium" class="model-pane active space-y-6">
+        <div id="pane-bitterrarium" class="model-pane space-y-6 active">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="rc-panel p-6">
                     <h3 class="text-lg font-bold text-[#ffcc00] mb-3">
                         🔬 <span lang="en">BitTerrarium™ Physics (17W Dry Condensation Loop)</span><span lang="fr">Physique du BitTerrarium™ (Boucle Sèche 17 W)</span>
                     </h3>
                     <p class="text-sm text-slate-300 mb-3">
-                        <span lang="en">At $17	ext{ W}$, liquid immersion adds unnecessary leaks and shipping weight. Placing an anodized `150 mm` aluminium dish over the Bitaxe Gamma 601's upward exhaust transfers `35%` ($pprox 6.0	ext{ W}_{	ext{th}}$) into the moist *Terra Preta* biochar bed while venting `65%` laterally so the BM1370 ASIC stays cool ($<54\,^\circ	ext{C}$).</span>
-                        <span lang="fr">À $17	ext{ W}$, l'immersion liquide est inutile : poser une coupelle en aluminium anodisé de `150 mm` au-dessus du flux d'air du Bitaxe Gamma 601 transfère `35 %` ($pprox 6,0	ext{ W}_{	ext{th}}$) au lit de biochar *Terra Preta* tout en évacuant `65 %` latéralement pour maintenir la puce BM1370 sous $54\,^\circ	ext{C}$.</span>
+                        <span lang="en">At <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="7" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c37"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44A TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>17</mn><mi>e</mi><mi>x</mi><mi>t</mi><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></math></mjx-assistive-mml></mjx-container>, liquid immersion adds unnecessary leaks and shipping weight. Placing an anodized `150 mm` aluminium dish over the Bitaxe Gamma 601's upward exhaust transfers `35%` (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="8" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-merror data-mjx-error="Cannot read properties of null (reading '4')" title="Cannot read properties of null (reading '4')"><mjx-mtext style="font-family: MJXZERO, serif;"><mjx-utext variant="-explicitFont" style="font-size: 85.2%; padding: 0.88em 0px 0.235em; width: 106px;">Math input error</mjx-utext></mjx-mtext></mjx-merror></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><merror data-mjx-error="Cannot read properties of null (reading '4')" title="Cannot read properties of null (reading '4')"><mtext>Math input error</mtext></merror></math></mjx-assistive-mml></mjx-container>) into the moist *Terra Preta* biochar bed while venting `65%` laterally so the BM1370 ASIC stays cool (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="9" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c3C"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c35"></mjx-c><mjx-c class="mjx-c34"></mjx-c></mjx-mn><mjx-msup><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-script style="vertical-align: 0.363em;"><mjx-mo class="mjx-n" size="s"><mjx-c class="mjx-c2218"></mjx-c></mjx-mo></mjx-script></mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>&lt;</mo><mn>54</mn><msup><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mo>∘</mo></msup><mi>e</mi><mi>x</mi><mi>t</mi><mrow data-mjx-texclass="ORD"><mi>C</mi></mrow></math></mjx-assistive-mml></mjx-container>).</span>
+                        <span lang="fr">À <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="10" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c37"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44A TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>17</mn><mi>e</mi><mi>x</mi><mi>t</mi><mrow data-mjx-texclass="ORD"><mi>W</mi></mrow></math></mjx-assistive-mml></mjx-container>, l'immersion liquide est inutile : poser une coupelle en aluminium anodisé de `150 mm` au-dessus du flux d'air du Bitaxe Gamma 601 transfère `35 %` (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="11" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-merror data-mjx-error="Cannot read properties of null (reading '4')" title="Cannot read properties of null (reading '4')"><mjx-mtext style="font-family: MJXZERO, serif;"><mjx-utext variant="-explicitFont" style="font-size: 88.4%; padding: 0.848em 0px 0.226em; width: 102px;">Math input error</mjx-utext></mjx-mtext></mjx-merror></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><merror data-mjx-error="Cannot read properties of null (reading '4')" title="Cannot read properties of null (reading '4')"><mtext>Math input error</mtext></merror></math></mjx-assistive-mml></mjx-container>) au lit de biochar *Terra Preta* tout en évacuant `65 %` latéralement pour maintenir la puce BM1370 sous <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="12" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c35"></mjx-c><mjx-c class="mjx-c34"></mjx-c></mjx-mn><mjx-msup><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-script style="vertical-align: 0.363em;"><mjx-mo class="mjx-n" size="s"><mjx-c class="mjx-c2218"></mjx-c></mjx-mo></mjx-script></mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>54</mn><msup><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mo>∘</mo></msup><mi>e</mi><mi>x</mi><mi>t</mi><mrow data-mjx-texclass="ORD"><mi>C</mi></mrow></math></mjx-assistive-mml></mjx-container>.</span>
                     </p>
                     <div class="math-box text-sm">
-                        $$ Q_{	ext{moss}} = \eta_{	ext{baffle}} \cdot P_{	ext{Bitaxe}} = 0.35 	imes 17	ext{ W} = 5.95	ext{ W}_{	ext{th}} \implies T_{	ext{bed}} pprox T_{	ext{amb}} + 6.8\,	ext{K} $$
+                        <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" tabindex="0" ctxtmenu_counter="13" style="font-size: 117.4%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-merror data-mjx-error="Cannot read properties of null (reading '4')" title="Cannot read properties of null (reading '4')"><mjx-mtext style="font-family: MJXZERO, serif;"><mjx-utext variant="-explicitFont" style="font-size: 85.2%; padding: 0.88em 0px 0.235em; width: 106px;">Math input error</mjx-utext></mjx-mtext></mjx-merror></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><merror data-mjx-error="Cannot read properties of null (reading '4')" title="Cannot read properties of null (reading '4')"><mtext>Math input error</mtext></merror></math></mjx-assistive-mml></mjx-container>
                     </div>
                     <ul class="text-xs sm:text-sm text-slate-300 space-y-2 list-disc pl-5">
                         <li>
-                            <span lang="en"><strong>Self-Watering Dew Point:</strong> Warmth evaporates moisture from Bunnings sphagnum moss; the upper borosilicate cloche sits at room ambient ($20.5\,^\circ	ext{C}$), condensing pure droplets that roll down into `gutter_ring` and water the roots perpetually.</span>
-                            <span lang="fr"><strong>Point de Rosée Auto-Irrigué :</strong> La chaleur douce évapore l'eau de la sphaigne ; la paroi haute de la cloche en verre reste à $20,5\,^\circ	ext{C}$, condensant des gouttelettes qui redescendent dans la gouttière `gutter_ring`.</span>
+                            <span lang="en"><strong>Self-Watering Dew Point:</strong> Warmth evaporates moisture from Bunnings sphagnum moss; the upper borosilicate cloche sits at room ambient (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="14" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c2E"></mjx-c><mjx-c class="mjx-c35"></mjx-c></mjx-mn><mjx-msup><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-script style="vertical-align: 0.363em;"><mjx-mo class="mjx-n" size="s"><mjx-c class="mjx-c2218"></mjx-c></mjx-mo></mjx-script></mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>20.5</mn><msup><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mo>∘</mo></msup><mi>e</mi><mi>x</mi><mi>t</mi><mrow data-mjx-texclass="ORD"><mi>C</mi></mrow></math></mjx-assistive-mml></mjx-container>), condensing pure droplets that roll down into `gutter_ring` and water the roots perpetually.</span>
+                            <span lang="fr"><strong>Point de Rosée Auto-Irrigué :</strong> La chaleur douce évapore l'eau de la sphaigne ; la paroi haute de la cloche en verre reste à <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="15" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c><mjx-c class="mjx-c30"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="2"><mjx-c class="mjx-c35"></mjx-c></mjx-mn><mjx-msup><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-script style="vertical-align: 0.363em;"><mjx-mo class="mjx-n" size="s"><mjx-c class="mjx-c2218"></mjx-c></mjx-mo></mjx-script></mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>20</mn><mo>,</mo><mn>5</mn><msup><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mo>∘</mo></msup><mi>e</mi><mi>x</mi><mi>t</mi><mrow data-mjx-texclass="ORD"><mi>C</mi></mrow></math></mjx-assistive-mml></mjx-container>, condensant des gouttelettes qui redescendent dans la gouttière `gutter_ring`.</span>
                         </li>
                         <li>
                             <span lang="en"><strong>2-Minute Monthly Care:</strong> Mist only `10–15 mL` of distilled/rainwater once every 3–4 weeks (never tap water, which leaves white limescale on glass).</span>
@@ -771,7 +1764,7 @@
                         <span lang="fr">Conçu autour d'un bécher borosilicate standard Amazon de `1500 mL` (`Ø115 mm × H 140 mm`, rempli à `1,35 L`). L'ouverture à `32 %` du `thermal_baffle` transfère `~5,4 Wth` via le disque alu `112 mm`, stabilisant l'eau à `26,2 ± 0,8 °C` tandis qu'une pompe piézo USB `1,2 W` actionne le tube Air-Lift imprimé en 3D sans aucune hélice immergée.</span>
                     </p>
                     <div class="math-box text-sm">
-                        $$ P_{	ext{loss}} = U \cdot A_{	ext{beaker}} \cdot (T_{	ext{water}} - T_{	ext{amb}}) pprox 11.2 	imes 0.068 	imes 6.0 pprox 4.57	ext{ W}_{	ext{th}} $$
+                        <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" tabindex="0" ctxtmenu_counter="16" style="font-size: 113.1%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-merror data-mjx-error="Cannot read properties of null (reading '4')" title="Cannot read properties of null (reading '4')"><mjx-mtext style="font-family: MJXZERO, serif;"><mjx-utext variant="-explicitFont" style="font-size: 88.4%; padding: 0.848em 0px 0.226em; width: 102px;">Math input error</mjx-utext></mjx-mtext></mjx-merror></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><merror data-mjx-error="Cannot read properties of null (reading '4')" title="Cannot read properties of null (reading '4')"><mtext>Math input error</mtext></merror></math></mjx-assistive-mml></mjx-container>
                     </div>
                     <p class="text-xs text-emerald-300 font-mono">
                         <span lang="en">→ See Section 5 below for the complete 21-day cycling, prawn acclimation &amp; Wolffia harvesting masterclass!</span>
@@ -818,7 +1811,7 @@
                         <span lang="fr">Le <strong>Canaan Avalon Nano 3S</strong> (`205 × 115 × 58,5 mm`, `6 TH/s`, `140 W`, `33–40 dB`) délivre `102,2 kWh_th/mois` d'air chaud propre (`42–48 °C`). Notre hotte imprimée en 3D (`bitplant_manifold.scad`) canalise cette chaleur via une gaine Bunnings `Ø100 mm` vers un plénum posé sur un panneau isolant XPS Bunnings `20 mm` — stabilisant une **serre 72 cellules** (`540 × 280 mm`) à `25 °C` tout l'hiver.</span>
                     </p>
                     <div class="math-box text-sm">
-                        $$ Q_{	ext{Nano3S}} = 140	ext{ W} 	imes \eta_{	ext{damper}}(0.78) pprox 109.2	ext{ W}_{	ext{th}} \implies +45\% 	ext{ Germination Speed} $$
+                        <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" display="true" tabindex="0" ctxtmenu_counter="17" style="font-size: 113.1%; position: relative;"><mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-merror data-mjx-error="Cannot read properties of null (reading '4')" title="Cannot read properties of null (reading '4')"><mjx-mtext style="font-family: MJXZERO, serif;"><mjx-utext variant="-explicitFont" style="font-size: 88.4%; padding: 0.848em 0px 0.226em; width: 102px;">Math input error</mjx-utext></mjx-mtext></mjx-merror></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><merror data-mjx-error="Cannot read properties of null (reading '4')" title="Cannot read properties of null (reading '4')"><mtext>Math input error</mtext></merror></math></mjx-assistive-mml></mjx-container>
                     </div>
                     <ul class="text-xs sm:text-sm text-slate-300 space-y-2 list-disc pl-5">
                         <li>
@@ -826,8 +1819,8 @@
                             <span lang="fr"><strong>Volet Rotatif Été/Hiver :</strong> Tourner le levier externe à `90°` dès que la pièce dépasse `25 °C` pour dévier l'air chaud vers un séchoir à herbes ou à biochar.</span>
                         </li>
                         <li>
-                            <span lang="en"><strong>Crop Rotation (28-Day Cycle):</strong> Pak Choi, Dwarf Kale, Spinach, Genovese Basil, and broccoli microgreens (`pH 5.8–6.2`, `EC 1.4–1.8 mS/cm`, harvest index `>85%`).</span>
-                            <span lang="fr"><strong>Rotation 28 Jours :</strong> Pak Choï, Kale nain, Épinard, Basilic Genovese et micropousses de brocoli (`pH 5,8–6,2`, `EC 1,4–1,8 mS/cm`, indice de récolte `>85 %`).</span>
+                            <span lang="en"><strong>Crop Rotation (28-Day Cycle):</strong> Pak Choi, Dwarf Kale, Spinach, Genovese Basil, and broccoli microgreens (`pH 5.8–6.2`, `EC 1.4–1.8 mS/cm`, harvest index `&gt;85%`).</span>
+                            <span lang="fr"><strong>Rotation 28 Jours :</strong> Pak Choï, Kale nain, Épinard, Basilic Genovese et micropousses de brocoli (`pH 5,8–6,2`, `EC 1,4–1,8 mS/cm`, indice de récolte `&gt;85 %`).</span>
                         </li>
                     </ul>
                 </div>
@@ -939,7 +1932,7 @@
                 </h3>
                 <ul class="space-y-2.5 text-xs sm:text-sm text-slate-300 list-disc pl-5 leading-relaxed">
                     <li>
-                        <span lang="en"><strong>Best Choice — Red Cherry Shrimp (<em>Neocaridina davidi</em>):</strong> Hardy (`18–28.5°C`), breeds readily in freshwater (no brackish larval stage), `2.5–3 cm` adult size, constantly grazes biofilm, and produces gentle, predictable ammonia. Sold at every Sydney aquarium shop (e.g., <em>Bespoke Aquariums</em>, <em>Livefish.com.au</em>, or local hobbyists at ~$3–$5 AUD each).</span>
+                        <span lang="en"><strong>Best Choice — Red Cherry Shrimp (<em>Neocaridina davidi</em>):</strong> Hardy (`18–28.5°C`), breeds readily in freshwater (no brackish larval stage), `2.5–3 cm` adult size, constantly grazes biofilm, and produces gentle, predictable ammonia. Sold at every Sydney aquarium shop (e.g., <em>Bespoke Aquariums</em>, <em>Livefish.com.au</em>, or local hobbyists at ~<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="18" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2013"></mjx-c></mjx-mo></mjx-texatom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>3</mn><mrow data-mjx-texclass="ORD"><mo>–</mo></mrow></math></mjx-assistive-mml></mjx-container>5 AUD each).</span>
                         <span lang="fr"><strong>Choix Optimal — Crevette Red Cherry (<em>Neocaridina davidi</em>) :</strong> Ultra-robuste (`18–28,5 °C`), reproduction directe en eau douce (sans stade larvaire saumâtre), `2,5–3 cm` adulte, broute le biofilm en continu. Disponible dans toute animalerie aquariophile (~3–5 $ AUD pièce).</span>
                     </li>
                     <li>
@@ -1017,27 +2010,27 @@
                             <td class="py-3 px-4">Add <strong>2 drops of Seachem Prime</strong> per 2 L of tap water before adding.</td>
                         </tr>
                         <tr>
-                            <td class="py-3 px-4 font-mono font-bold text-white">Ammonia ($	ext{NH}_3$) / Nitrite ($	ext{NO}_2^-$)</td>
+                            <td class="py-3 px-4 font-mono font-bold text-white">Ammonia (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="19" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-msub><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D441 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43B TEX-I"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>e</mi><mi>x</mi><mi>t</mi><msub><mrow data-mjx-texclass="ORD"><mi>N</mi><mi>H</mi></mrow><mn>3</mn></msub></math></mjx-assistive-mml></mjx-container>) / Nitrite (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="20" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-msubsup><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D441 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.278em; margin-left: 0px;"><mjx-mo class="mjx-n" size="s"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-spacer style="margin-top: 0.18em;"></mjx-spacer><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msubsup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>e</mi><mi>x</mi><mi>t</mi><msubsup><mrow data-mjx-texclass="ORD"><mi>N</mi><mi>O</mi></mrow><mn>2</mn><mo>−</mo></msubsup></math></mjx-assistive-mml></mjx-container>)</td>
                             <td class="py-3 px-3 font-mono text-[#44ee77]">0.00 ppm</td>
                             <td class="py-3 px-3">Toxic metabolic waste; proof that your Biochar/LECA biofilter is alive.</td>
                             <td class="py-3 px-4">Never add prawns until 21-day cycle reads `0 ppm` on API Master Kit.</td>
                         </tr>
                         <tr>
-                            <td class="py-3 px-4 font-mono font-bold text-white">Nitrate ($	ext{NO}_3^-$)</td>
+                            <td class="py-3 px-4 font-mono font-bold text-white">Nitrate (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="21" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-msubsup><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D441 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.277em; margin-left: 0px;"><mjx-mo class="mjx-n" size="s"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-spacer style="margin-top: 0.18em;"></mjx-spacer><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msubsup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>e</mi><mi>x</mi><mi>t</mi><msubsup><mrow data-mjx-texclass="ORD"><mi>N</mi><mi>O</mi></mrow><mn>3</mn><mo>−</mo></msubsup></math></mjx-assistive-mml></mjx-container>)</td>
                             <td class="py-3 px-3 font-mono text-[#00e5ff]">5 – 20 ppm</td>
                             <td class="py-3 px-3">Primary nitrogen fertilizer fueling *Wolffia* &amp; watercress protein synthesis.</td>
-                            <td class="py-3 px-4">If `>25 ppm`, harvest 30% of *Wolffia* mat; if `0 ppm`, feed 1 extra crumb.</td>
+                            <td class="py-3 px-4">If `&gt;25 ppm`, harvest 30% of *Wolffia* mat; if `0 ppm`, feed 1 extra crumb.</td>
                         </tr>
                         <tr>
                             <td class="py-3 px-4 font-mono font-bold text-white">General Hardness (GH) &amp; TDS</td>
                             <td class="py-3 px-3 font-mono text-[#ffcc00]">6–8 dGH · 180–260 ppm</td>
-                            <td class="py-3 px-3">Provides $	ext{Ca}^{2+}$ &amp; $	ext{Mg}^{2+}$ so prawns molt cleanly without "white ring of death".</td>
+                            <td class="py-3 px-3">Provides <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="22" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-msup><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: 0.432em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>e</mi><mi>x</mi><mi>t</mi><msup><mrow data-mjx-texclass="ORD"><mi>C</mi><mi>a</mi></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn><mo>+</mo></mrow></msup></math></mjx-assistive-mml></mjx-container> &amp; <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="23" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-msup><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D440 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D454 TEX-I"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: 0.41em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>e</mi><mi>x</mi><mi>t</mi><msup><mrow data-mjx-texclass="ORD"><mi>M</mi><mi>g</mi></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn><mo>+</mo></mrow></msup></math></mjx-assistive-mml></mjx-container> so prawns molt cleanly without "white ring of death".</td>
                             <td class="py-3 px-4">Place a `1 cm²` piece of boiled cuttlebone (Amazon/pet aisle) in the LECA bed.</td>
                         </tr>
                         <tr>
                             <td class="py-3 px-4 font-mono font-bold text-white">pH &amp; Carbonate (KH)</td>
                             <td class="py-3 px-3 font-mono text-[#44ee77]">pH 6.8–7.4 · KH 2–4</td>
-                            <td class="py-3 px-3">Prevents acidic pH swings while keeping $	ext{NH}_4^+$ in non-toxic ionized form.</td>
+                            <td class="py-3 px-3">Prevents acidic pH swings while keeping <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="24" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-msubsup><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D441 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43B TEX-I"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.305em; margin-left: 0px;"><mjx-mo class="mjx-n" size="s"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-spacer style="margin-top: 0.18em;"></mjx-spacer><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-script></mjx-msubsup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>e</mi><mi>x</mi><mi>t</mi><msubsup><mrow data-mjx-texclass="ORD"><mi>N</mi><mi>H</mi></mrow><mn>4</mn><mo>+</mo></msubsup></math></mjx-assistive-mml></mjx-container> in non-toxic ionized form.</td>
                             <td class="py-3 px-4">Crushed cuttlebone + activated biochar naturally buffers pH at `~7.1`.</td>
                         </tr>
                     </tbody>
@@ -1171,7 +2164,7 @@
                     <span><span lang="en">LIVE TELEMETRY TRACE (Water °C · Canopy °C · Safe Threshold 29.0°C)</span><span lang="fr">COURBE TEMPS RÉEL (Eau °C · Dôme °C · Seuil Max 29,0 °C)</span></span>
                     <span id="lp-sample-count" class="text-[#00e5ff]">0 samples</span>
                 </div>
-                <canvas id="telemetryChartCanvas" class="responsive-cv h-[165px]"></canvas>
+                <canvas id="telemetryChartCanvas" class="responsive-cv h-[165px]" width="1894" height="947"></canvas>
             </div>
         </div>
 
@@ -1204,9 +2197,7 @@
                 <span class="font-mono text-xs font-bold uppercase tracking-widest text-[#44ee77] block mb-1">
                     05 // PARAMETRIC CAD &amp; FIRMWARE SOURCE VAULT
                 </span>
-                <h2 id="scad-title" class="text-xl sm:text-2xl font-extrabold text-white">
-                    bitterrarium_topper.scad
-                </h2>
+                <h2 id="scad-title" class="text-xl sm:text-2xl font-extrabold text-white">bitterrarium_topper.scad</h2>
             </div>
 
             <div class="flex flex-wrap items-center gap-2">
@@ -1226,7 +2217,122 @@
             </div>
         </div>
 
-        <pre id="scad-viewer" class="max-h-[420px] overflow-auto p-4 rounded-xl bg-[#020306] border border-white/10 font-mono text-xs text-emerald-300 leading-relaxed"></pre>
+        <pre id="scad-viewer" class="max-h-[420px] overflow-auto p-4 rounded-xl bg-[#020306] border border-white/10 font-mono text-xs text-emerald-300 leading-relaxed">// ============================================================================
+// 01. BITTERRARIUM v1.0 — 17W BITAXE SNAP-ON DRY CLOCHE BIOSPHERE TOPPER
+// Regenerative Compute (regenerativecompute.org | regenerativecompute.io)
+// Zero-Workshop Edition: Fits 150mm Amazon Glass Cloche + 150mm Alu Saucer
+// ============================================================================
+
+PART_TO_RENDER = "assembly"; // "assembly", "cradle", "gutter_ring", "led_crown"
+
+pcb_len       = 99.76;   // Bitaxe Gamma 601 exact PCB length
+pcb_wid       = 56.54;   // Bitaxe Gamma 601 exact PCB width
+pcb_thick     = 1.60;
+clearance     = 0.35;
+saucer_od     = 150.0;   // Off-the-shelf 150mm anodized aluminium saucer
+cloche_od     = 146.0;   // Fits standard 15cm Amazon borosilicate glass cloche
+wall          = 2.4;
+cradle_h      = 50.0;
+bypass_pct    = 65;      // 65% lateral air bypass keeps BM1370 &lt; 54°C
+$fn           = 80;
+
+if (PART_TO_RENDER == "assembly") {
+    bt_assembly();
+} else if (PART_TO_RENDER == "cradle") {
+    bt_cradle();
+} else if (PART_TO_RENDER == "gutter_ring") {
+    bt_condensation_gutter();
+} else if (PART_TO_RENDER == "led_crown") {
+    bt_led_crown();
+}
+
+module bt_cradle() {
+    base_od = saucer_od + 6.0;
+    difference() {
+        union() {
+            cylinder(d1 = base_od + 8, d2 = base_od, h = cradle_h);
+            translate([0, -base_od/2 + 1, 16])
+                rotate([24, 0, 0])
+                    cube([36, 12, 20], center = true);
+        }
+        translate([0, 0, wall])
+            cylinder(d1 = base_od - 2*wall, d2 = saucer_od - 8, h = cradle_h + 2);
+
+        sw = pcb_wid + 2*clearance;
+        sl = pcb_len + 2*clearance;
+        translate([-sw/2, -sl/2 + 6, 10])
+            cube([sw, sl + 35, 32]);
+        translate([-(sw + 2.4)/2, -sl/2 + 6, 12])
+            cube([sw + 2.4, sl + 35, pcb_thick + 0.5]);
+
+        translate([0, -base_od/2 - 1, 16])
+            rotate([24, 0, 0])
+                cube([28, 22, 13], center = true);
+
+        for (a = [30 : 45 : 330]) {
+            rotate([0, 0, a])
+                translate([base_od/2, 0, 7])
+                    cube([16, 14, 6], center = true);
+        }
+
+        slot_h = 4.0 + (bypass_pct / 100.0) * 6.0;
+        for (a = [0 : 45 : 315]) {
+            rotate([0, 0, a + 22.5])
+                translate([base_od/2 - 2, 0, cradle_h - 10])
+                    cube([16, 18, slot_h], center = true);
+        }
+
+        translate([0, 0, cradle_h - 3.5])
+            cylinder(d = saucer_od + 0.8, h = 5.0);
+    }
+}
+
+module bt_condensation_gutter() {
+    difference() {
+        cylinder(d = saucer_od - 1.0, h = 12.0);
+        translate([0, 0, -1])
+            cylinder(d = cloche_od - 8.0, h = 15.0);
+        translate([0, 0, 5.0])
+            difference() {
+                cylinder(d = cloche_od + 1.2, h = 8.0);
+                cylinder(d = cloche_od - 4.2, h = 8.0);
+            }
+        for (a = [0 : 45 : 315]) {
+            rotate([0, 0, a])
+                translate([cloche_od/2 - 3, 0, 5.0])
+                    rotate([0, -25, 0])
+                        cube([10, 3.0, 4.0], center = true);
+        }
+    }
+}
+
+module bt_led_crown() {
+    difference() {
+        cylinder(d = 54.0, h = 8.0);
+        translate([0, 0, 2.0]) cylinder(d = 48.0, h = 7.0);
+        translate([0, 0, -1]) cylinder(d = 22.0, h = 10.0);
+    }
+}
+
+module bt_assembly() {
+    color("#d97706") bt_cradle();
+    color("#cbd5e1") translate([0, 0, cradle_h - 3.0]) cylinder(d = saucer_od, h = 2.0);
+    color("#334155") translate([0, 0, cradle_h - 1.0]) bt_condensation_gutter();
+    color("#1c1917") translate([0, 0, cradle_h]) cylinder(d = cloche_od - 10, h = 18);
+    color("#22c55e") translate([0, 0, cradle_h + 18]) resize([120, 120, 45]) sphere(d = 100);
+    color("#e0f2fe", 0.22)
+        translate([0, 0, cradle_h + 4])
+            difference() {
+                union() {
+                    cylinder(d = cloche_od, h = 75);
+                    translate([0, 0, 75]) sphere(d = cloche_od);
+                }
+                translate([0, 0, -1]) cylinder(d = cloche_od - 4, h = 76);
+                translate([0, 0, 75]) sphere(d = cloche_od - 4);
+                translate([0, 0, -80]) cube([300, 300, 160], center = true);
+            }
+}
+</pre>
     </section>
 
 
@@ -1243,8 +2349,8 @@
                 <span lang="fr">Calculateur d'Équilibre Azoté &amp; Matrice de Dépannage Terrain</span>
             </h2>
             <p class="text-slate-300 text-sm max-w-4xl">
-                <span lang="en">Balance prawn biomass against <em>Wolffia arrhiza</em> harvesting rate so nitrate ($	ext{NO}_3^-$) stays locked between `5` and `20 ppm`—and diagnose any thermal, optical, or water-chemistry anomaly in seconds.</span>
-                <span lang="fr">Équilibrez le nombre de crevettes et la récolte hebdomadaire de <em>Wolffia arrhiza</em> afin de maintenir les nitrates ($	ext{NO}_3^-$) entre `5` et `20 ppm` — et diagnostiquez instantanément toute dérive thermique ou chimique.</span>
+                <span lang="en">Balance prawn biomass against <em>Wolffia arrhiza</em> harvesting rate so nitrate (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="25" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-msubsup><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D441 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.277em; margin-left: 0px;"><mjx-mo class="mjx-n" size="s"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-spacer style="margin-top: 0.18em;"></mjx-spacer><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msubsup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>e</mi><mi>x</mi><mi>t</mi><msubsup><mrow data-mjx-texclass="ORD"><mi>N</mi><mi>O</mi></mrow><mn>3</mn><mo>−</mo></msubsup></math></mjx-assistive-mml></mjx-container>) stays locked between `5` and `20 ppm`—and diagnose any thermal, optical, or water-chemistry anomaly in seconds.</span>
+                <span lang="fr">Équilibrez le nombre de crevettes et la récolte hebdomadaire de <em>Wolffia arrhiza</em> afin de maintenir les nitrates (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="26" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-msubsup><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D441 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.277em; margin-left: 0px;"><mjx-mo class="mjx-n" size="s"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-spacer style="margin-top: 0.18em;"></mjx-spacer><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msubsup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>e</mi><mi>x</mi><mi>t</mi><msubsup><mrow data-mjx-texclass="ORD"><mi>N</mi><mi>O</mi></mrow><mn>3</mn><mo>−</mo></msubsup></math></mjx-assistive-mml></mjx-container>) entre `5` et `20 ppm` — et diagnostiquez instantanément toute dérive thermique ou chimique.</span>
             </p>
         </div>
 
@@ -1283,11 +2389,11 @@
                         <span class="text-[10px] uppercase text-slate-400">TAN Excreted</span>
                     </div>
                     <div class="p-3 rounded-xl bg-black/60 border border-white/10 text-center">
-                        <span id="res-no3-eq" class="block font-mono text-base font-extrabold text-[#00e5ff]">11.8 ppm</span>
+                        <span id="res-no3-eq" class="block font-mono text-base font-extrabold text-[#00e5ff]">12.8 ppm</span>
                         <span class="text-[10px] uppercase text-slate-400">Equilibrium NO₃⁻</span>
                     </div>
                     <div class="p-3 rounded-xl bg-black/60 border border-white/10 text-center">
-                        <span id="res-harvest-g" class="block font-mono text-base font-extrabold text-[#44ee77]">14.5 g/wk</span>
+                        <span id="res-harvest-g" class="block font-mono text-base font-extrabold text-[#44ee77]">14.4 g/wk</span>
                         <span class="text-[10px] uppercase text-slate-400">Wolffia Harvest</span>
                     </div>
                     <div class="p-3 rounded-xl bg-black/60 border border-white/10 text-center">
@@ -1295,9 +2401,7 @@
                         <span class="text-[10px] uppercase text-slate-400">Pure Protein (40%)</span>
                     </div>
                 </div>
-                <div id="st-verdict" class="p-3.5 rounded-xl bg-[#44ee77]/10 border-l-4 border-[#44ee77] text-xs text-slate-200 leading-relaxed">
-                    ● Balanced Stoichiometry: Wolffia uptake matches prawn nitrogen excretion. Harvest 1 tablespoon weekly.
-                </div>
+                <div id="st-verdict" class="p-3.5 rounded-xl bg-[#44ee77]/10 border-l-4 border-[#44ee77] text-xs text-slate-200 leading-relaxed" style="border-left-color: rgb(68, 238, 119); background: rgba(68, 238, 119, 0.1);">● Balanced Stoichiometry: Wolffia uptake matches prawn nitrogen excretion. Harvest 1 tablespoon weekly.</div>
             </div>
         </div>
 
@@ -1319,12 +2423,12 @@
                     </tr>
                     <tr>
                         <td class="py-3 px-4 font-semibold text-white">Water &gt; 29.0°C during summer</td>
-                        <td class="py-3 px-3">High room ambient ($T_{	ext{amb}} > 27\,^\circ	ext{C}$) reducing convective loss.</td>
+                        <td class="py-3 px-3">High room ambient (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="27" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.12em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3E"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c32"></mjx-c><mjx-c class="mjx-c37"></mjx-c></mjx-mn><mjx-msup><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-script style="vertical-align: 0.363em;"><mjx-mo class="mjx-n" size="s"><mjx-c class="mjx-c2218"></mjx-c></mjx-mo></mjx-script></mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>T</mi><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>x</mi><mi>t</mi><mrow data-mjx-texclass="ORD"><mi>a</mi><mi>m</mi><mi>b</mi></mrow></mrow></msub><mo>&gt;</mo><mn>27</mn><msup><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mo>∘</mo></msup><mi>e</mi><mi>x</mi><mi>t</mi><mrow data-mjx-texclass="ORD"><mi>C</mi></mrow></math></mjx-assistive-mml></mjx-container>) reducing convective loss.</td>
                         <td class="py-3 px-4">Enable Life-Pulse™ AxeOS auto-throttle (`400 MHz` / `11W`) or print `22%` summer baffle.</td>
                     </tr>
                     <tr>
                         <td class="py-3 px-4 font-semibold text-white">Wolffia turns pale yellow</td>
-                        <td class="py-3 px-3">Nitrogen starvation (`NO3 < 2 ppm`) or insufficient LED photoperiod.</td>
+                        <td class="py-3 px-3">Nitrogen starvation (`NO3 &lt; 2 ppm`) or insufficient LED photoperiod.</td>
                         <td class="py-3 px-4">Increase USB grow ring timer to `14h/day` and feed prawns 1 extra algae wafer crumb.</td>
                     </tr>
                     <tr>
@@ -1349,7 +2453,7 @@
                     </tr>
                     <tr>
                         <td class="py-3 px-4 font-semibold text-white">White line around prawn carapace</td>
-                        <td class="py-3 px-3">Molting difficulty due to low calcium/magnesium (`GH < 4 dGH`).</td>
+                        <td class="py-3 px-3">Molting difficulty due to low calcium/magnesium (`GH &lt; 4 dGH`).</td>
                         <td class="py-3 px-4">Drop a `1 cm²` piece of boiled cuttlebone into the LECA biofilter bed.</td>
                     </tr>
                 </tbody>
@@ -1372,7 +2476,7 @@
             </h2>
             <p class="text-slate-300 text-sm max-w-4xl leading-relaxed">
                 <span lang="en">Once your `1.35 L` Bitaxe unit is cycling smoothly, you can scale to a `40 L` desktop unit powered by a single <strong>Canaan Avalon Nano 3S (`140 W`, `6 TH/s`)</strong>—combining <strong>Australian Jade Perch / Barramundi juveniles</strong>, an upper <strong><em>Wolffia</em> tray</strong>, and a gas-coupled <strong><em>Arthrospira platensis</em> (Spirulina) photobioreactor column</strong>.</span>
-                <span lang="fr">Une fois votre unité Bitaxe `1,35 L` maîtrisée, passez à l'échelle supérieure avec un <strong>Canaan Avalon Nano 3S (`140 W`, `6 TH/s`)</strong> sur `40 L` — associant des <strong>juvéniles de Jade Perch / Barramundi</strong>, un bac supérieur de <strong><em>Wolffia</em></strong> et une colonne photobioréacteur de <strong><em>Spiruline</em></strong> couplée par échange gazeux $	ext{CO}_2/	ext{O}_2$.</span>
+                <span lang="fr">Une fois votre unité Bitaxe `1,35 L` maîtrisée, passez à l'échelle supérieure avec un <strong>Canaan Avalon Nano 3S (`140 W`, `6 TH/s`)</strong> sur `40 L` — associant des <strong>juvéniles de Jade Perch / Barramundi</strong>, un bac supérieur de <strong><em>Wolffia</em></strong> et une colonne photobioréacteur de <strong><em>Spiruline</em></strong> couplée par échange gazeux <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="28" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-msub><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-msub><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>e</mi><mi>x</mi><mi>t</mi><msub><mrow data-mjx-texclass="ORD"><mi>C</mi><mi>O</mi></mrow><mn>2</mn></msub><mrow data-mjx-texclass="ORD"><mo>/</mo></mrow><mi>e</mi><mi>x</mi><mi>t</mi><msub><mrow data-mjx-texclass="ORD"><mi>O</mi></mrow><mn>2</mn></msub></math></mjx-assistive-mml></mjx-container>.</span>
             </p>
         </div>
 
@@ -1394,8 +2498,8 @@
                     <span lang="en"><em>Wolffia</em> Nitrate Scrubber</span><span lang="fr">Bac Supérieur <em>Wolffia</em></span>
                 </h3>
                 <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                    <span lang="en">A `3W` USB water pump lifts nitrate-rich water into a shallow `38 × 18 × 12 cm` acrylic tray. A dense *Wolffia* mat strips `>90%` of nitrates within 48 hours and overflows back into the fish tank, providing daily live green feed.</span>
-                    <span lang="fr">Une micro-pompe USB `3 W` remonte l'eau chargée en nitrates vers un bac acrylique plat. Le tapis de *Wolffia* absorbe `>90 %` des nitrates en 48 h et nourrit quotidiennement les poissons.</span>
+                    <span lang="en">A `3W` USB water pump lifts nitrate-rich water into a shallow `38 × 18 × 12 cm` acrylic tray. A dense *Wolffia* mat strips `&gt;90%` of nitrates within 48 hours and overflows back into the fish tank, providing daily live green feed.</span>
+                    <span lang="fr">Une micro-pompe USB `3 W` remonte l'eau chargée en nitrates vers un bac acrylique plat. Le tapis de *Wolffia* absorbe `&gt;90 %` des nitrates en 48 h et nourrit quotidiennement les poissons.</span>
                 </p>
             </div>
 
@@ -1405,8 +2509,8 @@
                     <span lang="en"><em>Spirulina</em> Gas-Coupled Column</span><span lang="fr">Colonne <em>Spiruline</em> (Couplage Gaz)</span>
                 </h3>
                 <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                    <span lang="en"><strong>NEVER mix Spirulina water with fish water!</strong> Spirulina requires `pH 10.2` sodium bicarbonate medium at `31°C`. The two loops connect <em>only via air tubing</em>: fish respiratory $	ext{CO}_2$ bubbles into the Spirulina column, and $	ext{O}_2$-rich air returns to the fish diffuser.</span>
-                    <span lang="fr"><strong>Ne jamais mélanger l'eau de Spiruline avec celle des poissons !</strong> La Spiruline exige un milieu bicarbonaté à `pH 10,2` et `31 °C`. Les deux compartiments ne communiquent <em>que par voie gazeuse</em> ($	ext{CO}_2 \leftrightarrow 	ext{O}_2$).</span>
+                    <span lang="en"><strong>NEVER mix Spirulina water with fish water!</strong> Spirulina requires `pH 10.2` sodium bicarbonate medium at `31°C`. The two loops connect <em>only via air tubing</em>: fish respiratory <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="29" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-msub><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>e</mi><mi>x</mi><mi>t</mi><msub><mrow data-mjx-texclass="ORD"><mi>C</mi><mi>O</mi></mrow><mn>2</mn></msub></math></mjx-assistive-mml></mjx-container> bubbles into the Spirulina column, and <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="30" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-msub><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>e</mi><mi>x</mi><mi>t</mi><msub><mrow data-mjx-texclass="ORD"><mi>O</mi></mrow><mn>2</mn></msub></math></mjx-assistive-mml></mjx-container>-rich air returns to the fish diffuser.</span>
+                    <span lang="fr"><strong>Ne jamais mélanger l'eau de Spiruline avec celle des poissons !</strong> La Spiruline exige un milieu bicarbonaté à `pH 10,2` et `31 °C`. Les deux compartiments ne communiquent <em>que par voie gazeuse</em> (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="31" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-msub><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2194"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-msub><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>e</mi><mi>x</mi><mi>t</mi><msub><mrow data-mjx-texclass="ORD"><mi>C</mi><mi>O</mi></mrow><mn>2</mn></msub><mo stretchy="false">↔</mo><mi>e</mi><mi>x</mi><mi>t</mi><msub><mrow data-mjx-texclass="ORD"><mi>O</mi></mrow><mn>2</mn></msub></math></mjx-assistive-mml></mjx-container>).</span>
                 </p>
             </div>
         </div>
@@ -1476,7 +2580,7 @@
 
         <pre id="python-daemon-code" class="max-h-[420px] overflow-auto p-4 rounded-xl bg-[#020306] border border-white/10 font-mono text-xs text-cyan-300 leading-relaxed">#!/usr/bin/env python3
 """
-lifepulse_daemon.py — 24/7 Biosphere Telemetry, SQLite Logger & Bitaxe AxeOS Guard
+lifepulse_daemon.py — 24/7 Biosphere Telemetry, SQLite Logger &amp; Bitaxe AxeOS Guard
 Part of Regenerative Compute (regenerativecompute.org | regenerativecompute.io)
 
 Dependencies:
@@ -1521,7 +2625,7 @@ def init_db(db_path: str = "lifepulse_telemetry.db"):
     return conn
 
 
-def patch_bitaxe_axeos(bitaxe_ip: str, frequency_mhz: int, core_mv: int) -> bool:
+def patch_bitaxe_axeos(bitaxe_ip: str, frequency_mhz: int, core_mv: int) -&gt; bool:
     """
     Sends an HTTP PATCH to Bitaxe AxeOS REST API (/api/system) to smoothly
     scale thermal dissipation up or down without rebooting the miner.
@@ -1536,7 +2640,7 @@ def patch_bitaxe_axeos(bitaxe_ip: str, frequency_mhz: int, core_mv: int) -> bool
     )
     try:
         with urllib.request.urlopen(req, timeout=4) as resp:
-            print(f"[AXEOS] {bitaxe_ip} -> {frequency_mhz} MHz / {core_mv} mV (HTTP {resp.status})")
+            print(f"[AXEOS] {bitaxe_ip} -&gt; {frequency_mhz} MHz / {core_mv} mV (HTTP {resp.status})")
             return True
     except Exception as exc:
         print(f"[WARN] Could not reach Bitaxe at {bitaxe_ip}: {exc}")
@@ -1544,7 +2648,7 @@ def patch_bitaxe_axeos(bitaxe_ip: str, frequency_mhz: int, core_mv: int) -> bool
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Life-Pulse ESP32-C3 Daemon & Bitaxe Guard")
+    parser = argparse.ArgumentParser(description="Life-Pulse ESP32-C3 Daemon &amp; Bitaxe Guard")
     parser.add_argument("--port", default="/dev/ttyACM0", help="USB Serial port (e.g. COM4 or /dev/ttyACM0)")
     parser.add_argument("--baud", type=int, default=115200)
     parser.add_argument("--bitaxe-ip", default="192.168.1.142", help="Local LAN IP of Bitaxe Gamma 601")
@@ -1578,13 +2682,13 @@ def main():
             proof_str = f"{ts_utc}|{water_c:.2f}|{air_c:.2f}|{rh_pct:.1f}|{tds_ppm:.0f}"
             sha256_hex = hashlib.sha256(proof_str.encode("utf-8")).hexdigest()
 
-            # Closed-loop thermal hysteresis control for prawns & Wolffia
-            if water_c >= args.max_water_c and not is_throttled:
-                print(f"[ALERT] Water {water_c:.2f}°C >= {args.max_water_c}°C -> Throttling Bitaxe to 400 MHz!")
+            # Closed-loop thermal hysteresis control for prawns &amp; Wolffia
+            if water_c &gt;= args.max_water_c and not is_throttled:
+                print(f"[ALERT] Water {water_c:.2f}°C &gt;= {args.max_water_c}°C -&gt; Throttling Bitaxe to 400 MHz!")
                 if patch_bitaxe_axeos(args.bitaxe_ip, 400, 1100):
                     is_throttled = True
-            elif water_c <= args.recover_water_c and is_throttled:
-                print(f"[OK] Water cooled to {water_c:.2f}°C -> Restoring Bitaxe to 525 MHz!")
+            elif water_c &lt;= args.recover_water_c and is_throttled:
+                print(f"[OK] Water cooled to {water_c:.2f}°C -&gt; Restoring Bitaxe to 525 MHz!")
                 if patch_bitaxe_axeos(args.bitaxe_ip, 525, 1150):
                     is_throttled = False
 
@@ -1620,7 +2724,7 @@ if __name__ == "__main__":
         </div>
 
         <div class="space-y-4">
-            <details class="p-4 rounded-xl bg-white/[0.025] border border-white/10" open>
+            <details class="p-4 rounded-xl bg-white/[0.025] border border-white/10" open="">
                 <summary class="font-bold text-sm sm:text-base text-white cursor-pointer">
                     <span lang="en">1. Is there any risk of water leaking onto the Bitaxe Gamma 601 power supply?</span>
                     <span lang="fr">1. Y a-t-il un risque de fuite d'eau sur l'alimentation du Bitaxe Gamma 601 ?</span>
@@ -1648,8 +2752,8 @@ if __name__ == "__main__":
                     <span lang="fr">3. Pourquoi la carte Life-Pulse™ n'alimente-t-elle la sonde TDS que 50 ms toutes les 10 minutes ?</span>
                 </summary>
                 <p class="text-xs sm:text-sm text-slate-300 mt-2.5 leading-relaxed">
-                    <span lang="en">Dwarf freshwater prawns (<em>Neocaridina</em> and <em>Paratya</em>) are extraordinarily sensitive to dissolved copper and heavy-metal ions (`>0.02 ppm` Cu²⁺ is lethal). Leaving a cheap analog TDS probe continuously energized drives electrolytic corrosion at the metal pins. Switching `GPIO4` HIGH for `50 ms` once every `600,000 ms` (`0.008%` duty cycle) eliminates electrolysis completely while still warning you whenever evaporation concentrates minerals.</span>
-                    <span lang="fr">Les crevettes naines d'eau douce (<em>Neocaridina</em> et <em>Paratya</em>) sont extrêmement sensibles aux ions cuivre (`>0,02 ppm` Cu²⁺ est mortel). Laisser une sonde TDS alimentée en continu provoque une électrolyse des broches métalliques. L'excitation pulsée de `50 ms` toutes les `10 minutes` (`0,008 %` de rapport cyclique) supprime toute électrolyse tout en surveillant l'évaporation.</span>
+                    <span lang="en">Dwarf freshwater prawns (<em>Neocaridina</em> and <em>Paratya</em>) are extraordinarily sensitive to dissolved copper and heavy-metal ions (`&gt;0.02 ppm` Cu²⁺ is lethal). Leaving a cheap analog TDS probe continuously energized drives electrolytic corrosion at the metal pins. Switching `GPIO4` HIGH for `50 ms` once every `600,000 ms` (`0.008%` duty cycle) eliminates electrolysis completely while still warning you whenever evaporation concentrates minerals.</span>
+                    <span lang="fr">Les crevettes naines d'eau douce (<em>Neocaridina</em> et <em>Paratya</em>) sont extrêmement sensibles aux ions cuivre (`&gt;0,02 ppm` Cu²⁺ est mortel). Laisser une sonde TDS alimentée en continu provoque une électrolyse des broches métalliques. L'excitation pulsée de `50 ms` toutes les `10 minutes` (`0,008 %` de rapport cyclique) supprime toute électrolyse tout en surveillant l'évaporation.</span>
                 </p>
             </details>
 
@@ -1680,8 +2784,8 @@ if __name__ == "__main__":
                 <span lang="fr">De 17 W sur un Bureau à Sydney à 1 MW en Mine NSW &amp; 25 MW à Madagascar</span>
             </h2>
             <p class="text-slate-300 text-sm max-w-4xl leading-relaxed">
-                <span lang="en">Every prototype on this page obeys the exact same First-Law energy balance ($Q_{	ext{th}} = P_{	ext{elec}}$). Use the two reference tables below to verify your online 3D print tolerances before ordering from JLC3DP/PCBWay and to compare thermal-biological yields across all five deployment scales.</span>
-                <span lang="fr">Chaque prototype de cette page obéit exactement au même bilan énergétique du premier principe ($Q_{	ext{th}} = P_{	ext{élec}}$). Utilisez les deux tableaux ci-dessous pour valider vos tolérances d'impression 3D en ligne et comparer les rendements à chaque échelle.</span>
+                <span lang="en">Every prototype on this page obeys the exact same First-Law energy balance (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="32" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D444 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c210E TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D443 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.109em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D459 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-texatom></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>Q</mi><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>x</mi><mi>t</mi><mrow data-mjx-texclass="ORD"><mi>t</mi><mi>h</mi></mrow></mrow></msub><mo>=</mo><msub><mi>P</mi><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>x</mi><mi>t</mi><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>l</mi><mi>e</mi><mi>c</mi></mrow></mrow></msub></math></mjx-assistive-mml></mjx-container>). Use the two reference tables below to verify your online 3D print tolerances before ordering from JLC3DP/PCBWay and to compare thermal-biological yields across all five deployment scales.</span>
+                <span lang="fr">Chaque prototype de cette page obéit exactement au même bilan énergétique du premier principe (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="33" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D444 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c210E TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D443 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.177em; margin-left: -0.109em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-utext variant="italic" style="font-size: 88.4%; padding: 0.848em 0px 0.226em; font-family: MJXZERO, serif; font-style: italic;">é</mjx-utext></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D459 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-texatom></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>Q</mi><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>x</mi><mi>t</mi><mrow data-mjx-texclass="ORD"><mi>t</mi><mi>h</mi></mrow></mrow></msub><mo>=</mo><msub><mi>P</mi><mrow data-mjx-texclass="ORD"><mi>e</mi><mi>x</mi><mi>t</mi><mrow data-mjx-texclass="ORD"><mi>é</mi><mi>l</mi><mi>e</mi><mi>c</mi></mrow></mrow></msub></math></mjx-assistive-mml></mjx-container>). Utilisez les deux tableaux ci-dessous pour valider vos tolérances d'impression 3D en ligne et comparer les rendements à chaque échelle.</span>
             </p>
         </div>
 
@@ -1834,62 +2938,62 @@ if __name__ == "__main__":
         <div class="rounded-2xl overflow-hidden border border-white/10 bg-[#030509] p-4 mb-8">
             <svg viewBox="0 0 920 340" class="w-full h-auto block" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Life-Pulse ESP32-C3 Wago 221 Zero-Solder Wiring Schematic">
                 <!-- Background Grid -->
-                <rect width="920" height="340" fill="#030509"/>
+                <rect width="920" height="340" fill="#030509"></rect>
                 <text x="24" y="28" fill="#00e5ff" font-family="Fira Code, monospace" font-size="11" font-weight="700">
                     LIFE-PULSE™ v1.0 — ZERO-SOLDER WAGO 221 + DUPONT JUMPER SCHEMATIC
                 </text>
 
                 <!-- ESP32-C3 SuperMini Box -->
-                <rect x="30" y="65" width="210" height="230" rx="12" fill="#0f172a" stroke="#b366ff" stroke-width="2"/>
+                <rect x="30" y="65" width="210" height="230" rx="12" fill="#0f172a" stroke="#b366ff" stroke-width="2"></rect>
                 <text x="135" y="92" fill="#ffffff" font-family="Inter, sans-serif" font-size="13" font-weight="800" text-anchor="middle">ESP32-C3 SuperMini</text>
                 <text x="135" y="110" fill="#d8b4fe" font-family="Fira Code, monospace" font-size="10" text-anchor="middle">(USB-C to PC / 5V Hub)</text>
 
                 <!-- Pins on ESP32-C3 -->
                 <g font-family="Fira Code, monospace" font-size="10.5" fill="#e2e8f0">
-                    <circle cx="240" cy="135" r="5" fill="#ef4444"/><text x="226" y="139" text-anchor="end">3.3V OUT</text>
-                    <circle cx="240" cy="165" r="5" fill="#64748b"/><text x="226" y="169" text-anchor="end">GND</text>
-                    <circle cx="240" cy="195" r="5" fill="#ffcc00"/><text x="226" y="199" text-anchor="end">GPIO2 (OneWire)</text>
-                    <circle cx="240" cy="225" r="5" fill="#44ee77"/><text x="226" y="229" text-anchor="end">GPIO8 / GPIO9 (I2C)</text>
-                    <circle cx="240" cy="255" r="5" fill="#00e5ff"/><text x="226" y="259" text-anchor="end">GPIO4 (TDS 50ms PWR)</text>
-                    <circle cx="240" cy="280" r="5" fill="#f7931a"/><text x="226" y="284" text-anchor="end">GPIO0 (TDS ADC IN)</text>
+                    <circle cx="240" cy="135" r="5" fill="#ef4444"></circle><text x="226" y="139" text-anchor="end">3.3V OUT</text>
+                    <circle cx="240" cy="165" r="5" fill="#64748b"></circle><text x="226" y="169" text-anchor="end">GND</text>
+                    <circle cx="240" cy="195" r="5" fill="#ffcc00"></circle><text x="226" y="199" text-anchor="end">GPIO2 (OneWire)</text>
+                    <circle cx="240" cy="225" r="5" fill="#44ee77"></circle><text x="226" y="229" text-anchor="end">GPIO8 / GPIO9 (I2C)</text>
+                    <circle cx="240" cy="255" r="5" fill="#00e5ff"></circle><text x="226" y="259" text-anchor="end">GPIO4 (TDS 50ms PWR)</text>
+                    <circle cx="240" cy="280" r="5" fill="#f7931a"></circle><text x="226" y="284" text-anchor="end">GPIO0 (TDS ADC IN)</text>
                 </g>
 
                 <!-- Wago 221 Power Bus Blocks -->
-                <rect x="325" y="115" width="150" height="36" rx="7" fill="#1e1b18" stroke="#ef4444" stroke-width="1.8"/>
+                <rect x="325" y="115" width="150" height="36" rx="7" fill="#1e1b18" stroke="#ef4444" stroke-width="1.8"></rect>
                 <text x="400" y="137" fill="#fca5a5" font-family="Fira Code, monospace" font-size="10" font-weight="700" text-anchor="middle">WAGO 221-415 (+3.3V)</text>
 
-                <rect x="325" y="160" width="150" height="36" rx="7" fill="#1e293b" stroke="#94a3b8" stroke-width="1.8"/>
+                <rect x="325" y="160" width="150" height="36" rx="7" fill="#1e293b" stroke="#94a3b8" stroke-width="1.8"></rect>
                 <text x="400" y="182" fill="#cbd5e1" font-family="Fira Code, monospace" font-size="10" font-weight="700" text-anchor="middle">WAGO 221-415 (GND)</text>
 
                 <!-- Wires from ESP32 to Wago -->
-                <line x1="245" y1="135" x2="325" y2="133" stroke="#ef4444" stroke-width="2.5"/>
-                <line x1="245" y1="165" x2="325" y2="178" stroke="#94a3b8" stroke-width="2.5"/>
+                <line x1="245" y1="135" x2="325" y2="133" stroke="#ef4444" stroke-width="2.5"></line>
+                <line x1="245" y1="165" x2="325" y2="178" stroke="#94a3b8" stroke-width="2.5"></line>
 
                 <!-- Sensor 1: DS18B20 Waterproof Probe -->
-                <rect x="575" y="55" width="310" height="68" rx="10" fill="#0b131e" stroke="#ffcc00" stroke-width="1.8"/>
+                <rect x="575" y="55" width="310" height="68" rx="10" fill="#0b131e" stroke="#ffcc00" stroke-width="1.8"></rect>
                 <text x="730" y="78" fill="#ffcc00" font-family="Inter, sans-serif" font-size="12" font-weight="800" text-anchor="middle">1. DS18B20 Waterproof Water Probe</text>
                 <text x="730" y="96" fill="#cbd5e1" font-family="Fira Code, monospace" font-size="9.5" text-anchor="middle">Red→3.3V · Black→GND · Yellow→GPIO2 (+4.7kΩ pullup)</text>
                 <text x="730" y="112" fill="#94a3b8" font-family="Fira Code, monospace" font-size="9" text-anchor="middle">Submerged mid-beaker · Triggers AxeOS throttle &gt;29.0°C</text>
-                <line x1="245" y1="195" x2="520" y2="195" stroke="#ffcc00" stroke-width="2"/>
-                <line x1="520" y1="195" x2="520" y2="89" stroke="#ffcc00" stroke-width="2"/>
-                <line x1="520" y1="89" x2="575" y2="89" stroke="#ffcc00" stroke-width="2"/>
+                <line x1="245" y1="195" x2="520" y2="195" stroke="#ffcc00" stroke-width="2"></line>
+                <line x1="520" y1="195" x2="520" y2="89" stroke="#ffcc00" stroke-width="2"></line>
+                <line x1="520" y1="89" x2="575" y2="89" stroke="#ffcc00" stroke-width="2"></line>
 
                 <!-- Sensor 2: SHT40 Canopy Air & RH -->
-                <rect x="575" y="142" width="310" height="68" rx="10" fill="#0b131e" stroke="#44ee77" stroke-width="1.8"/>
+                <rect x="575" y="142" width="310" height="68" rx="10" fill="#0b131e" stroke="#44ee77" stroke-width="1.8"></rect>
                 <text x="730" y="165" fill="#44ee77" font-family="Inter, sans-serif" font-size="12" font-weight="800" text-anchor="middle">2. SHT40 High-Accuracy Canopy Sensor</text>
                 <text x="730" y="183" fill="#cbd5e1" font-family="Fira Code, monospace" font-size="9.5" text-anchor="middle">VIN→3.3V · GND→GND · SDA→GPIO8 · SCL→GPIO9</text>
                 <text x="730" y="199" fill="#94a3b8" font-family="Fira Code, monospace" font-size="9" text-anchor="middle">Sits in side louver slot · Computes Dome VPD (kPa)</text>
-                <line x1="245" y1="225" x2="540" y2="225" stroke="#44ee77" stroke-width="2"/>
-                <line x1="540" y1="225" x2="540" y2="176" stroke="#44ee77" stroke-width="2"/>
-                <line x1="540" y1="176" x2="575" y2="176" stroke="#44ee77" stroke-width="2"/>
+                <line x1="245" y1="225" x2="540" y2="225" stroke="#44ee77" stroke-width="2"></line>
+                <line x1="540" y1="225" x2="540" y2="176" stroke="#44ee77" stroke-width="2"></line>
+                <line x1="540" y1="176" x2="575" y2="176" stroke="#44ee77" stroke-width="2"></line>
 
                 <!-- Sensor 3: Pulsed TDS Probe -->
-                <rect x="575" y="230" width="310" height="72" rx="10" fill="#0b131e" stroke="#00e5ff" stroke-width="1.8"/>
+                <rect x="575" y="230" width="310" height="72" rx="10" fill="#0b131e" stroke="#00e5ff" stroke-width="1.8"></rect>
                 <text x="730" y="253" fill="#00e5ff" font-family="Inter, sans-serif" font-size="12" font-weight="800" text-anchor="middle">3. Prawn-Safe Pulsed TDS Probe</text>
                 <text x="730" y="271" fill="#cbd5e1" font-family="Fira Code, monospace" font-size="9.5" text-anchor="middle">VCC→GPIO4 (50ms pulse!) · GND→GND · OUT→GPIO0</text>
                 <text x="730" y="288" fill="#44ee77" font-family="Fira Code, monospace" font-size="9" text-anchor="middle">Zero copper electrolysis · Alerts when TDS &gt; 280 ppm</text>
-                <line x1="245" y1="255" x2="575" y2="255" stroke="#00e5ff" stroke-width="2"/>
-                <line x1="245" y1="280" x2="575" y2="280" stroke="#f7931a" stroke-width="2"/>
+                <line x1="245" y1="255" x2="575" y2="255" stroke="#00e5ff" stroke-width="2"></line>
+                <line x1="245" y1="280" x2="575" y2="280" stroke="#f7931a" stroke-width="2"></line>
             </svg>
         </div>
 
@@ -1909,13 +3013,13 @@ if __name__ == "__main__":
                         <td class="py-3 px-4 font-mono font-bold text-[#ffcc00]">07:00 – 19:00 (12h)</td>
                         <td class="py-3 px-3 font-mono text-[#44ee77]">ON (6500K PAR)</td>
                         <td class="py-3 px-3 font-mono">17 W · 1.2 TH/s + Air-Lift 24/7</td>
-                        <td class="py-3 px-4">Peak *Wolffia* &amp; watercress photosynthesis; absorbs $	ext{NO}_3^-$ &amp; $	ext{CO}_2$, releases $	ext{O}_2$ bubbles.</td>
+                        <td class="py-3 px-4">Peak *Wolffia* &amp; watercress photosynthesis; absorbs <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="34" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-msubsup><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D441 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.277em; margin-left: 0px;"><mjx-mo class="mjx-n" size="s"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-spacer style="margin-top: 0.18em;"></mjx-spacer><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msubsup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>e</mi><mi>x</mi><mi>t</mi><msubsup><mrow data-mjx-texclass="ORD"><mi>N</mi><mi>O</mi></mrow><mn>3</mn><mo>−</mo></msubsup></math></mjx-assistive-mml></mjx-container> &amp; <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="35" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-msub><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>e</mi><mi>x</mi><mi>t</mi><msub><mrow data-mjx-texclass="ORD"><mi>C</mi><mi>O</mi></mrow><mn>2</mn></msub></math></mjx-assistive-mml></mjx-container>, releases <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="36" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-msub><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>e</mi><mi>x</mi><mi>t</mi><msub><mrow data-mjx-texclass="ORD"><mi>O</mi></mrow><mn>2</mn></msub></math></mjx-assistive-mml></mjx-container> bubbles.</td>
                     </tr>
                     <tr>
                         <td class="py-3 px-4 font-mono font-bold text-[#00e5ff]">19:00 – 07:00 (12h)</td>
                         <td class="py-3 px-3 font-mono text-slate-400">OFF (Dark Respiration)</td>
                         <td class="py-3 px-3 font-mono">17 W · 1.2 TH/s + Air-Lift 24/7</td>
-                        <td class="py-3 px-4">Bitaxe prevents nighttime temperature drop (`26.5°C` steady); Air-Lift maintains high dissolved $	ext{O}_2$ while plants respire.</td>
+                        <td class="py-3 px-4">Bitaxe prevents nighttime temperature drop (`26.5°C` steady); Air-Lift maintains high dissolved <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" tabindex="0" ctxtmenu_counter="37" style="font-size: 117.4%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-msub><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi></mjx-texatom><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>e</mi><mi>x</mi><mi>t</mi><msub><mrow data-mjx-texclass="ORD"><mi>O</mi></mrow><mn>2</mn></msub></math></mjx-assistive-mml></mjx-container> while plants respire.</td>
                     </tr>
                     <tr>
                         <td class="py-3 px-4 font-mono font-bold text-[#b366ff]">Every 10 Minutes</td>
@@ -1957,23 +3061,23 @@ if __name__ == "__main__":
         <form id="bio-log-form" onsubmit="addBioLogEntry(event)" class="grid grid-cols-2 sm:grid-cols-6 gap-3 mb-6 p-4 rounded-xl bg-[#05080d] border border-white/10">
             <div>
                 <label class="block font-mono text-[10px] uppercase text-slate-400 mb-1">Temp (°C)</label>
-                <input type="number" id="log-temp" step="0.1" value="26.5" required class="w-full bg-[#0b0f17] border border-white/15 rounded-lg px-2.5 py-1.5 font-mono text-xs text-white">
+                <input type="number" id="log-temp" step="0.1" value="26.5" required="" class="w-full bg-[#0b0f17] border border-white/15 rounded-lg px-2.5 py-1.5 font-mono text-xs text-white">
             </div>
             <div>
                 <label class="block font-mono text-[10px] uppercase text-slate-400 mb-1">NO₂⁻ (ppm)</label>
-                <input type="number" id="log-no2" step="0.05" value="0.00" required class="w-full bg-[#0b0f17] border border-white/15 rounded-lg px-2.5 py-1.5 font-mono text-xs text-white">
+                <input type="number" id="log-no2" step="0.05" value="0.00" required="" class="w-full bg-[#0b0f17] border border-white/15 rounded-lg px-2.5 py-1.5 font-mono text-xs text-white">
             </div>
             <div>
                 <label class="block font-mono text-[10px] uppercase text-slate-400 mb-1">NO₃⁻ (ppm)</label>
-                <input type="number" id="log-no3" step="1" value="10" required class="w-full bg-[#0b0f17] border border-white/15 rounded-lg px-2.5 py-1.5 font-mono text-xs text-white">
+                <input type="number" id="log-no3" step="1" value="10" required="" class="w-full bg-[#0b0f17] border border-white/15 rounded-lg px-2.5 py-1.5 font-mono text-xs text-white">
             </div>
             <div>
                 <label class="block font-mono text-[10px] uppercase text-slate-400 mb-1">TDS (ppm)</label>
-                <input type="number" id="log-tds" step="5" value="215" required class="w-full bg-[#0b0f17] border border-white/15 rounded-lg px-2.5 py-1.5 font-mono text-xs text-white">
+                <input type="number" id="log-tds" step="5" value="215" required="" class="w-full bg-[#0b0f17] border border-white/15 rounded-lg px-2.5 py-1.5 font-mono text-xs text-white">
             </div>
             <div>
                 <label class="block font-mono text-[10px] uppercase text-slate-400 mb-1">Wolffia (g)</label>
-                <input type="number" id="log-wolf" step="0.5" value="14.5" required class="w-full bg-[#0b0f17] border border-white/15 rounded-lg px-2.5 py-1.5 font-mono text-xs text-white">
+                <input type="number" id="log-wolf" step="0.5" value="14.5" required="" class="w-full bg-[#0b0f17] border border-white/15 rounded-lg px-2.5 py-1.5 font-mono text-xs text-white">
             </div>
             <div class="flex items-end">
                 <button type="submit" class="w-full py-1.5 px-3 rounded-lg font-mono text-xs font-extrabold bg-[#ffcc00] text-[#050608] hover:brightness-110 transition-all">
@@ -1995,7 +3099,17 @@ if __name__ == "__main__":
                         <th class="py-2.5 px-4 text-right">Status</th>
                     </tr>
                 </thead>
-                <tbody id="bio-log-tbody" class="divide-y divide-white/[0.06] font-mono text-slate-300"></tbody>
+                <tbody id="bio-log-tbody" class="divide-y divide-white/[0.06] font-mono text-slate-300">
+                <tr>
+                    <td class="py-2.5 px-4 text-white">2026-11-20</td>
+                    <td class="py-2.5 px-3 text-[#ffcc00]">26.5 °C</td>
+                    <td class="py-2.5 px-3 text-[#44ee77]">0.00 ppm</td>
+                    <td class="py-2.5 px-3 text-[#00e5ff]">12 ppm</td>
+                    <td class="py-2.5 px-3">215 ppm</td>
+                    <td class="py-2.5 px-3 text-[#44ee77]">+14.5 g</td>
+                    <td class="py-2.5 px-4 text-right">✅ Optimal</td>
+                </tr>
+            </tbody>
             </table>
         </div>
     </section>
@@ -3058,5 +4172,6 @@ if __name__ == "__main__":
         });
     });
 </script>
-</body>
-</html>
+
+
+</body></html>
