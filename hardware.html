@@ -615,8 +615,11 @@
             <a href="#blueprint-details" class="hover:text-[#ffcc00] transition-colors">
                 <span lang="en">3. Build Guides</span><span lang="fr">3. Montage</span>
             </a>
-            <a href="#prawns-wolffia-masterclass" class="hover:text-[#44ee77] text-emerald-300 transition-colors">
-                <span lang="en">4. Prawns &amp; Wolffia</span><span lang="fr">4. Crevettes &amp; Wolffia</span>
+            <a href="#bitterrarium-masterclass" class="px-4 py-2 rounded-xl font-mono text-xs font-bold bg-[#ffcc00]/20 border border-[#ffcc00] text-[#ffcc00] hover:bg-[#f7931a]/30 transition-all no-underline">
+                🌿 <span lang="en">Jump to BitTerrarium™ Ecosystem</span><span lang="fr">Aller au Guide Écosystème BitTerrarium™</span>
+            </a>
+            <a href="#prawns-wolffia-masterclass" class="px-4 py-2 rounded-xl font-mono text-xs font-bold bg-[#00e5ff]/15 border border-[#00e5ff] text-[#00e5ff] hover:bg-[#00e5ff]/25 transition-all no-underline">
+                🦐 <span lang="en">Jump to Prawns & Wolffia Guide</span><span lang="fr">Aller au Guide Crevettes & Wolffia</span>
             </a>
             <a href="#lifepulse-telemetry" class="hover:text-[#00e5ff] text-cyan-300 transition-colors">
                 <span lang="en">5. Sensor WebApp</span><span lang="fr">5. Capteurs &amp; WebApp</span>
@@ -1405,6 +1408,260 @@
                             <input type="checkbox" data-chk="lp-step4" class="mt-1 w-4 h-4 accent-[#44ee77]">
                             <span><span lang="en"><strong>4. Flash &amp; Connect WebSerial:</strong> Flash our Arduino C++ sketch in Section 6, then click <strong>Connect USB Sensor (WebSerial)</strong> right on this page!</span><span lang="fr"><strong>4. Flasher &amp; Connecter WebSerial :</strong> Téléverser le sketch Arduino C++ de la Section 6, puis cliquer sur <strong>Connecter Capteur USB (WebSerial)</strong> ci-dessous !</span></span>
                         </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================================
+         4B. COMPLETE BIOLOGICAL & THERMODYNAMIC MASTERCLASS: BITTERRARIUM™ ECOSYSTEM
+         ============================================================================ -->
+    <section id="bitterrarium-masterclass" class="rc-panel-warm p-6 sm:p-8 mb-16 scroll-mt-24">
+        <div class="max-w-4xl mb-8">
+            <span class="font-mono text-xs font-bold uppercase tracking-widest text-[#ffcc00] block mb-1">
+                02B // CLOSED-CLOCHE BIOSPHERE MASTERCLASS · TERRA PRETA + BRYOPHYTES + SPRINGTAILS
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-white mb-3">
+                <span lang="en">Building a Self-Watering Tropical Micro-Biosphere on a 17 W Bitaxe Gamma 601</span>
+                <span lang="fr">Construire une Micro-Biosphère Tropicale Auto-Irriguée sur un Bitaxe Gamma 601 (17 W)</span>
+            </h2>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                <span lang="en">Your <strong>BitTerrarium™</strong> is the ideal first build: zero water pumps, zero plumbing seals, and zero risk of spills—yet it demonstrates the exact same <strong>Joule-heat-to-biology thermodynamic coupling</strong> (`17 W` electric → `~6 Wth` basal soil warmth → `26.5–28.0 °C` root zone). Inside the `150 mm` borosilicate glass cloche, a four-level closed ecosystem recycles water, carbon, and trace minerals for years with just `10 mL` of distilled misting once a month.</span>
+                <span lang="fr">Le <strong>BitTerrarium™</strong> est le module idéal pour démarrer : aucune pompe à eau, aucun joint hydraulique et zéro risque de fuite — tout en démontrant exactement le même <strong>couplage thermodynamique Joule → biologie</strong> (`17 W` électriques → `~6 Wth` de chaleur basale douce → `26,5–28,0 °C` au niveau des racines). Sous la cloche en verre borosilicate de `150 mm`, un écosystème fermé à quatre étages recycle l'eau, le carbone et les minéraux pendant des années avec seulement `10 mL` de brumisation par mois.</span>
+            </p>
+        </div>
+
+        <!-- PART A: 5-LAYER STRATIFIED SUBSTRATE ARCHITECTURE (SVG + ENGINEERING SPECS) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8 items-stretch">
+            <!-- Left Col: Architectural Cross-Section SVG -->
+            <div class="rounded-2xl overflow-hidden border border-white/10 bg-[#030509] p-4 flex flex-col justify-between">
+                <div class="font-mono text-xs font-bold text-[#ffcc00] mb-2">
+                    <span lang="en">5-LAYER STRATIFIED BIOSPHERE ARCHITECTURE (Ø150 MM CLOCHE)</span>
+                    <span lang="fr">ARCHITECTURE STRATIFIÉE EN 5 COUCHES (CLOCHE Ø150 MM)</span>
+                </div>
+                <svg viewBox="0 0 540 360" class="w-full h-auto block" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BitTerrarium 5-Layer Stratified Biosphere Cross-Section">
+                    <rect width="540" height="360" fill="#030509"></rect>
+
+                    <!-- Glass Cloche Dome -->
+                    <path d="M 110 265 L 110 155 A 160 135 0 0 1 430 155 L 430 265" fill="rgba(224,242,254,0.06)" stroke="#67e8f9" stroke-width="2.2"></path>
+                    <!-- USB Grow Ring Crown -->
+                    <rect x="215" y="14" width="110" height="12" rx="4" fill="#1e293b" stroke="#ffcc00" stroke-width="1.5"></rect>
+                    <text x="270" y="10" fill="#ffcc00" font-family="Fira Code, monospace" font-size="9.5" text-anchor="middle">USB 6500K LED RING (160 µmol)</text>
+
+                    <!-- Condensation droplets along inner glass wall -->
+                    <g fill="#00e5ff" opacity="0.85">
+                        <circle cx="122" cy="175" r="2.5"></circle>
+                        <circle cx="118" cy="205" r="2.8"></circle>
+                        <circle cx="116" cy="235" r="3.0"></circle>
+                        <circle cx="418" cy="175" r="2.5"></circle>
+                        <circle cx="422" cy="205" r="2.8"></circle>
+                        <circle cx="424" cy="235" r="3.0"></circle>
+                    </g>
+
+                    <!-- Layer 5: Canopy Flora (Moss + Fittonia + Oak Leaf Fern) -->
+                    <ellipse cx="205" cy="195" rx="46" ry="24" fill="#10b981" opacity="0.85"></ellipse>
+                    <ellipse cx="330" cy="192" rx="48" ry="26" fill="#44ee77" opacity="0.8"></ellipse>
+                    <ellipse cx="268" cy="172" rx="38" ry="32" fill="#059669" opacity="0.9"></ellipse>
+                    <text x="270" y="168" fill="#ffffff" font-family="Inter, sans-serif" font-size="10.5" font-weight="800" text-anchor="middle">CANOPY FLORA & SPRINGTAILS</text>
+                    <text x="270" y="182" fill="#d1fae5" font-family="Fira Code, monospace" font-size="9" text-anchor="middle">25.5°C · 84% RH · VPD 0.52 kPa</text>
+
+                    <!-- Layer 4: Terra Preta Biochar + Sphagnum Substrate (18 mm) -->
+                    <rect x="122" y="212" width="296" height="24" rx="3" fill="#292524" stroke="#a8a29e" stroke-width="1"></rect>
+                    <text x="270" y="227" fill="#fde68a" font-family="Fira Code, monospace" font-size="9.5" font-weight="700" text-anchor="middle">LAYER 4: TERRA PRETA BIOCHAR + SPHAGNUM (18 mm)</text>
+
+                    <!-- Layer 3: Fine Nylon Mesh Separator (1 mm) -->
+                    <line x1="122" y1="238" x2="418" y2="238" stroke="#b366ff" stroke-width="2" stroke-dasharray="4,3"></line>
+                    <text x="270" y="248" fill="#d8b4fe" font-family="Fira Code, monospace" font-size="8.5" text-anchor="middle">LAYER 3: INERT NYLON ROOT BARRIER MESH</text>
+
+                    <!-- Layer 2: LECA Clay Pebbles Drainage & Reservoir (14 mm) -->
+                    <rect x="122" y="251" width="296" height="20" rx="3" fill="#451a03" stroke="#f7931a" stroke-width="1"></rect>
+                    <text x="270" y="264" fill="#fed7aa" font-family="Fira Code, monospace" font-size="9.5" font-weight="700" text-anchor="middle">LAYER 2: BUNNINGS LECA CLAY PEBBLES + RAIN GUTTER (14 mm)</text>
+
+                    <!-- Layer 1: 150mm Anodized Aluminium Dish + Bitaxe Thermal Plume -->
+                    <rect x="104" y="273" width="332" height="7" rx="2" fill="#cbd5e1"></rect>
+                    <rect x="135" y="286" width="270" height="54" rx="8" fill="#18120e" stroke="#f7931a" stroke-width="2"></rect>
+                    <text x="270" y="309" fill="#ffcc00" font-family="Fira Code, monospace" font-size="11" font-weight="800" text-anchor="middle">BITAXE GAMMA 601 (17 W · BM1370)</text>
+                    <text x="270" y="326" fill="#94a3b8" font-family="Fira Code, monospace" font-size="9.5" text-anchor="middle">35% Upward Basal Heat (~6 Wth) · 65% Side Bypass</text>
+                </svg>
+                <div class="mt-2 text-[11px] font-mono text-slate-400 flex justify-between">
+                    <span>Total Height: 210 mm</span>
+                    <span class="text-[#44ee77]">Water Autonomy: 30–45 Days</span>
+                </div>
+            </div>
+
+            <!-- Right Col: Detailed Layer-by-Layer Engineering Breakdown -->
+            <div class="p-5 rounded-2xl bg-[#06090e] border border-white/10 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-lg font-bold text-[#ffcc00] mb-3">
+                        🧱 <span lang="en">Why Each Substrate Layer Is Essential (Zero-Rot Engineering)</span><span lang="fr">Rôle de Chaque Strate (Ingénierie Anti-Pourriture)</span>
+                    </h3>
+                    <ol class="space-y-2.5 text-xs sm:text-sm text-slate-300 list-decimal pl-5 leading-relaxed">
+                        <li>
+                            <span lang="en"><strong>Layer 1 — 150 mm Anodized Aluminium Thermal Plate:</strong> Conducts `~6.0 Wth` evenly across the entire dish floor so there are no scorching hot-spots above the Bitaxe heatsink, while forming an impenetrable moisture shield over your miner.</span>
+                            <span lang="fr"><strong>Strate 1 — Coupelle Aluminium Anodisé Ø150 mm :</strong> Répartit uniformément `~6,0 Wth` sur toute la base sans point chaud au-dessus du radiateur Bitaxe, tout en formant un bouclier étanche absolu.</span>
+                        </li>
+                        <li>
+                            <span lang="en"><strong>Layer 2 — Bunnings Yates LECA Clay Pebbles (`14 mm`) + `gutter_ring`:</strong> Expanded porous clay spheres hold `30 mL` of reserve water underneath the soil line. As distilled droplets condense on the cool glass cloche (`~21 °C`), `gutter_ring` funnels them straight back into this reservoir without flooding plant roots.</span>
+                            <span lang="fr"><strong>Strate 2 — Billes d'Argile LECA Bunnings (`14 mm`) + `gutter_ring` :</strong> Réserve hydrique de `30 mL` sous la zone racinaire. Les gouttelettes condensées sur la paroi froide du verre (`~21 °C`) ruissellent dans `gutter_ring` et rechargent ce réservoir sans noyer les racines.</span>
+                        </li>
+                        <li>
+                            <span lang="en"><strong>Layer 3 — Fine Nylon / Fibreglass Mesh (`1 mm`):</strong> Cut a `140 mm` circle from standard Bunnings flyscreen mesh; prevents biochar fines from washing down into the LECA drainage layer.</span>
+                            <span lang="fr"><strong>Strate 3 — Grille Fine Nylon / Moustiquaire (`1 mm`) :</strong> Découper un disque de `140 mm` dans une moustiquaire Bunnings pour empêcher le biochar de colmater les billes LECA.</span>
+                        </li>
+                        <li>
+                            <span lang="en"><strong>Layer 4 — Activated Terra Preta Biochar (`30%`) + Brunnings Sphagnum Moss (`70%`):</strong> Crushed horticultural charcoal traps volatile organic acids, prevents anaerobic souring, and hosts beneficial mycorrhizal fungi.</span>
+                            <span lang="fr"><strong>Strate 4 — Biochar Terra Preta Activé (`30 %`) + Sphaigne Brunnings (`70 %`) :</strong> Le charbon horticole concassé adsorbe les acides organiques, empêche toute fermentation et abrite les champignons mycorhiziens.</span>
+                        </li>
+                        <li>
+                            <span lang="en"><strong>Layer 5 — Tropical Bryophyte Canopy + Micro-Cleaners:</strong> Living cushion moss (*Leucobryum*) + nerve plant (*Fittonia*) + <strong>tropical white springtails (<em>Folsomia candida</em>)</strong> that eat mold spores before they can ever form.</span>
+                            <span lang="fr"><strong>Strate 5 — Canopée Tropicale + Micro-Nettoyeurs :</strong> Mousse coussin vivante (*Leucobryum*) + *Fittonia* + <strong>collemboles blancs tropicaux (<em>Folsomia candida</em>)</strong> qui dévorent les spores de moisissure avant toute apparition.</span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- PART B: CURATED FLORA & MICRO-FAUNA SELECTION MATRIX (BUNNINGS / SYDNEY NURSERIES) -->
+        <div class="mb-8">
+            <h3 class="text-lg font-bold text-[#44ee77] mb-3">
+                🌱 <span lang="en">Curated BitTerrarium™ Species Matrix (25–28 °C Warm High-Humidity Cloche)</span><span lang="fr">Sélection Botanique & Micro-Faune Optimale pour le BitTerrarium™ (25–28 °C)</span>
+            </h3>
+            <div class="overflow-x-auto rounded-xl border border-white/10 bg-[#040609]">
+                <table class="w-full text-left border-collapse text-xs sm:text-sm">
+                    <thead>
+                        <tr class="border-b border-white/10 bg-white/[0.03] font-mono text-[11px] uppercase text-[#ffcc00]">
+                            <th class="py-3 px-4"><span lang="en">Organism & Botanical Name</span><span lang="fr">Organisme & Nom Botanique</span></th>
+                            <th class="py-3 px-3"><span lang="en">Ecological Role</span><span lang="fr">Rôle Écologique</span></th>
+                            <th class="py-3 px-3"><span lang="en">Where to Buy (AU)</span><span lang="fr">Où Trouver (AU / FR)</span></th>
+                            <th class="py-3 px-4"><span lang="en">Growth Habit & Pruning</span><span lang="fr">Croissance & Taille</span></th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/[0.06] text-slate-300">
+                        <tr>
+                            <td class="py-3 px-4 font-semibold text-white">Cushion Moss (<em>Leucobryum glaucum</em>) & Java Moss (<em>Taxiphyllum</em>)</td>
+                            <td class="py-3 px-3">Primary CO<sub>2</sub> fixer, humidity buffer & emerald carpet</td>
+                            <td class="py-3 px-3">Bunnings Terrarium section / Sydney Aquarium shops</td>
+                            <td class="py-3 px-4">Forms dense velvet mounds (`2–3 cm` tall); requires zero pruning for 12+ months.</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-semibold text-white">Nerve Plant (<em>Fittonia albivenis</em> 'Mini White' / 'Pink')</td>
+                            <td class="py-3 px-3">Living moisture gauge (wilts slightly if cloche needs 10 mL mist)</td>
+                            <td class="py-3 px-3">Bunnings Indoor Mini-Plants (`$5–$7` 50mm pot)</td>
+                            <td class="py-3 px-4">Thrives at `26–28 °C` & `85% RH`; pinch top leaves every 2 months to keep bushy.</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-semibold text-white">Oak Leaf Creeping Fig (<em>Ficus pumila quercifolia</em>)</td>
+                            <td class="py-3 px-3">Miniature trailing vine covering biochar & hardscape</td>
+                            <td class="py-3 px-3">Bunnings / Terrarium specialty nurseries / eBay AU</td>
+                            <td class="py-3 px-4">Tiny `8 mm` oak-shaped leaves; loves warm roots (`27 °C`) and steady LED light.</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-semibold text-white">Artillery Fern (<em>Pilea microphylla</em>) or Baby's Tears (<em>Soleirolia</em>)</td>
+                            <td class="py-3 px-3">Fast-growing biomass & micro-canopy oxygen producer</td>
+                            <td class="py-3 px-3">Bunnings Indoor Garden / local nursery</td>
+                            <td class="py-3 px-4">Trim back `20%` every 6 weeks and compost clippings directly into the biochar bed.</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-semibold text-white">Tropical White Springtails (<em>Folsomia candida</em>)</td>
+                            <td class="py-3 px-3"><strong>Mandatory Detritivore Cleaners</strong> — eat mold & dead leaves</td>
+                            <td class="py-3 px-3">eBay AU / Gumtree / Reptile & Terrarium suppliers (`$12`)</td>
+                            <td class="py-3 px-4">Self-regulating micro-arthropods (`1–2 mm`); convert detritus into plant-available nitrates.</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-semibold text-white">Dwarf White Isopods (<em>Trichorhina tomentosa</em>) — Optional</td>
+                            <td class="py-3 px-3">Deep soil aerators & biochar-microbe stimulators</td>
+                            <td class="py-3 px-3">Australian Bioactive / Reptile shops (`$15`)</td>
+                            <td class="py-3 px-4">Add 8–10 individuals; burrow through sphagnum/biochar without eating live moss.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- PART C: 14-DAY ESTABLISHMENT PROTOCOL + INTERACTIVE MICROCLIMATE SIMULATOR -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <!-- Left Col: 14-Day Establishment Timeline -->
+            <div class="p-5 rounded-2xl bg-[#06090e] border border-white/10 space-y-4">
+                <h3 class="text-lg font-bold text-[#00e5ff]">
+                    📅 <span lang="en">14-Day BitTerrarium™ Biological Commissioning Protocol</span><span lang="fr">Protocole de Mise en Service Biologique sur 14 Jours</span>
+                </h3>
+                <div class="space-y-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    <div class="p-3 rounded-xl bg-white/[0.03] border border-white/10">
+                        <div class="font-mono text-xs font-bold text-[#ffcc00] mb-1">DAY 1 · SUBSTRATE WASH & CHARGING</div>
+                        <span lang="en">Boil or rinse Bunnings LECA pebbles and horticultural charcoal 3× in tap water, then do a final rinse with <strong>distilled/rainwater</strong> (prevents mineral white crust on your borosilicate dome). Moisten sphagnum moss until damp like a wrung-out sponge—never dripping wet.</span>
+                        <span lang="fr">Rincer 3× les billes LECA et le charbon horticole Bunnings, puis effectuer un rinçage final à l'<strong>eau distillée/pluie</strong> (évite tout dépôt blanc sur le verre). Humidifier la sphaigne comme une éponge essorée — jamais détrempée.</span>
+                    </div>
+                    <div class="p-3 rounded-xl bg-white/[0.03] border border-white/10">
+                        <div class="font-mono text-xs font-bold text-[#44ee77] mb-1">DAYS 2–4 · PLANTING & SPRINGTAIL SEEDING</div>
+                        <span lang="en">Nestle the *Fittonia* root ball into the biochar-sphagnum layer, press live cushion moss firmly onto the surface so rhizoids contact moist biochar, tap `~50` tropical springtails from their culture cup onto the moss, mist `25 mL` distilled water, and seat the `150 mm` glass cloche into `gutter_ring`.</span>
+                        <span lang="fr">Installer la motte de *Fittonia* dans la couche biochar-sphaigne, plaquer fermement la mousse vivante, introduire `~50` collemboles blancs sur la mousse, brumiser `25 mL` d'eau pure et poser la cloche `150 mm` dans `gutter_ring`.</span>
+                    </div>
+                    <div class="p-3 rounded-xl bg-white/[0.03] border border-white/10">
+                        <div class="font-mono text-xs font-bold text-[#00e5ff] mb-1">DAYS 5–14 · CONDENSATION EQUILIBRIUM TUNING</div>
+                        <span lang="en">Run your Bitaxe Gamma 601 (`17 W`) and set the USB LED crown timer to `12h ON / 12h OFF`. <strong>Ideal visual check:</strong> morning mist covers `40–70%` of the glass dome and clears partially during the afternoon. If `100%` of the glass stays opaque all day, lift the cloche for 20 minutes once to vent excess water.</span>
+                        <span lang="fr">Faire tourner le Bitaxe Gamma 601 (`17 W`) et régler la couronne LED sur `12h ON / 12h OFF`. <strong>Repère visuel idéal :</strong> une fine buée recouvre `40–70 %` de la cloche le matin et s'éclaircit l'après-midi. Si la cloche reste 100 % opaque toute la journée, aérer 20 minutes une seule fois.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Col: Interactive BitTerrarium Condensation & VPD Calculator -->
+            <div class="p-5 rounded-2xl bg-[#06090e] border border-[#ffcc00]/30 flex flex-col justify-between">
+                <div>
+                    <div class="font-mono text-xs font-bold text-[#ffcc00] mb-1">INTERACTIVE DEW-POINT & AUTONOMY SIMULATOR</div>
+                    <h3 class="text-lg font-bold text-white mb-4">
+                        <span lang="en">BitTerrarium™ Closed Rain-Loop & Autonomy Calculator</span>
+                        <span lang="fr">Simulateur du Cycle de Pluie Fermé & Autonomie Hydrique</span>
+                    </h3>
+
+                    <div class="space-y-4 mb-5">
+                        <div>
+                            <label for="bt-sim-watts" class="flex justify-between text-xs font-semibold text-slate-200 mb-1.5">
+                                <span><span lang="en">Bitaxe Power Setting (AxeOS)</span><span lang="fr">Puissance Bitaxe (AxeOS)</span></span>
+                                <span id="out-bt-watts" class="font-mono text-[#ffcc00] font-bold">17.0 W</span>
+                            </label>
+                            <input type="range" id="bt-sim-watts" min="10" max="22" step="0.5" value="17.0" class="w-full">
+                        </div>
+
+                        <div>
+                            <label for="bt-sim-amb" class="flex justify-between text-xs font-semibold text-slate-200 mb-1.5">
+                                <span><span lang="en">Room Temperature (Sydney Winter → Summer)</span><span lang="fr">Température Pièce (Hiver → Été)</span></span>
+                                <span id="out-bt-amb" class="font-mono text-[#00e5ff] font-bold">20.5 °C</span>
+                            </label>
+                            <input type="range" id="bt-sim-amb" min="14" max="30" step="0.5" value="20.5" class="w-full">
+                        </div>
+
+                        <div>
+                            <label for="bt-sim-seal" class="flex justify-between text-xs font-semibold text-slate-200 mb-1.5">
+                                <span><span lang="en">Gutter Ring Seal Tightness</span><span lang="fr">Étanchéité Anneau Condenseur</span></span>
+                                <span id="out-bt-seal" class="font-mono text-[#44ee77] font-bold">96 % (Closed Loop)</span>
+                            </label>
+                            <input type="range" id="bt-sim-seal" min="80" max="99" step="1" value="96" class="w-full">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                        <div class="p-2.5 rounded-xl bg-black/60 border border-white/10 text-center">
+                            <span id="bt-res-soil" class="block font-mono text-base font-extrabold text-[#ffcc00]">27.3 °C</span>
+                            <span class="text-[10px] uppercase text-slate-400">Biochar Bed</span>
+                        </div>
+                        <div class="p-2.5 rounded-xl bg-black/60 border border-white/10 text-center">
+                            <span id="bt-res-rain" class="block font-mono text-base font-extrabold text-[#00e5ff]">42.8 mL/d</span>
+                            <span class="text-[10px] uppercase text-slate-400">Internal Rain</span>
+                        </div>
+                        <div class="p-2.5 rounded-xl bg-black/60 border border-white/10 text-center">
+                            <span id="bt-res-vpd" class="block font-mono text-base font-extrabold text-[#44ee77]">0.54 kPa</span>
+                            <span class="text-[10px] uppercase text-slate-400">Canopy VPD</span>
+                        </div>
+                        <div class="p-2.5 rounded-xl bg-black/60 border border-white/10 text-center">
+                            <span id="bt-res-days" class="block font-mono text-base font-extrabold text-purple-300">38 days</span>
+                            <span class="text-[10px] uppercase text-slate-400">Water Autonomy</span>
+                        </div>
+                    </div>
+                    <div id="bt-sim-verdict" class="p-3 rounded-xl bg-[#44ee77]/10 border-l-4 border-[#44ee77] text-xs text-slate-200 leading-relaxed">
+                        ● Optimal Bryophyte Dew-Point: 42.8 mL/day distilled rain recycles cleanly through gutter_ring; mist 10 mL once every 5 weeks.
                     </div>
                 </div>
             </div>
@@ -3658,9 +3915,58 @@ if __name__ == "__main__":
         showToast('📥 Bio-logbook CSV exported!');
     }
 
+    function updateBitTerrariumSim() {
+        const wEl = document.getElementById('bt-sim-watts');
+        if (!wEl) return;
+        const watts = parseFloat(wEl.value);
+        const tAmb = parseFloat(document.getElementById('bt-sim-amb').value);
+        const sealPct = parseInt(document.getElementById('bt-sim-seal').value, 10);
+        const isFr = document.body.classList.contains('lang-fr');
+
+        document.getElementById('out-bt-watts').textContent = watts.toFixed(1) + ' W';
+        document.getElementById('out-bt-amb').textContent = tAmb.toFixed(1) + ' °C';
+        document.getElementById('out-bt-seal').textContent = sealPct + (isFr ? ' % (Boucle Fermée)' : ' % (Closed Loop)');
+
+        const qBasal = watts * 0.35;
+        const soilC = tAmb + (qBasal / 0.88);
+        const canopyC = tAmb + (qBasal / 1.45);
+        const rainMlDay = Math.max(12, qBasal * 7.2 * (sealPct / 96.0));
+        const rh = Math.min(94, 72 + (sealPct - 80) * 0.75);
+        const esat = 0.6108 * Math.exp((17.27 * canopyC) / (canopyC + 237.3));
+        const vpd = esat * (1.0 - rh / 100.0);
+
+        const lossMlDay = Math.max(0.35, rainMlDay * (1.0 - sealPct / 100.0) * 1.15);
+        const autonomyDays = Math.min(90, Math.round(30.0 / lossMlDay));
+
+        document.getElementById('bt-res-soil').textContent = soilC.toFixed(1) + ' °C';
+        document.getElementById('bt-res-rain').textContent = rainMlDay.toFixed(1) + ' mL/d';
+        document.getElementById('bt-res-vpd').textContent = vpd.toFixed(2) + ' kPa';
+        document.getElementById('bt-res-days').textContent = autonomyDays + (isFr ? ' jours' : ' days');
+
+        const verdict = document.getElementById('bt-sim-verdict');
+        if (soilC > 30.0) {
+            verdict.style.borderLeftColor = '#f7931a';
+            verdict.style.background = 'rgba(247, 147, 26, 0.14)';
+            verdict.textContent = isFr
+                ? '⚠️ Substrat chaud (> 30 °C) : Réduisez le Bitaxe à 12 W dans AxeOS ou aérez la cloche 15 min.'
+                : '⚠️ Warm Biochar Bed (> 30°C): Step Bitaxe down to 12 W in AxeOS or vent cloche for 15 min.';
+        } else {
+            verdict.style.borderLeftColor = '#44ee77';
+            verdict.style.background = 'rgba(68, 238, 119, 0.10)';
+            verdict.textContent = isFr
+                ? `● Point de Rosée Optimal : ${rainMlDay.toFixed(1)} mL/jour de pluie distillée recyclée via gutter_ring ; autonomie ~${autonomyDays} jours sans arrosage.`
+                : `● Optimal Bryophyte Dew-Point: ${rainMlDay.toFixed(1)} mL/day distilled rain recycles cleanly through gutter_ring; ~${autonomyDays} days water autonomy.`;
+        }
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
         renderBioLogs();
         updateStoichiometry();
+        updateBitTerrariumSim();
+        ['bt-sim-watts', 'bt-sim-amb', 'bt-sim-seal'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener('input', updateBitTerrariumSim);
+        });
         ['st-prawns', 'st-wolffia', 'st-feed'].forEach(id => document.getElementById(id).addEventListener('input', updateStoichiometry));
         let savedLang = 'en';
         try { savedLang = localStorage.getItem('rc-lang') || 'en'; } catch (e) {}
