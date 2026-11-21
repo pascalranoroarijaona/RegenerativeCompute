@@ -1,0 +1,13 @@
+{
+  "timestamp_utc": "2026-11-21T02:00:16.163576+00:00",
+  "current_bitcoin_block": 976822,
+  "target_launch_block": 1000000,
+  "blocks_remaining": 23178,
+  "estimated_launch_utc": "2027-05-01 01:00 UTC",
+  "horizon_years": 114,
+  "horizon_end_block": 6995816,
+  "covenant_text": "REGENERATIVE COMPUTE (regenerativecompute.io | regenerativecompute.org) — TIMECHAIN COVENANT: Sustaining Life on Earth and Beyond. New Civilizational KPI: Lift humanity starting from the most vulnerable populations—bringing sovereign food, clean atmospheric water, and Terra Preta soil regeneration to all Madagascans and Lemurians across a 114-year low-time-preference horizon (Block #1,000,000 Launch -> Block #6,995,816 / Year 2140), while flight-qualifying closed-loop life support for Mars. Every watt of compute warms life.",
+  "covenant_sha256": "09a6b82ac7d5e783721cfce7a48045d7d67de7309f6c38668568012a557644e3",
+  "op_return_hex": "5243314d09a6b82ac7d5e783721cfce7a48045d7d67de7309f6c38668568012a557644e3",
+  "verification_instructions": "Broadcast a 0-value OP_RETURN transaction containing op_return_hex on Bitcoin mainnet or stamp data/timechain_covenant.json via OpenTimestamps (ots stamp data/timechain_covenant.json)."
+}
