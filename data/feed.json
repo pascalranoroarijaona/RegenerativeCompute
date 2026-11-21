@@ -1,9 +1,23 @@
 {
-  "updated_at": "2026-11-20T08:33:00+11:00",
+  "updated_at": "2026-11-21T02:00:16.871658+00:00",
   "genesis_promise_block": 970500,
   "target_launch_block": 1000000,
   "horizon_year": 2140,
   "posts": [
+    {
+      "date": "2026-11-21",
+      "day_number": 2,
+      "block_height": 976822,
+      "pillar": "Completing the Bitaxe Equation (17W BM1370 + Snap-On Borosilicate Biosphere Dome)",
+      "title_en": "Day 2: Completing the Bitaxe Equation at Block #976,822",
+      "title_fr": "Jour 2 : Compléter l'équation Bitaxe au Bloc #976,822",
+      "hook_en": "With 23,178 blocks remaining until Block #1,000,000, every watt of open-source ASIC heat can water moss, fix carbon in Terra Preta, and prototype Mars life support.",
+      "hook_fr": "À 23,178 blocs du Bloc #1 000 000, chaque watt de chaleur ASIC open-source peut irriguer la mousse, fixer le carbone dans la Terra Preta et prototyper le support de vie martien.",
+      "x_post": "Block #976,822 (23,178 left to #1,000,000).\n\nBitaxe gave us open-source hash. Now we add the living dome: 17W of Joule heat driving a self-watering Terra Preta biosphere.\n\n114-year mission: feed all Madagascans & Lemurians first, then terraform Mars.\n\nregenerativecompute.io #Bitcoin #Bitaxe",
+      "linkedin_post": "Countdown to Bitcoin Block #1,000,000: 23,178 blocks remaining.\n\nWhat happens when we stop treating compute heat as waste and start measuring civilizational success by how fast we uplift the most vulnerable populations?\n\nAt Regenerative Compute (regenerativecompute.io), we pair open-source ASICs with closed-loop water harvesting (MOF-303), Terra Preta biochar, and hydroponics—starting from a $42 Bitaxe topper on a desk in Sydney and scaling to solar microgrids in Madagascar and Martian lava tubes.\n\nLow time preference. 114 years (2026–2140). Every watt warms life.",
+      "video_warmth_prompt": "4K 60fps tactile macro cinema: warm golden morning sunlight streaming through a Sydney studio window onto a charred-timber desk. An open-source Bitaxe miner hums silently beneath a brushed aluminum saucer filled with dark Terra Preta biochar and emerald fern moss inside a hand-blown borosilicate glass dome. Visible warm amber thermal shimmer rises gently, condensing into crystal water droplets that roll down the glass onto the moss. Warm tungsten glow, shallow depth of field, Kodak Vision3 500T film grain, hopeful human-centric warmth.",
+      "prospect_segment": "Open-Source Bitaxe Makers & Climate-Tech Seed Investors"
+    },
     {
       "date": "2026-11-20",
       "day_number": 1,
@@ -16,5 +30,6 @@
       "linkedin_post": "Bitaxe solved open-source sovereign hashing. Now we complete the equation: coupling 100% Joule heat recovery with closed-loop biospheres.\n\nAt Regenerative Compute (Lemuria Technologies), we measure civilizational progress by a new KPI: lifting societies starting from the most vulnerable—bringing food and water security to all Madagascans and Lemurians over a 114-year horizon (2026–2140), while flight-qualifying the closed-loop life support needed for Mars.\n\nCountdown to Block #1,000,000 is live at regenerativecompute.io.",
       "video_warmth_prompt": "Macro 4K 60fps warm golden-hour cinematography: an open-source Bitaxe miner sitting in a charred-timber cradle on an oak desk in Sydney, gentle amber convection shimmer rising into an anodized aluminum dish holding dark Terra Preta biochar and lush green fern moss inside a borosilicate glass cloche dome, sparkling condensation droplets falling onto leaves, shallow depth of field, warm tungsten rim light, serene organic-tech warmth."
     }
-  ]
+  ],
+  "latest_block": 976822
 }
