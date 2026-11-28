@@ -1,9 +1,9 @@
 {
-  "timestamp_utc": "2026-11-27T03:31:41.347175+00:00",
-  "current_bitcoin_block": 977747,
+  "timestamp_utc": "2026-11-28T03:08:42.069421+00:00",
+  "current_bitcoin_block": 977885,
   "target_launch_block": 1000000,
-  "blocks_remaining": 22253,
-  "estimated_launch_utc": "2027-04-30 16:21 UTC",
+  "blocks_remaining": 22115,
+  "estimated_launch_utc": "2027-04-30 16:58 UTC",
   "horizon_years": 114,
   "horizon_end_block": 6995816,
   "covenant_text": "REGENERATIVE COMPUTE (regenerativecompute.io | regenerativecompute.org) — TIMECHAIN COVENANT: Sustaining Life on Earth and Beyond. New Civilizational KPI: Lift humanity starting from the most vulnerable populations—bringing sovereign food, clean atmospheric water, and Terra Preta soil regeneration to all Madagascans and Lemurians across a 114-year low-time-preference horizon (Block #1,000,000 Launch -> Block #6,995,816 / Year 2140), while flight-qualifying closed-loop life support for Mars. Every watt of compute warms life.",
